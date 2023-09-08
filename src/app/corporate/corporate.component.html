@@ -1,0 +1,221 @@
+<section class="motor-details-inner-wrapper">
+    <!------banner-tab show-hide-area------>
+    <div class="banner-tab-area">
+        <div class="container">
+            <div class="health-insurance">
+                <div class="tab-head-text text-center">
+                    <h1>Existing offer on <span>Commercial Insurance</span></h1>
+                    <p>From 10+ insurance companies</p>
+                </div>
+            </div>
+            <div class="productformbox">
+
+                <div class="row full-width">
+                    <!---left side start-->
+                    <div class="col-md-6 border-right ">
+                        <div class="tab-left-area  ">
+                            <p class="right-nevigation">
+                                <span><i class="fa fa-home" aria-hidden="true"></i>
+                                    Home</span> >
+                                Corporate Insurance
+                            </p>
+                            <div class="big-l-block blue-text text-uppercase mb-3">
+                                <h6>Instant - simple - smart</h6>
+                                <h2>Corporate Insurance</h2>
+                            </div>
+                            <p class="l-sm-info">
+                                More than 50,000 satisfied customer<br>
+                                Best Rates Guaranteed<br>
+                                Dedicated Claims Desk
+                            </p>
+                            <div class="text-center">
+                                <img src="assets/images/motor-details/corporate-insurance-1.png">
+                            </div>
+                        </div>
+                    </div>
+                    <!---left end-->
+                    <!---right side start-->
+                    <div class="col-md-6">
+                        <div class="tab-right-area">
+                            <div class="mo-details-r-head text-center">
+                                <span>Corporate Insurance</span>
+                            </div>
+                            <!------>
+                            <div class="tab-pane ">
+                                <h4>Compare and Buy from 24+ insurance companies </h4>
+                                <form class="form-inline" (ngSubmit)="submit()">
+                                    <!-- individual-step-one -->
+                                    <div class="">
+                                        <div class="row">
+                                            <div class="col-md-12 pr-0">
+                                                <div class="form-group">
+                                                    <label class="control-label col-sm-2" for="email">Name</label>
+                                                    <div class="col-sm-10">
+                                                        <input type="text" class="form-control" id=""
+                                                            placeholder="Enter Name" name="corporate_user_name"
+                                                            [(ngModel)]="corpData.corporate_user_name" />
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="control-label col-sm-4" for="">Email</label>
+                                                    <div class="col-sm-8">
+                                                        <input type="email" class="form-control" id=""
+                                                            placeholder="Enter Email" name="corporate_user_email"
+                                                            [(ngModel)]="corpData.corporate_user_email">
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+
+                                            <div class="col-md-6">
+
+                                                <div class="form-group">
+                                                    <label class="control-label col-sm-4" for="">Mobile No</label>
+                                                    <div class="col-sm-8">
+                                                        <input type="text" class="form-control" id=""
+                                                            placeholder="Enter Mobile No" name="corporate_user_mobile"
+                                                            [(ngModel)]="corpData.corporate_user_mobile" maxlength="10">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+
+                                                <div class="form-group">
+                                                    <label class="control-label col-sm-4" for="">Type of Insurence
+                                                        looking for</label>
+                                                    <div class="col-sm-8">
+                                                        <select class="form-control" name="corporate_ins_type"
+                                                            [(ngModel)]="corpData.corporate_ins_type">
+                                                            <option value="">-Select-</option>
+                                                            <option value="Group Health Insurance">Group Health
+                                                                Insurance</option>
+                                                            <option value="Group Term Insurance">Group Term Insurance
+                                                            </option>
+                                                            <option value="Fire & Burglary Insurance">Fire & Burglary
+                                                                Insurance</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <p class="text-center d-block full-width m-0">
+                                            <button type="submit"
+                                                class="btn btn-default get-quotes-btn">Submit</button>
+                                        </p>
+                                    </div>
+
+
+
+                                </form>
+
+                            </div>
+                            <!------>
+                        </div>
+                    </div>
+                    <!---right side end-->
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+<div *ngIf="f === 'corporate-insurance'">
+    <!----container area start--->
+    <!----details block start---->
+    <section class="motor-details-des section-divider">
+        <div class="container">
+            <h2>What Is Corporate Insurance?
+                <div class="heading-boder"></div>
+            </h2>
+            <div class="row">
+                <div class="col-md-7 nopad-left ">
+                    <p>A car insurance is the policy which covers your car against financial losses that you may face in
+                        case of accident or theft of car. You pay a certain amount
+                        as a premium to the insurance company to buy this cover, and they agree to pay for accidental
+                        damages and theft losses. As per IRDA <strong>(Insurance Regulatory and Development
+                            Authority),</strong> it is
+                        mandatory for any vehicle running on Indian roads to be covered under an active <b><i>car
+                                insurance
+                                policy</i></b>.
+                    </p>
+                    <p class=" text-left"><strong>Based on the type of policy and add-ons that you opt for, your car
+                            insurance policy may include:</strong></p>
+
+                    <div class="row nopad-left">
+                        <div class="col-lg-6 col-md-6 col-sm-6 nopad-left">
+                            <ul class="list2">
+                                <li>Liability Cover</li>
+                                <li>Invoice Cover</li>
+                                <li>Engine Protector</li>
+                                <li>Tyre Cover</li>
+                                <li>Electrical Accessories</li>
+                                <li>PA For Unnamed Passenger</li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 nopad nopad-left">
+                            <ul class="list2">
+                                <li>Consumable Cover</li>
+                                <li>24*7 Roadside Assistance</li>
+                                <li>No Claim Bonus</li>
+                                <li>Key &amp; Lock Replacement</li>
+                                <li>Non-Electrical Accessories</li>
+                                <li>LL To Paid Driver</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5 text-center text-md-right">
+
+                    <a href="#" target="_blank">
+                        <img src="assets/images/motor-details/corporate-insurance-2.png" alt="commercial-insurence">
+                    </a>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!----details block end---->
+    <!----details block start---->
+    
+    <!----details block start---->
+ 
+
+    <!----details block end---->
+    <!----details block start---->
+    
+    <!----details block end---->
+
+    <!----details block start---->
+   
+</div>
+<div *ngIf="f === 'corporate'">
+ 
+
+    
+  
+    <!--- OUR PARTNERS us end--->
+    <app-partners></app-partners>
+    <!--- OUR PARTNERS us end--->
+    <!--- Our satisfied clients start--->
+    <app-satisfied-client></app-satisfied-client>
+</div>
+
+<!-- Success Modal -->
+<ng-template #successmodal>
+    <div class="modal-header">
+      <h4 class="modal-title pull-left">Success</h4>
+      <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+        Thank You Showing Interest.We Will get Back To You Soon
+    </div>
+</ng-template>

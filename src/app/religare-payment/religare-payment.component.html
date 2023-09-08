@@ -1,0 +1,110 @@
+<main>
+    <section class="conmon-gap thank-you-health-nstp">
+        <div class="container">
+
+            <!-- <div class="my-4 pt-4">
+          <img src="images/thank-you/health-banner.jpg">
+        </div> -->
+            <div class="content-wrappper my-4 pt-4" *ngIf="proposalNum">
+                <div class="alert alert-success" role="alert">
+                    <h4 class="alert-heading">Congratulations!</h4>
+                    <!-- <p>Your Transaction ReferenceId is <strong>{{referenceId}}</strong></p> -->
+                    <p>Thank you for the payment of {{plandetail.premium | currency:'INR'}}. Your payment was successful. Welcome to ThePolicyMall.com
+                        family! We are glad you have taken the first step towards protecting your future. </p>
+
+                    <p>
+                        You can download your policy copy
+                        (PDF file) with Proposal No.: <span *ngIf="proposalNum"><strong>{{proposalNum}}</strong>.</span>
+                        <span *ngIf="!proposalNum">
+                            Processing<a href="javascript:" class="ml-2"><i class="fa fa-refresh"
+                                    aria-hidden="true"></i></a>
+                        </span>
+                    </p>
+                    <hr>
+                    <p class="mb-0">
+                        Below mentioned are your policy details:
+                    </p>
+                    <table class="table mt-2">
+                        <thead>
+                            <tr>
+                                <th scope="col">Insurer name</th>
+                                <th scope="col">Plan name</th>
+                                <th scope="col">Sum Insured (in Rs)</th>
+                                <th scope="col">Premium (in Rs)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>{{plandetail.company}}</td>
+                                <td>{{plandetail.plan}}</td>
+                                <td>{{plandetail.si | currency:'INR'}}</td>
+                                <td>{{plandetail.premium | currency:'INR'}}</td>
+                              </tr>
+                        </tbody>
+                    </table>
+                    <p class="text-center py-3">
+                        <button type="button" class="btn-proposal-form btn-dark-blue py-3 mr-lg-5" [disabled]="dwnloadBtn" (click)="downloadPolicyPDF()">Download Policy Copy</button>
+                        <button type="button" class="btn-proposal-form btn-dark-blue py-3">Download Proposal
+                            form</button>
+                    </p>
+                    <p>
+                        <strong>
+                            With ThePolicyMall, you are assured of:
+                        </strong>
+
+                    </p>
+                    <ul>
+                        <li>Free Claim assistance</li>
+                        <li>Dedicated customer service team to support you throughout</li>
+                        <li>Great Value guaranteed</li>
+
+
+                    </ul>
+                    <hr>
+                    <p class="mb-0 text-center">
+                        For any help, feel free to get in touch with us at <strong><span class="blue-text">+91 0120 487
+                                4600 / +91 74282 66733</span></strong>
+                    </p>
+
+                </div>
+
+
+                <!-- <p class="blue-bg text-center Download-ThePolicyMall"><span class="blue-text">Download ThePolicyMall App
+              Now!</span></p> -->
+                <p class="mb-0 text-center">Customer Support | Access all your documents | Claim Support</p>
+                <div class="grey-bg text-center py-3 px-2">
+                    Need insurance help? Head to <a href="#">ThePolicyMall.com</a>, for all insurance-related solutions.
+                </div>
+
+                <div class="footer-btn-hld my-5 text-center d-flex align-items-center justify-content-center">
+                    <a href="#" class="login-acc-btn btn btn-dark-blue">Login to My Account</a>
+                    <a href="https://www.kobinet.com.tr/" target="_blank" class="market-btn apple-btn" role="button">
+                        <span class="market-button-subtitle">Download on the</span>
+                        <span class="market-button-title">App Store</span>
+                    </a>
+                    <a href="https://www.kobinet.com.tr/" target="_blank" class="market-btn google-btn" role="button">
+                        <span class="market-button-subtitle">Get It On</span>
+                        <span class="market-button-title">Google Play</span>
+                    </a>
+                </div>
+                <p class="py-4 my-5 text-center">Login to your account or download our mobile app for quick after sales
+                    support
+                </p>
+            </div>
+            <!--=============== When Payment Failed========================== -->
+            <div class="content-wrappper my-4 pt-4">
+                <div class="alert alert-danger my-4 pt-4" role="alert" *ngIf="!proposalNum">
+                    <h4 class="alert-heading">Failed!</h4>
+                    <p>Sorry Your Transction is Unsuccessfull</p>
+                    <hr>
+                    <p class="mb-0 text-center">
+                        For any help, feel free to get in touch with us at <strong><span class="blue-text">+91 0120 487
+                                4600 / +91 74282 66733</span></strong>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+</main>

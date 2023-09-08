@@ -1,0 +1,143 @@
+<section class="compare-page">
+    <div class="container-fluid">
+        <div class="row">
+            
+            <div class="col-lg-11 mx-auto">
+                <div>
+                    <div class="col-md-12 text-right pt-2">
+                        <button class="btn btn-dark-blue" (click)="savenShareModal(savequotes)">Save &
+                            Share</button>
+                    </div>
+                    <div class=" col-md-12 col-sm-12 col-xs-12 nopad maintable">
+                        <div class="pricing-table">
+                            <div class="pricing-option1">
+                                <h3 class="goback">
+                                    <a class="gobacktxt" href="javascript:" (click)="backClicked()">
+                                        <img src="assets/images/icon/left-arrow.png" alt="left-arrow">
+                                        View All Quotes</a>
+                                </h3>
+                                <p>&nbsp;</p>
+                                <hr />
+                                <div class="price">
+                                    <span>Cover</span>
+                                </div>
+                                <hr>
+                                <div class="price">
+                                    <span>Term</span>
+                                </div>
+                                <hr>
+                                <div class="price pricemt">Premium</div>
+                            </div>
+
+                            <div class="pricing-option" *ngFor="let comp of compareArr">
+                                <div class="logoplanarea">
+
+                                    <img [src]="comp.company_logo"
+                                        alt="{{comp.company_name}}" role="button"
+                                        tabindex="0">
+                                </div>
+
+                                <p> {{comp.plan_name}} </p>
+
+                                <hr>
+
+                                <h1 class="price"> {{comp.sum_insured}} </h1>
+
+                                <hr>
+                                <h1 class="price"> {{comp.term}} Year </h1>
+
+                                <hr>
+                                <div class="price">
+                                    <div class="front">
+                                        <span class="price">
+                                            <!-- <i class="fa fa-inr" aria-hidden="true"></i> -->
+                                            <span>{{comp.premium_with_gst | currency:'INR'}} </span>
+                                        </span>
+
+                                    </div>
+
+                                    <div class="back">
+                                        <a href="javascript:" class="button" (click)="buyNow(comp)">
+                                            <span class="bttxtcomp">buy Now </span><i class="fa fa-angle-right"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="">
+                            <div class="pricing-table1" *ngFor="let feature of features">
+                                <div class="pricing-option1"> <span data-toggle="popover"
+                                        data-content="Actual expenses of room charged by the hospital for occupancy during hospitalization will be covered by the Insurer, ideally one should look for No limit under this benefit"
+                                        data-trigger="hover" data-original-title="" title="">{{feature.feature_name}}</span>
+                                </div>
+
+                                <div class="pricing-option" *ngFor="let comp of compareArr">
+                                  
+                                    <span>
+                                        {{(comp[feature.feature_slug].length > 0)?comp[feature.feature_slug][0]['plan_feature_content']:'...'}}
+                                    </span>
+
+                                </div>
+
+
+                            </div>
+                            <!-- <div class="pricing-table1">
+                                <div class="pricing-option1"> <span data-toggle="popover"
+                                        data-content="Actual expenses of room charged by the hospital for occupancy during hospitalization will be covered by the Insurer, ideally one should look for No limit under this benefit"
+                                        data-trigger="hover" data-original-title="" title="">Copay</span>
+                                </div>
+
+                                <div class="pricing-option" *ngFor="let comp of compareArr">
+                                    <span class="">
+                                        {{comp.copay || 'NA'}}
+                                    </span>
+
+                                </div>
+                            </div>
+                            <div class="pricing-table1">
+                                <div class="pricing-option1"> <span data-toggle="popover"
+                                        data-content="Actual expenses of room charged by the hospital for occupancy during hospitalization will be covered by the Insurer, ideally one should look for No limit under this benefit"
+                                        data-trigger="hover" data-original-title="" title="">Maternity Cover</span>
+                                </div>
+
+                                <div class="pricing-option" *ngFor="let comp of compareArr">
+                                    <span class="">
+                                        {{comp.maternity || 'NA'}}
+                                    </span>
+
+                                </div>
+                            </div> -->
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!----container area end--->
+
+<!-- //========= Save Quotes============= -->
+<ng-template #savequotes>
+    <div class="modal-header">
+        <h4 class="modal-title pull-left">Confirm Your Email & Mobile No</h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef2.hide()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <div class="form-group">
+            <label for="email">Email ID</label>
+            <input type="email" class="form-control" id="email" name="emailId" placeholder="Enter email"
+                [(ngModel)]="savequotesObj.emailId">
+        </div>
+        <div class="form-group">
+            <label for="mobile">Mobile Number</label>
+            <input type="text" class="form-control" id="mobile" name="contactNumber" maxlength="10"
+                [(ngModel)]="savequotesObj.contactNumber" (keyup)="numericCheck($event)" autocomplete="off">
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-primary" (click)="sendQuotes()">Send</button>
+    </div>
+</ng-template>

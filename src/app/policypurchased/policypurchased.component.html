@@ -1,0 +1,192 @@
+<!---content area start------->
+<main>
+    <section class="conmon-gap ">
+        <div class="container-fluid">
+            <div class="quotation-page-wrapper">
+                <div class="row">
+                    <!-----left side wrapper start-->
+                    <div class="nooutline col-md-3 col-lg-3 login-dashboard-left-wrapper">
+                        <app-usermenu></app-usermenu>
+                    </div>
+                    <!-----left side wrapper end-->
+                    <!-----right side wrapper start-->
+                    <div class="nooutline col-md-9 col-lg-9  login-dashboard-right py-4 px-md-5">
+                        <!---top search result start---->
+                        <div class="top-search-result my-4 ">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <h3 class="results-num1">Welcome {{userName}},</h3>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <!---top search result end---->
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h2 class="recent-s-h m-0">Policy Purchased</h2>
+                            <!-- <a href="#" class="see-all">See all</a> -->
+                        </div>
+                        <!----plan box start-------->
+                        <div class="plan box-wrapper">
+
+                            <!----looping row start-->
+                            <div class="planbox-inner-wrapper" *ngFor="let sess of purchased;let i=index">
+                                <!-----single-planbox start--->
+                                <div class="single-planbox-wrapper nmdcard  pt-4 pb-3">
+                                    <div class="row position-relative">
+                                        <!---left area-->
+                                        <div class="col-lg-4">
+                                            <div class="row align-items-center">
+                                                <div class="col">
+                                                    <div class="imgareah">
+                                                        <img [src]="sess.companylogo" class="imgwidth"
+                                                            alt="Company Logo">
+                                                    </div>
+                                                </div>
+                                                <div class="col">
+                                                    <h2 class="policy-name">{{sess.plan}}</h2>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!----middle area-->
+                                        <div class="col-lg-8">
+                                            <div class="row ">
+                                                <div class="col-6 text-center">
+                                                    <p class="plan-des">{{sess.proposalTypeName | titlecase}}</p>
+                                                    <label class="hospital-info">{{sess.proposalTypeValue | uppercase}}</label>
+                                                </div>
+                                                <!-- <div class="col-3 text-center">
+                                                    <p class="plan-des">Premium</p>
+                                                    <label class="hospital-info">{{sess.premium | currency:'INR'}}</label>
+                                                </div> -->
+                                                <div class="col-3 text-center">
+                                                    <p class="plan-des">Payment Status</p>
+                                                    <label class="hospital-info">{{sess.payment_status | titlecase}}</label>
+                                                </div>
+                                                <div class="col-3">
+                                                    <p class="plan-des">Purchase Date</p>
+                                                    <label class="hospital-info">{{sess.updatedAt | date}}</label>
+                                                </div>
+                                                <!-- <div class="col text-center">
+                                                    <button class="btn btn-dark-blue" (click)="SessionDetailModal(sessiondetail,sess)"> Saved & Shared</button>
+                                                </div> -->
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                    <!----bottom area start--->
+                                    <!-- <div class="bottom-area m-text">
+                                        <div class="row align-items-center ">
+                                            <div class="col-md-12">
+                                                <div class="blue-text smart-rider text-capitalize bottom-area-left">
+                                                    <a href="#">Smart Select Rider</a>
+                                                    <span class="px-2">|</span>
+                                                    <a href="#">Room Rent Tider</a>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div> -->
+                                    <!----bottom area end--->
+                                </div>
+                                <!-----single-planbox end--->
+                            </div>
+                            <p class="text-center" *ngIf="purchased.length <= 0">--No Plan Purchased Yet--</p>
+                           
+
+
+                       
+                        </div>
+                        <!----plan box wrapper end-------->
+
+                    </div>
+                    <!-----right side wrapper end-->
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+<!---content area end------->
+
+<!-------25.11.20 compare right toogle--------->
+<div class="insure_compare_pop">
+    <div id="dismiss">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+            <path id="close.svg" class="cls-1"
+                d="M1419.99,33.847l-2.14,2.147L1412,30.147l-5.85,5.847-2.14-2.147L1409.85,28l-5.84-5.847,2.14-2.146,5.85,5.847,5.85-5.847,2.14,2.146L1414.15,28Z"
+                transform="translate(-1404 -20)"></path>
+        </svg>
+    </div>
+    <div class="insure_compare_pop-inner mt-5">
+        <!---compare box cross icon-->
+
+        <!--image border box-->
+        <div class="nooutline compare-item-box">
+            <!--cross button-->
+            <div class="cross-c-box">
+                <svg viewBox="0 0 212.982 212.982" id="cross">
+                    <path
+                        d="M131.804 106.491l75.936-75.936c6.99-6.99 6.99-18.323 0-25.312-6.99-6.99-18.322-6.99-25.312 0L106.491 81.18 30.554 5.242c-6.99-6.99-18.322-6.99-25.312 0-6.989 6.99-6.989 18.323 0 25.312l75.937 75.936-75.937 75.937c-6.989 6.99-6.989 18.323 0 25.312 6.99 6.99 18.322 6.99 25.312 0l75.937-75.937 75.937 75.937c6.989 6.99 18.322 6.99 25.312 0 6.99-6.99 6.99-18.322 0-25.312l-75.936-75.936z">
+                    </path>
+                </svg>
+            </div>
+            <!--cross button-->
+            <div class="imgarea1">
+                <span class="imgcol1">
+                    <img src="https://www.easypolicy.com/HomePage/Images/Logos/general_insurance/aditya_birla.png"
+                        alt="">
+                </span>
+
+            </div>
+            <h5 class="planname ng-binding">Activ Assure Diamond</h5>
+        </div>
+        <!--image border box end-->
+        <!--image border box-->
+        <div class="nooutline compare-item-box ">
+            <!--cross button-->
+            <div class="cross-c-box">
+                <svg viewBox="0 0 212.982 212.982" id="cross">
+                    <path
+                        d="M131.804 106.491l75.936-75.936c6.99-6.99 6.99-18.323 0-25.312-6.99-6.99-18.322-6.99-25.312 0L106.491 81.18 30.554 5.242c-6.99-6.99-18.322-6.99-25.312 0-6.989 6.99-6.989 18.323 0 25.312l75.937 75.936-75.937 75.937c-6.989 6.99-6.989 18.323 0 25.312 6.99 6.99 18.322 6.99 25.312 0l75.937-75.937 75.937 75.937c6.989 6.99 18.322 6.99 25.312 0 6.99-6.99 6.99-18.322 0-25.312l-75.936-75.936z">
+                    </path>
+                </svg>
+            </div>
+            <!--cross button-->
+            <div class="imgarea1">
+                <span class="imgcol1">
+                    <img src="https://www.easypolicy.com/HomePage/Images/Logos/general_insurance/aditya_birla.png"
+                        alt="">
+                </span>
+
+            </div>
+            <h5 class="planname">Activ Assure Diamond</h5>
+        </div>
+        <!--image border box end-->
+        <!--image border box-->
+        <div class="nooutline compare-item-box">
+            <!--cross button-->
+            <div class="cross-c-box">
+                <svg viewBox="0 0 212.982 212.982" id="cross">
+                    <path
+                        d="M131.804 106.491l75.936-75.936c6.99-6.99 6.99-18.323 0-25.312-6.99-6.99-18.322-6.99-25.312 0L106.491 81.18 30.554 5.242c-6.99-6.99-18.322-6.99-25.312 0-6.989 6.99-6.989 18.323 0 25.312l75.937 75.936-75.937 75.937c-6.989 6.99-6.989 18.323 0 25.312 6.99 6.99 18.322 6.99 25.312 0l75.937-75.937 75.937 75.937c6.989 6.99 18.322 6.99 25.312 0 6.99-6.99 6.99-18.322 0-25.312l-75.936-75.936z">
+                    </path>
+                </svg>
+            </div>
+            <!--cross button-->
+            <div class="imgarea1">
+                <span class="imgcol1">
+                    <img src="https://www.easypolicy.com/HomePage/Images/Logos/general_insurance/aditya_birla.png"
+                        alt="">
+                </span>
+
+            </div>
+            <h5 class="planname">Activ Assure Diamond</h5>
+        </div>
+        <div class="text-center mt-4">
+            <a class="btn btn-dark-blue d-block" href="policy-comparepop.html">Compare</a>
+            <!--image border box end-->
+        </div>
+    </div>
+</div>

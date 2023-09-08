@@ -1,0 +1,20 @@
+{
+    "company": [
+        {
+            "company_id": 1,
+            "company_name": "HDFC General"
+        },
+        {
+            "company_id": 2,
+            "company_name": "Religare Health"
+        },
+        {
+            "company_id": 3,
+            "company_name": "Star Health"
+        },
+        {
+            "company_id": 4,
+            "company_name": "Manipal Cigna"
+        }
+    ]
+}

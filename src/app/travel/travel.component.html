@@ -1,0 +1,1142 @@
+<section class="motor-details-inner-wrapper ">
+    <!------banner-tab show-hide-area------>
+    <div class="banner-tab-area">
+        <div class="container">
+            <div class="health-insurance">
+                <div class="tab-head-text text-center">
+                    <h1>Existing offer on <span>Travel Insurance</span></h1>
+                    <p>From 10+ insurance companies</p>
+                </div>
+            </div>
+            <div class="productformbox">
+
+                <div class="row full-width">
+                    <!---left side start-->
+                    <div class="col-md-6 border-right pr-md-0">
+                        <div class="tab-left-area  ">
+                            <p class="right-nevigation">
+                                <span><i class="fa fa-home" aria-hidden="true"></i>
+                                    Home</span> >
+                                Travel Insurance
+                            </p>
+                            <div class="big-l-block blue-text text-uppercase mb-3">
+                                <h6>Instant - simple - smart</h6>
+                                <h2>Travel Insurance</h2>
+                            </div>
+                            <p class="l-sm-info">
+                                More than 50,000 satisfied customer<br>
+                                Best Rates Guaranteed<br>
+                                Dedicated Claims Desk
+                            </p>
+                            <div class="text-center">
+                                <img src="assets/images/motor-details/travel-insurance-1.png">
+                            </div>
+                        </div>
+                    </div>
+                    <!---left end-->
+                    <!---right side start-->
+                    <div class="col-md-6">
+                        <div class="tab-right-area">
+                            <div class="mo-details-r-head text-center">
+                                <span>Travel Insurance</span>
+                            </div>
+                            <!------>
+                            <div class="tab-pane ">
+                                <h4>Compare and Buy from 24+ insurance companies</h4>
+                                <form class="form-inline" (ngSubmit)="travelSubmit()">
+                                    <!-- individual-step-one -->
+                                    <div class="">
+                                        <div class="row">
+                                            <div class="col-md-12 pr-0">
+                                                <div class="form-group">
+                                                    <label class="control-label col-sm-2" for="email">Name</label>
+                                                    <div class="col-sm-10">
+                                                        <input type="text" class="form-control" id=""
+                                                            placeholder="Enter Name" name="user_name"
+                                                            [(ngModel)]="travelData.travel_user_name" />
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="control-label col-sm-4" for="">Email</label>
+                                                    <div class="col-sm-8">
+                                                        <input type="email" class="form-control" id=""
+                                                            placeholder="Enter Email" name="email"
+                                                            [(ngModel)]="travelData.travel_user_email"
+                                                            autocomplete="off">
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+
+                                            <div class="col-md-6">
+
+                                                <div class="form-group">
+                                                    <label class="control-label col-sm-3" for="">Mobile</label>
+                                                    <div class="col-sm-9">
+                                                        <input type="text" class="form-control" id=""
+                                                            placeholder="Enter Mobile No" name="travel_user_mobile"
+                                                            [(ngModel)]="travelData.travel_user_mobile" maxlength="10">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 pr-0">
+
+                                                <div class="form-group">
+                                                    <label class="control-label col-sm-2" for="">Journey Start
+                                                        Date</label>
+                                                    <div class="col-sm-6 jstartDt">
+                                                        <input type="text" class="form-control" id=""
+                                                            placeholder="DD/MM/YYYY" name="journy_start_date"
+                                                            [(ngModel)]="travelData.start_date"
+                                                            [bsConfig]="{ dateInputFormat: 'DD/MM/YYYY' }" bsDatepicker
+                                                            [minDate]="minDate" autocomplete="off" [isOpen]="isOpen">
+                                                        <i class="fa fa-calendar" (click)="isOpen = !isOpen"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+                                        <p class="text-center d-block full-width m-0">
+                                            <button type="submit" class="btn btn-default get-quotes-btn"
+                                                [disabled]="getQuoteBtn">Submit</button>
+                                        </p>
+                                    </div>
+
+
+
+                                </form>
+
+                            </div>
+                            <!------>
+                        </div>
+                    </div>
+                    <!---right side end-->
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+<div *ngIf="f === 'travel-insurance'">
+    <!----details block start---->
+    <section class="motor-details-des section-divider">
+        <div class="container">
+            <div class="leftcontent">
+
+                <section class="section-divider">
+                    <div class="row">
+                        <div class="col-md-12 fh5co-section-heading  ">
+                            <h2>What Is Travel Insurance And How It Works
+                                <div class="heading-boder"></div>
+                            </h2>
+                            <div class="col-md-12 nopad-left ">
+                                <p>Travelling is always an experience, be it business travelling or leisure travelling.
+                                    It creates memories for a lifetime and you look forward to more holidays and
+                                    successful business trips, in and around the country.
+                                    <br> But, as any other event of life, there are risks involved with travel too.
+                                    There are possibilities of unforeseen circumstances involved with travel, especially
+                                    when you are in foreign lands and using public facilities.
+                                </p>
+                                <p>Such unforeseen circumstances and the effects are covered under Travel Insurance. It
+                                    is an insurance product specifically designed to cover the costs and losses of
+                                    unexpected events encountered while travelling. This insurance
+                                    is usually meant to reduce the risk and damages incurred during unfortunate
+                                    incidents associated with travel. The basic purpose of travel insurance is to cover
+                                    trip cancellation, lost luggage, flight accidents, travel
+                                    injuries and sometimes other medical expenses faced while travelling.</p>
+                                <p> A travel insurance is must for people travelling domestically or internationally, to
+                                    safeguard any unwanted expenditure and losses during the travel, to make travel a
+                                    pleasant and happy experience, each time.</p>
+
+                                <div class="sec-heading">Here are simple ways in which a travel insurance works and
+                                    comes to your rescue:</div>
+                                <ul class="list2">
+                                    <li>It works if you need to cancel a trip in unforeseen circumstances, you do not
+                                        lose all your booking money.</li>
+                                    <li>It works if you lose your luggage while travelling. Basic necessities of
+                                        travelling are provided.</li>
+                                    <li>It works if you get sick during a trip, by providing immediate medical help.
+                                    </li>
+                                    <li>It works in case of delayed flights by providing you resting place and meals.
+                                    </li>
+                                    <li>It works in case if you have lost your passport, to provide immediate
+                                        assistance.</li>
+                                    <li>It works if you encounter a natural or man-made disaster in any other city. You
+                                        are provided help to reach home safely.</li>
+                                    <li>It works in case you are travelling to some specific countries. You cannot
+                                        travel to these foreign land without a travel insurance.</li>
+                                    <li>It works if your travel company goes bankrupt. Your travel is safe and sound.
+                                    </li>
+                                    <li>It works to make your trip pleasant, safe and risk free.</li>
+                                    <li>It works to bring a huge travel coverage, which is of utmost importance, at very
+                                        nominal cost.</li>
+                                </ul>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </section>
+                <section class="section-divider">
+                    <div class="row">
+                        <div class="col-md-12 fh5co-section-heading  ">
+                            <h2>Eligibility To Buy Travel Insurance!
+                                <div class="heading-boder"></div>
+                            </h2>
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h3>Eligibility To Buy Domestic Travel Insurance</h3>
+                                    <ul class="list2">
+                                        <li>Any Indian citizen travelling within the country is eligible to buy domestic
+                                            travel insurance. Usually, the travel companies associate the travel
+                                            insurance component along with the trip planning. </li>
+                                        <li>A citizen of another country travelling within India, or working with a work
+                                            permit in India, can also buy domestic travel insurance to safeguard the
+                                            travelling risks. </li>
+                                        <li>Eligible age to buy domestic travel insurance is 18 to 65 years (usually).
+                                            This also varies as per insurance providers and plans. </li>
+                                        <li>The coverage provided by <a
+                                                href="https://www.thepolicymall.com/insurance-companies"><b><i>insurance
+                                                        company</i></b></a> depends on the city you are travelling to,
+                                            your age, your medical condition, and the duration
+                                            of the trip. </li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-12">
+                                    <h3>Eligibility To Buy International Travel Insurance</h3>
+                                    <ul class="list2">
+                                        <li>Any Indian citizen travelling to a foreign country for business or leisure,
+                                            holding a valid passport, is eligible to buy international travel insurance.
+                                            There are various kinds of international travel insurance
+                                            categories one can choose from.</li>
+                                        <li>Foreign national, employed in India on a work permit, are also eligible to
+                                            buy international travel insurance.</li>
+                                        <li>Eligible age to buy international travel insurance is 6 months to 70 years.
+                                            However, it varies from company to company and plan to plan.</li>
+                                        <li>The coverage provided by the insurance company depends on the country you
+                                            are travelling to, your age, your medical condition, and the duration of the
+                                            trip.</li>
+                                    </ul>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </section>
+                <section class="section-divider" id="section6">
+                    <div class="row">
+                        <div class="col-md-12 fh5co-section-heading  ">
+                            <h2>Key Advantages And Features of Travel Insurance!
+                                <div class="heading-boder"></div>
+                            </h2>
+                            <p>Whether you are an avid traveller or once in a while trip is your choice, a travel
+                                insurance is a must to cover all the unforeseen events you may encounter while
+                                travelling to other cities or countries.<br> While the travel
+                                insurance cover may vary from company to company and plan to plan, there are some common
+                                features associated with travel insurance that bring some major advantages. </p>
+                            <div class=" sec-heading">Let us know more about those features:</div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="panel-group" id="accordion-alt1">
+                                        <div class="panel">
+                                            <div class="panel-heading">
+                                                <h4 class="panel-title">
+                                                    <a data-toggle="collapse" data-parent="#accordion-alt1"
+                                                        href="#collapseone-alt1" class="collapsed"> <span><img
+                                                                src="assets/images/spend-arrow.png" alt=""
+                                                                width="20"></span>Cover Against Flight Issues</a>
+                                                </h4>
+                                            </div>
+                                            <div id="collapseone-alt1" class="panel-collapse collapse in">
+                                                <div class="panel-body">
+                                                    <p>The major feature of a regular travel insurance is that it
+                                                        provides a cover against usual flight related issues such as
+                                                        flight cancellations ad flight delays. The advantage you get is,
+                                                        while travelling
+                                                        to other countries, you are provided with accommodation and
+                                                        meals for the waiting period.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel">
+                                            <div class="panel-heading">
+                                                <h4 class="panel-title">
+                                                    <a data-toggle="collapse" data-parent="#accordion-alt1"
+                                                        href="#collapsetwo-alt1" class="collapsed"> <span><img
+                                                                src="assets/images/spend-arrow.png" alt=""
+                                                                width="20"></span>Cover Against Medical Emergencies And
+                                                        Hospitalisation</a>
+                                                </h4>
+                                            </div>
+                                            <div id="collapsetwo-alt1" class="panel-collapse collapse"
+                                                style="height: 0px;">
+                                                <div class="panel-body">
+                                                    <p>This feature is very important to cover the medical conditions or
+                                                        accidents you may face while travelling. Your travel insurance
+                                                        comes in handy to compensate against all the medical treatment,
+                                                        hospitalisation,
+                                                        and ambulance fee costs. Instantaneous teeth surgeries or
+                                                        required dental treatments are also covered in travel insurance.
+                                                        You get the advantage of immediate medical attention even in
+                                                        foreign lands,
+                                                        without having to worry about cash, where you may feel stranded
+                                                        otherwise.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel">
+                                            <div class="panel-heading">
+                                                <h4 class="panel-title">
+                                                    <a data-toggle="collapse" data-parent="#accordion-alt1"
+                                                        href="#collapsethree-alt1" class="collapsed"> <span><img
+                                                                src="assets/images/spend-arrow.png" alt=""
+                                                                width="20"></span>Cover Against Physical Losses Such As
+                                                        Baggage And Passport </a>
+                                                </h4>
+                                            </div>
+                                            <div id="collapsethree-alt1" class="panel-collapse collapse">
+                                                <div class="panel-body">
+                                                    <p>While travelling it is a usual fear to lose baggage or other
+                                                        valuables including important documents, in transit. Therefore,
+                                                        the travel insurance offers a very important feature of cover
+                                                        against loss
+                                                        of baggage as well as passport. You get the advantage of
+                                                        necessary basics being offered in case of baggage loss, and
+                                                        immediate assistance in case you lose your passport.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel">
+                                            <div class="panel-heading">
+                                                <h4 class="panel-title">
+                                                    <a data-toggle="collapse" data-parent="#accordion-alt1"
+                                                        href="#collapsefour-alt1" class="collapsed"> <span><img
+                                                                src="assets/images/spend-arrow.png" alt=""
+                                                                width="20"></span>Cover Against Personal Accident And
+                                                        Death </a>
+                                                </h4>
+                                            </div>
+                                            <div id="collapsefour-alt1" class="panel-collapse collapse">
+                                                <div class="panel-body">
+                                                    <p>Another important feature of a travel insurance is the cover
+                                                        against accidental injuries or accidental death. While
+                                                        travelling the insurer encounters an unfortunate accident
+                                                        situation and suffer injuries,
+                                                        or God forbidden the insurer dies during the travel, there is a
+                                                        certain sum assured paid to cover for medical expenses or death.
+                                                        This is an advantage equal to a life cover while travelling.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel">
+                                            <div class="panel-heading">
+                                                <h4 class="panel-title">
+                                                    <a data-toggle="collapse" data-parent="#accordion-alt1"
+                                                        href="#collapsefive-alt1" class="collapsed"> <span><img
+                                                                src="assets/images/spend-arrow.png" alt=""
+                                                                width="20"></span>Covers Against Emergency Trip
+                                                        Cancellation and Curtailment </a>
+                                                </h4>
+                                            </div>
+                                            <div id="collapsefive-alt1" class="panel-collapse collapse">
+                                                <div class="panel-body">
+                                                    <p>This feature helps you to cancel the trip in emergency
+                                                        situations, such as critical medical condition of a family
+                                                        member, without facing too many losses of bookings done. Such
+                                                        last minute cancellations
+                                                        are taken care of by your travel insurance and you get the
+                                                        advantage of not having to worry about travel expenses getting
+                                                        waste in emergent situations.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel">
+                                            <div class="panel-heading">
+                                                <h4 class="panel-title">
+                                                    <a data-toggle="collapse" data-parent="#accordion-alt1"
+                                                        href="#collapsesex-alt1" class="collapsed"> <span><img
+                                                                src="assets/images/spend-arrow.png" alt=""
+                                                                width="20"></span>Covers Against Burglary While You Are
+                                                        Away </a>
+                                                </h4>
+                                            </div>
+                                            <div id="collapsesex-alt1" class="panel-collapse collapse">
+                                                <div class="panel-body">
+                                                    <p>Another important feature to cover you against unwanted losses
+                                                        while you are away from home. A theft or burglary is covered
+                                                        under travel insurance, if it happens while you are travelling.
+                                                        There are chances
+                                                        of such mishaps, especially when the house is left unattended.
+                                                        Therefore, it becomes important to avail a cover against it, and
+                                                        the advantage is that you travel free minded with the thought
+                                                        that
+                                                        your valuables back home are secured. </p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <p>If you are planning to travel soon, you must cover yourself with an adequate travel
+                                insurance. Compare and find the best travel insurance here at thepolicymall.com</p>
+
+                        </div>
+                    </div>
+                </section>
+                <section class="section-divider">
+                    <div class="row">
+                        <div class="col-md-12 fh5co-section-heading  ">
+                            <h2>Benefits of Travel Insurance
+                                <div class="heading-boder"></div>
+                            </h2>
+                            <p>The basic benefits of a regular travel insurance must be known to you, so that you know
+                                what all is covered in your travel insurance policy.</p>
+                            <p><b>Here is a quick list of all the benefits of travel insurance:</b></p>
+                            <ul class="list2">
+                                <li>Provision of emergency cash in case you lose travel funds due to theft or burglary
+                                    in a foreign country. </li>
+                                <li>Emergency medical expenses are paid if you or your family member falls critically
+                                    sick, or is injured and need hospitalisation, or dies in another country. </li>
+                                <li>Emergency evacuation from another city or a foreign country, if needed, is paid for
+                                    by travel insurance.</li>
+                                <li>An immediate anaesthetic tooth surgery is paid for, if it is required due to an
+                                    injury. </li>
+                                <li>Compensation for death or permanent disability due to an accident encountered while
+                                    travelling in a flight or ship carrier is made. </li>
+                                <li>The cost of obtaining a fresh or duplicate passport or necessary travel documents,
+                                    in case of loss of passport, is borne by travel insurance.</li>
+                                <li>Absolute loss of your checked-in baggage due to an airline's fault is reimbursed by
+                                    travel insurance. </li>
+                                <li>Expenses incurred are covered, if a trip is delayed for more than 12 hours due to
+                                    airline's fault, medical problems, personal employment problems or issues caused due
+                                    to natural disasters.</li>
+                                <li>Expenses incurred are covered if a trip is totally cancelled or interrupted due to
+                                    airline's fault, medical problems, personal employment problems or issues caused due
+                                    to natural disasters.</li>
+                                <li>If you have to miss a connecting flight, due to delay of the previous flight, the
+                                    expenses are covered by travel insurance.</li>
+                                <li>Compensation for a third party in case you cause a loss of life, loss of limb,
+                                    injury or loss of property to someone by mistake, while on a travel.</li>
+                                <li>You are covered against burglary in your home, while you are travelling.</li>
+                                <li>Special distress allowance is provided in case of a plane highjack for more than
+                                    more than 12 hours</li>
+                            </ul>
+                            <p>Always remember these benefits while buying your travel insurance at thepolicymall.com.
+                                Also, do not forget to carefully read through the policy terms and conditions, to get
+                                all possible information on your travel coverage. </p>
+                        </div>
+                    </div>
+                </section>
+                <section class="section-divider">
+                    <div class="row">
+                        <div class="col-md-12 fh5co-section-heading  ">
+                            <h2>Importance of Having Travel Insurance
+                                <div class="heading-boder"></div>
+                            </h2>
+                            <strong>
+                            </strong>
+                            <ul class="list2"><strong>
+                                    <li>Are you an avid traveller?</li>
+                                    <li>Do you take regular vacations?</li>
+                                    <li>Does your business or profession demand a lot of travelling?</li>
+                                    <li>If you are answering the above questions in yes, then travel insurance is
+                                        extremely important for you.</li>
+                                </strong>
+                            </ul>
+                            <div class="sec-heading">Here are a 8 reasons that lay down the importance of having travel
+                                insurance.</div>
+                            <div class="row scrollbox3">
+                                <div class="media-1">
+                                    <div class="media-left"><span class="process-number">1</span></div>
+                                    <div class="media-body">
+                                        <p>Travel insurance takes care of inevitable flight cancellations and the
+                                            expenses incurred. For example; you are travelling from New York to your
+                                            home country with your family. You land at a foreign airport for connecting
+                                            flight. But, the next flight is delayed or cancelled. In such case, your
+                                            travel insurance will come in handy to assist you with finding &amp; booking
+                                            new flights and reaching back home safely.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="media-1">
+                                    <div class="media-left"><span class="process-number">2</span></div>
+                                    <div class="media-body">
+                                        <p>Travel insurance takes care of your baggage losses, and damages thus
+                                            incurred. For example; you are travelling to another city with your
+                                            expensive medication and your hand baggage is lost with your medicine in it.
+                                            Here, you can always call your travel insurance to help you locate your bag
+                                            and also, to get the necessary medication arranged for you. </p>
+                                    </div>
+                                </div>
+                                <div class="media-1">
+                                    <div class="media-left"><span class="process-number">3</span></div>
+                                    <div class="media-body">
+                                        <p>Travel insurance helps to arrange for emergency travel documents and cash.
+                                            For example; you arrive in London, and as soon as you step out of airport,
+                                            your passport, along with your wallet is stolen. Your travel
+                                            insurance will arrange for necessary cash and emergency travel documents to
+                                            travel back to country.</p>
+
+                                    </div>
+                                </div>
+                                <div class="media-1">
+                                    <div class="media-left"><span class="process-number">4</span></div>
+                                    <div class="media-body">
+                                        <p>Travel insurance is important if you meet with an accident or face a critical
+                                            medical situation in another city or country. For example; you were
+                                            travelling to a remote city in Rajasthan, you fall critically ill
+                                            or are badly injured and adequate medical help is not available. Your travel
+                                            insurance will help you arrange for a medical evacuation. </p>
+                                    </div>
+                                </div>
+                                <div class="media-1">
+                                    <div class="media-left"><span class="process-number">5</span></div>
+                                    <div class="media-body">
+                                        <p>Travel insurance proves to be very important in case of emergency trip
+                                            cancellations. For example; you are leaving for a holiday to Mauritius and
+                                            suddenly your child gets too sick to travel. Your travel insurance
+                                            is there to save money on non-refundable trip deposits and pre-payments on
+                                            tickets.</p>
+                                    </div>
+                                </div>
+                                <div class="media-1">
+                                    <div class="media-left"><span class="process-number">6</span></div>
+                                    <div class="media-body">
+                                        <p>Travel insurance is particularly important when it comes to luggage safety.
+                                            For example; you arrive in Bhutan but your luggage is lost in transit. Now,
+                                            your travel insurance company will be responsible to locate
+                                            it, arrange for cash and covered necessities in the foreign country, and to
+                                            reimburse the loss of contents if it is stolen. </p>
+                                    </div>
+                                </div>
+                                <div class="media-1">
+                                    <div class="media-left"><span class="process-number">7</span></div>
+                                    <div class="media-body">
+                                        <p>Travel insurance is crucial to cover you if the airlines, cruise line or the
+                                            tour operator goes bankrupt. For example; your are on a month long business
+                                            trip to Australia, where all the expenses are already paid
+                                            to the tour manager company. The tour company files for bankruptcy in this
+                                            duration and refuses to pay for further travel. Your travel insurance will
+                                            save you from getting stranded in an alien land and get you
+                                            safe back home. </p>
+                                    </div>
+                                </div>
+                                <div class="media-1">
+                                    <div class="media-left"><span class="process-number">8</span></div>
+                                    <div class="media-body">
+                                        <p>Travel insurance is certainly important if you need emergency evacuation from
+                                            a country or city facing terrorist attacks or other natural calamities. For
+                                            example; you were in Gujarat for holiday and sudden communal
+                                            riots broke. You can always call your travel insurance to arrange for
+                                            immediate evacuation and help you reach home safe.</p>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <p>These examples will bring you a lot of clarity on why an adequate travel insurance so
+                                important for you. Now, it is the time to buy your travel insurance right now at
+                                thepolicymall.com, and make your next business or holiday travel
+                                safe and secured.</p>
+                        </div>
+                    </div>
+                </section>
+                <section class="section-divider">
+                    <div class="row">
+                        <div class="col-md-12 fh5co-section-heading  ">
+                            <h2>Tips To Choose Best Travel Insurance!
+                                <div class="heading-boder"></div>
+                            </h2>
+                            <p>As much as travel is necessary in current demanding times, be it for business or leisure,
+                                so is travel insurance, to keep those trips secure and tension free! It is true that you
+                                may not even use that travel insurance for most
+                                of your trips, but, unforeseen events or disasters won't give a notice before they
+                                strike.</p>
+                            Therefore, a good travel insurance is always your best companion when you venture into
+                            foreign lands or unknown territories. But, how to choose the best travel insurance? <p></p>
+                            <div class="sec-heading">We are sharing some tips to choose the best travel insurance and
+                                feel safe anywhere you go:</div>
+                            <div class="row">
+                                <div class="media-1">
+                                    <div class="media-left"><span class="process-number">1</span></div>
+                                    <div class="media-body">
+                                        <p>Do not go by what your travel agent is offering you with your trip. This may
+                                            be just a basic policy at extra cost.</p>
+                                    </div>
+                                </div>
+                                <div class="media-1">
+                                    <div class="media-left"><span class="process-number">2</span></div>
+                                    <div class="media-body">
+                                        <p>Considering the destination you are traveling to, choose the sum assured for
+                                            medical cover. Some countries may have expensive hospitalization, where your
+                                            travel insurance hospitalization cover can come in handy.
+                                            But if you are traveling to a country that offers cheaper medical
+                                            assistance, you may go for a lower sum assured at lower premium. </p>
+                                    </div>
+                                </div>
+                                <div class="media-1">
+                                    <div class="media-left"><span class="process-number">3</span></div>
+                                    <div class="media-body">
+                                        <p>If you travel rarely, only for holidays, you have to choose the travel
+                                            insurance which can cover you for the duration of your trip. Longer the
+                                            trip, higher the premium for your travel insurance. </p>
+                                    </div>
+                                </div>
+                                <div class="media-1">
+                                    <div class="media-left"><span class="process-number">4</span></div>
+                                    <div class="media-body">
+                                        <p>But if you are a frequent traveler, opt for annual multi-trip policies which
+                                            can save you a lot of money. Multi-trip policies are usually valid for one
+                                            year and they cover multi trips abroad, in that duration. Each
+                                            trip covered can be 30-45 days and such policies are convenient to buy as
+                                            you are not required to submit documents a multiple times.</p>
+                                    </div>
+                                </div>
+                                <div class="media-1">
+                                    <div class="media-left"><span class="process-number">5</span></div>
+                                    <div class="media-body">
+                                        <p>If you holiday or business trip include some adventure activities such as
+                                            trekking, skiing, water sports, buy a special cover at extra cost, because a
+                                            regular travel insurance policy will not cover risks involved
+                                            with such activities. </p>
+                                    </div>
+                                </div>
+                                <div class="media-1">
+                                    <div class="media-left"><span class="process-number">6</span></div>
+                                    <div class="media-body">
+                                        <p>If you are 65 plus, and travelling, then you must look for senior citizen
+                                            travel insurance plans. These plans offer covers for pre-existing illnesses
+                                            in some special situations, higher sum assured, accidental death
+                                            or disability.</p>
+                                    </div>
+                                </div>
+                                <div class="media-1">
+                                    <div class="media-left"><span class="process-number">7</span></div>
+                                    <div class="media-body">
+                                        <p>Make sure you know about and buy a "bail-bond" travel insurance, if your
+                                            traveling job revolves around legal involvement and you need to travel more
+                                            than one country in one single trip. </p>
+                                    </div>
+                                </div>
+                                <div class="media-1">
+                                    <div class="media-left"><span class="process-number">8</span></div>
+                                    <div class="media-body">
+                                        <p>Lastly, always compare various insurers' various travel insurance plans
+                                            before choosing the best that serves your requirements. Analyze insurer's
+                                            insurance offerings, online services, claim processes, claim settlements
+                                            etc. and then go for the best that fits your travel plans.</p>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <div class="col-md-12 ">
+                            <p><br>Make sure you keep these tips in mind every time you need to travel and buy a travel
+                                insurance. </p>
+                        </div>
+                    </div>
+                </section>
+                <section class="section-divider">
+                    <div class="row">
+                        <div class="col-md-12 fh5co-section-heading  ">
+                            <h2>Claim Process For Travel Insurance!
+                                <div class="heading-boder"></div>
+                            </h2>
+                            <p>While travelling, if you have an adequate travel insurance policy, you are always at
+                                ease, thinking that everything will be taken care of, in case anything goes wrong during
+                                the travel, by your travel insurance.
+                            </p>
+                            <div class="sec-heading">But, what if something actually falls back and you need to file
+                                claims on your travel insurance? <br>Do you know the process?</div>
+                            <h3>Here is the step by step instruction on each travel insurance claim you may need to
+                                make:</h3>
+                            <ul class="list2">
+                                <li>There is an Assistance Service Provider (ASP) appointed by your insurance company.
+                                    The ASP is your single point of contact during the trip, or when you need to file
+                                    any claims. </li>
+                                <li>ASP will examine all the documents, analyse, cross-check and produce the report and
+                                    approval thereof, for your claim settlement. </li>
+                                <li>Each claim you make under travel insurance policy must be supported by all original
+                                    tickets or boarding passes, indicating the travel dates clearly. </li>
+                                <li>File the claim with all the supporting documents required in each kind of
+                                    contingency you may face while travelling.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="panel-group" id="accordion-alt2">
+                                <div class="panel">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#accordion-alt2"
+                                                href="#collapseone-alt2" class="collapsed"> <span><img
+                                                        src="assets/images/spend-arrow.png" width="20" alt=""></span>Details
+                                                you will need to provide while filing any claim</a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapseone-alt2" class="panel-collapse collapse in">
+                                        <div class="panel-body">
+                                            <ul>
+                                                <li>Policy Number</li>
+                                                <li>Insured Person's Name</li>
+                                                <li>Insured Person's Contact Number</li>
+                                                <li>Permanent Contact Number and Email Id</li>
+                                                <li>Place and Country of Travel </li>
+                                                <li>Brief Description of Loss</li>
+                                            </ul>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="panel">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#accordion-alt2"
+                                                href="#collapsetwo-alt2" class="collapsed"> <span><img
+                                                        src="assets/images/spend-arrow.png" width="20" alt=""></span>Documents
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapsetwo-alt2" class="panel-collapse collapse" style="height: 0px;">
+                                        <div class="panel-body">
+                                            <p>Here is a list of all documents you need to produce along with a claim
+                                                form, in each situation where you need to claim your travel insurance.
+                                                <br>
+                                                <strong>Medical, Hospitalisation, Accident or Sickness Claims While
+                                                    Travelling Outside India </strong>
+                                            </p>
+                                            <ul>
+                                                <li>Doctor's Report</li>
+                                                <li>Original Admission/Discharge Card</li>
+                                                <li>Original Bills/Receipts/Prescription</li>
+                                                <li>Original X-Ray Reports/ Pathological/ Investigative Reports</li>
+                                                <li>Copy Of Passport/Visa With Entry &amp; Exit Stamp</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#accordion-alt2"
+                                                href="#collapsethree-alt2" class="collapsed"> <span><img
+                                                        src="assets/images/spend-arrow.png" width="20" alt=""></span>Loss of
+                                                Baggage Claims While Travelling Anywhere</a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapsethree-alt2" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            <ul>
+                                                <li>Copies Of Baggage Tags</li>
+                                                <li>Copies Of Correspondence With The Airline Authorities/Others About
+                                                    Loss Of Checked Baggage</li>
+                                                <li>Property Irregularity Report (Obtained From Airline)</li>
+                                                <li>Details Of Compensation Received From Airlines/Other Authorities, If
+                                                    Any</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#accordion-alt2"
+                                                href="#collapsefour-alt2" class="collapsed"> <span><img
+                                                        src="assets/images/spend-arrow.png" width="20" alt=""></span>Delay of
+                                                Baggage Claims While travelling Anywhere</a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapsefour-alt2" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            <ul>
+                                                <li>Copies Of Baggage Tags</li>
+                                                <li>Copies Of Correspondence With The Airline Authorities Certifying The
+                                                    Delay</li>
+                                                <li>Property Irregularity Report (Obtained From Airline)</li>
+                                                <li>Original Bills/Receipts/Invoices Pertaining To Expenses
+                                                    Incurred/Purchases Made During The Delay Period.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#accordion-alt2"
+                                                href="#collapsefive-alt2" class="collapsed"> <span><img
+                                                        src="assets/images/spend-arrow.png" width="20" alt=""></span>Trip
+                                                Delay/ Cancellation/ Interruption/ Missed Connecting Flight Due To
+                                                Airline Delay</a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapsefive-alt2" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            <ul>
+                                                <li>Confirmation from the airlines, clearly mentioning the scheduled
+                                                    arrival time and the actual arrival time.</li>
+                                                <li>Copies of correspondence with the airline authorities certifying the
+                                                    delay.</li>
+                                                <li>Medical reports and doctors statement, if trip is cancelled or
+                                                    interrupted due to medical reasons.</li>
+                                                <li>Termination letter from the company, if trip is cancelled or
+                                                    interrupted due to employment reason.</li>
+                                                <li>Original tickets of the insured and the travelling companion
+                                                    indicating travel to the same destination for the same dates, in
+                                                    case the cancellation or interruption is owing to the sickness,
+                                                    injury or death
+                                                    of a travelling companion.</li>
+                                                <li>All the bills / receipts of reasonable additional expenses incurred
+                                                    and / or proof of cancellation charges levied by the carriers</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="panel">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#accordion-alt2"
+                                                href="#collapsesix-alt2" class="collapsed"> <span><img
+                                                        src="assets/images/spend-arrow.png" width="20" alt=""></span>Loss of
+                                                Passport Claim While Travelling Outside India</a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapsesix-alt2" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            <ul>
+                                                <li>Copy Of New Passport</li>
+                                                <li>Copy Of Previous Passport (If Available)</li>
+                                                <li>Original Bills/Invoices Of Expenses Incurred For Obtaining A New
+                                                    Passport</li>
+                                                <li>Copy Of FIR/ Police Report</li>
+                                                <li>Personal Liability </li>
+                                                <li>Full Statement of The Facts In Writing</li>
+                                                <li>Witness Statements</li>
+                                                <li>Any Other Documents Relevant To The Incident, Including Summons,
+                                                    Legal Notice Etc.</li>
+                                                <li>Any Other Information You Would Like To Share With Us</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="panel">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#accordion-alt2"
+                                                href="#collapseseven-alt2" class="collapsed"> <span><img
+                                                        src="assets/images/spend-arrow.png" width="20" alt=""></span>Hijack
+                                                Claim</a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapseseven-alt2" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            <ul>
+                                                <li>Full Statement Of The Events In Writing</li>
+                                                <li>Airline Correspondence In Regard To The Hijack</li>
+                                                <li>Copy of Ticket/ Boarding Pass</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="panel">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#accordion-alt2"
+                                                href="#collapseeight-alt2" class="collapsed"> <span><img
+                                                        src="assets/images/spend-arrow.png" width="20" alt=""></span>Accidental
+                                                Death &amp; Disability Claim</a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapseeight-alt2" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            <ul>
+                                                <li>Original Death Certificate</li>
+                                                <li>Copy of FIR/Police Inquiry Report/Coroner’s Report</li>
+                                                <li>Copy of Post Mortem Report</li>
+                                                <li>Dismemberment Case: Copy of treatment papers along with documents 1
+                                                    &amp;3 above</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="panel">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#accordion-alt2"
+                                                href="#collapsenine-alt2" class="collapsed"> <span><img
+                                                        src="assets/images/spend-arrow.png" width="20" alt=""></span>Emergency
+                                                Financial Assistance In Case You Are Arrested While Travelling</a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapsenine-alt2" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            <ul>
+                                                <li>Date And Reason of Arrest</li>
+                                                <li>Copy of FIR/ Police Inquiry Report</li>
+                                                <li>Bail Bond</li>
+                                                <li>Court Order Stipulating The Required Amount As Bail Bond</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="panel">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#accordion-alt2"
+                                                href="#collapseten-alt2" class="collapsed"> <span><img
+                                                        src="assets/images/spend-arrow.png" width="20"
+                                                        alt=""></span>Compassionate Visit Claim </a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapseten-alt2" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            <ul>
+                                                <li>Medical reports, doctor's statement giving the details of the
+                                                    sponsor and cause of death certificate of the sponsor</li>
+                                                <li>Medical statements from relations / spouse will not be accepted</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="panel">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#accordion-alt2"
+                                                href="#collapseeleven-alt2" class="collapsed"> <span><img
+                                                        src="assets/images/spend-arrow.png" width="20" alt=""></span>Sponsor
+                                                Protection Claim</a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapseeleven-alt2" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            <p><strong>Compassionate Visit Claim</strong>
+                                                <br> (When you are seeking reimbursement for a relative's ticket
+                                                visiting you when you are hospitalised)
+                                            </p>
+                                            <ul>
+                                                <li>Claim Form</li>
+                                                <li>Medical reports and Certificate from the doctor confirming
+                                                    hospitalisation of the insured, reason &amp; duration of
+                                                    hospitalisation</li>
+                                                <li>Doctor's statement specifically stating the need for an attendant
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="panel">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#accordion-alt2"
+                                                href="#collapsetwelve-alt2" class="collapsed"> <span><img
+                                                        src="assets/images/spend-arrow.png" width="20" alt=""></span>Study
+                                                Interruption Claim</a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapsetwelve-alt2" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            <ul>
+                                                <li>Claim Form</li>
+                                                <li>Medical reports, statement from the treating doctor or death
+                                                    certificate as a proof of the reason of study interruption</li>
+                                                <li>Medical statements from relations or spouse will not be accepted
+                                                </li>
+                                                <li>Receipts of the university fees paid</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <p>We must tell you that these are general lists based on regular claim requirements.
+                                    Your insurer may ask you for any additional documents, for complete satisfaction
+                                    before settling your claim. </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="section-divider">
+                    <div class="row">
+                        <div class="col-md-12 fh5co-section-heading  ">
+                            <h2>How ThePolicymall Helps To Choose Best Travel Insurance!
+                                <div class="heading-boder"></div>
+                            </h2>
+                            <p>ThePolicymall is your #1 insurance advisor when it comes to making a choice between various
+                                travel insurance plans from number of insurance companies. Do not get confused!
+                            </p>
+                            <div class="sec-heading">Here is how thepolicymall facilitates your travel insurance purchase
+                                to make it a sensible and most appropriate choice. With us you can:</div>
+                            <ul class="list2">
+                                <li>Compare the travel plans offered by various providers in one single go. </li>
+                                <li>Save a lot of time looking for the right insurance policy that suits your needs.
+                                </li>
+                                <li>Request for quotes online which helps you to compare different policies.</li>
+                                <li>Surpass the unnecessary paper-work and hassle.</li>
+                                <li>Get all the discounts available while buying online policies.</li>
+                                <li>Avoid useless sales pitches made by insurance agents.</li>
+                                <li>Get instant advisory on travel insurance needs through phone call, mail or our 24 x
+                                    7 chatbot.</li>
+                                <li>Renew or extend the policies instantly without any delays and save a lot of money.
+                                </li>
+                                <li>Make secure online payments and acquire instant policy via email and hard-copies at
+                                    door-step.</li>
+                                <li>Get compete assistance while filing travel insurance claims and getting approvals.
+                                </li>
+                            </ul>
+                            <p>ThePolicymall, your one stop insurance comparison engine is here to help you at every step,
+                                while you choose the best suited travel insurance policy. Let's get it started NOW!</p>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+    </section>
+    <!----details block end---->
+</div>
+<div *ngIf="f === 'travel'">
+    <section class="common-gap choose-us-wrapper">
+        <h2 class="common-heading text-center">Why you <span>Choose Us </span> </h2>
+
+        <div class="choose-us-background-hld">
+            <div class="container">
+                <div class="row ">
+                    <div class="col-lg-9 mx-auto">
+                        <div class="row justify-content-between custom-col">
+                            <div class="col-md-4 col-lg-3">
+                                <div class="choose-us-box ">
+                                    <div class="top-blue-circle">
+                                        <img src="assets/images/icon/blue-circle.png" alt="">
+                                    </div>
+                                    <div class="choose-us-ico">
+                                        <img src="assets/images/icon/best_price.png" alt="">
+                                    </div>
+                                    <h4>Best Price</h4>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-lg-3">
+                                <div class="choose-us-box ">
+                                    <div class="top-blue-circle">
+                                        <img src="assets/images/icon/blue-circle.png" alt="">
+                                    </div>
+                                    <div class="choose-us-ico">
+                                        <img src="assets/images/icon/best_comparison.png" alt="">
+                                    </div>
+                                    <h4>Unbiased Comparison</h4>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-lg-3">
+                                <div class="choose-us-box ">
+                                    <div class="top-blue-circle">
+                                        <img src="assets/images/icon/blue-circle.png" alt="">
+                                    </div>
+                                    <div class="choose-us-ico">
+                                        <img src="assets/images/icon/best_service.png" alt="">
+                                    </div>
+                                    <h4>Guaranteed Claim Assistance</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!---why choose us end--->
+    <!--- Easy Steps start--->
+    <section class="common-gap easy-step">
+        <h2 class="common-heading text-center">4 Easy Steps <span>To Renew Your Policy</span> </h2>
+        <div class="container text-center custom-container">
+            <!-- <img src="images/icon/easy-plan.png" alt=""> -->
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="d-md-flex align-items-center justify-content-between text-capitalize">
+                        <div class="step-circle-wrapper">
+                            <div class="step-circle">
+                                <span>1</span>
+                                <img src="assets/images/icon/enter-your-details.png" alt="">
+                            </div>
+                            <p>Enter Your <br />Details</p>
+                        </div>
+                        <div class="step-circle-wrapper">
+                            <div class="step-circle">
+                                <span>2</span>
+                                <img src="assets/images/icon/choose-your.png" alt="">
+                            </div>
+                            <p>Choose your <br />plan</p>
+                        </div>
+                        <div class="step-circle-wrapper">
+                            <div class="step-circle">
+                                <span>3</span>
+                                <img src="assets/images/icon/payment.png" alt="">
+                            </div>
+                            <p>Make payment on the insurer's portal</p>
+                        </div>
+                        <div class="step-circle-wrapper">
+                            <div class="step-circle">
+                                <span>4</span>
+                                <img src="assets/images/icon/inbox.png" alt="">
+                            </div>
+                            <p>Get your policy instantly in your inbox.</p>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--- Easy Steps us end--->
+    <section class="question-hld">
+        <div class="container question-hld-inner-bg p-4">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="m-0"><strong>Have question?</strong> Ask us anything, we'd love to answer!</p>
+                </div>
+                <div class="col-md-6 text-md-right">
+                    <a href="tel:++1 (305) 677-3952">
+                        <i class="fa fa-phone" aria-hidden="true"></i>
+                        <span>+1 (305) 677-3952</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <!--- OUR PARTNERS us end--->
+    <app-partners></app-partners>
+    <!--- OUR PARTNERS us end--->
+    <!--- Our satisfied clients start--->
+    <app-satisfied-client></app-satisfied-client>
+</div>
+
+<!-- Success Modal -->
+<ng-template #successmodal>
+    <div class="modal-header">
+      <h4 class="modal-title pull-left">Success</h4>
+      <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+        Thank You Showing Interest.We Will get Back To You Soon
+    </div>
+</ng-template>

@@ -1,0 +1,1342 @@
+<section class="motor-details-inner-wrapper ">
+    <!------banner-tab show-hide-area------>
+    <div class="banner-tab-area">
+        <div class="container">
+            <div class="health-insurance">
+                <div class="tab-head-text text-center">
+                    <h1>Existing offer on <span>Motor Insurance</span></h1>
+                    <p>From 10+ insurance companies</p>
+                </div>
+            </div>
+            <div class="productformbox">
+
+                <div class="row full-width">
+                    <!---left side start-->
+                    <div class="col-md-6 border-right pr-md-0">
+                        <div class="tab-left-area  ">
+                            <p class="right-nevigation">
+                                <span><i class="fa fa-home" aria-hidden="true"></i>
+                                    Home</span> >
+                                Motor Insurance
+                            </p>
+                            <div class="big-l-block blue-text text-uppercase mb-3">
+                                <h6>Instant - simple - smart</h6>
+                                <h2>Motor Insurance</h2>
+                            </div>
+                            <p class="l-sm-info">
+                                More than 50,000 satisfied customer<br>
+                                Best Rates Guaranteed<br>
+                                Dedicated Claims Desk
+                            </p>
+                            <div class="text-center">
+                                <img src="assets/images/motor-details/two-whiller-1.png">
+                            </div>
+                        </div>
+                    </div>
+                    <!---left end-->
+                    <!---right side start-->
+                    <div class="col-md-6">
+                        <div class="tab-right-area">
+                            <div class="mo-details-r-head text-center">
+                                <span>Motor Insurance</span>
+                            </div>
+                            <!------>
+                            <div class="tab-pane ">
+                                <h4>Compare and Buy from 24+ insurance companies </h4>
+                                <form class="form-inline" (ngSubmit)="submit()" *ngIf="first" >
+                                    <!-- individual-step-one -->
+                                    <div class="">
+                                        <div class="row">
+                                            <div class="col-md-12 pr-0">
+                                                <div class="form-group">
+                                                    <label class="control-label col-sm-2" for="email">Name</label>
+                                                    <div class="col-sm-10">
+                                                        <input type="text" class="form-control" id=""
+                                                            placeholder="Enter Name" name="motor_user_name"
+                                                            [(ngModel)]="motor.motor_user_name" />
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="control-label col-sm-4" for="">Email</label>
+                                                    <div class="col-sm-8">
+                                                        <input type="email" class="form-control" id=""
+                                                            placeholder="Enter Email" name="motor_user_email"
+                                                            [(ngModel)]="motor.motor_user_email">
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+
+                                            <div class="col-md-6">
+
+                                                <div class="form-group">
+                                                    <label class="control-label col-sm-4" for="">Mobile No</label>
+                                                    <div class="col-sm-8">
+                                                        <input type="number" class="form-control" id=""
+                                                            placeholder="Enter Mobile No" name="motor_user_mobile"
+                                                            [(ngModel)]="motor.motor_user_mobile" maxlength="10">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <label class="control-label col-sm-3" for="">Date Of Expiry</label>
+                                                    <div class="col-sm-9 jstartDt">
+                                                        <input type="text" class="form-control" id=""
+                                                            placeholder="DD/MM/YYYY" name="policy_expiry_date"
+                                                            [(ngModel)]="motor.expiry_date"
+                                                            [bsConfig]="{ dateInputFormat: 'DD/MM/YYYY' }" bsDatepicker
+                                                            autocomplete="off" [isOpen]="isOpen">
+                                                        <i class="fa fa-calendar" (click)="isOpen = !isOpen"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+                                        <p class="text-center d-block full-width m-0">
+                                            <button type="submit" class="btn btn-default get-quotes-btn"
+                                                [disabled]="getQuoteBtn">Submit</button>
+                                        </p>
+                                    </div>
+
+
+
+                                </form>
+
+
+
+
+                                <form class="form-inline" (ngSubmit)="submit1()" *ngIf="second">
+                                    <!-- individual-step-one -->
+                                    <div class="">
+                                        <div class="row">
+                                            <div class="col-md-12 pr-0">
+                                                <div class="form-group">
+                                                    <label class="control-label col-sm-2" for="email">Registration Number</label>
+                                                    <div class="col-sm-10">
+                                                        <input type="text" class="form-control" id=""
+                                                            placeholder="Enter Registeration Number" name="motor_regsitraion_number"
+                                                            [(ngModel)]="motor.registrationNumber" />
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                           
+
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <label class="control-label col-sm-3" for="">Vehicle Registration Date</label>
+                                                    <div class="col-sm-9 jstartDt">
+                                                        <input type="text" class="form-control" id=""
+                                                            placeholder="DD/MM/YYYY" name="vehicleRegistrationDate"
+                                                            [(ngModel)]="motor.vehicleRegistrationDate"
+                                                            [bsConfig]="{ dateInputFormat: 'DD/MM/YYYY' }" bsDatepicker
+                                                            autocomplete="off" [isOpen]="isOpen">
+                                                        <i class="fa fa-calendar" (click)="isOpen = !isOpen"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                          
+
+
+                                            <div class="col-md-12">
+
+                                                <div class="form-group">
+                                                    <label class="control-label col-sm-4" for="">State</label>
+                                                    <div class="col-sm-8">
+                                                        <select class="form-control" id="indiaStates" name="india_state" [(ngModel)]="motor.selectedIndiaState">
+                                                            <option value="None">Select a State</option>
+                                                            <option value="ANDHRA PRADESH">Andhra Pradesh</option>
+                                                            <option value="ARUNACHAL PRADESH">Arunachal Pradesh</option>
+                                                            <option value="ASSAM">Assam</option>
+                                                            <option value="DELHI">Delhi</option>
+                                                            <option value="MAHARASHTRA">Maharashtra</option>
+                                                            <option value="HARYANA">Haryana</option>
+                                                            <option value="PUNJAB">Punjab</option>
+                                                            <option value="ORISSA">Orissa</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                         
+                                          
+
+                                        </div>
+                                        <p class="text-center d-block full-width m-0">
+                                            <button type="submit" class="btn btn-default get-quotes-btn"
+                                                [disabled]="getQuoteBtn">Submit</button>
+                                        </p>
+                                    </div>
+
+
+
+                                </form>
+
+
+
+
+                            </div>
+                            <!------>
+                        </div>
+                    </div>
+                    <!---right side end-->
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+<!----container area start--->
+<div *ngIf="f === 'two-wheeler-insurance'">
+    <section class="motor-details-des section-divider">
+        <div class="container">
+            <div class="leftcontent">
+
+
+                <section class="section-divider">
+                    <div class="row">
+                        <div class="col-md-12 fh5co-section-heading  ">
+                            <h2>What Is Bike/Two wheeler Insurance ?
+                                <div class="heading-boder"></div>
+                            </h2>
+                            <div class="col-md-12 nopad-left ">
+                                <p>A two wheeler insurance policy is one that helps you to cover financial expenses
+                                    against any unforeseen circumstances including accidents, thefts or natural
+                                    disasters, if you are an owner of a two wheeler/bike. It is not
+                                    optional, but mandatory under the Motor Vehicles Act to have your two wheeler
+                                    covered under an insurance policy. When you buy a new vehicle, the seller adds the
+                                    cost of an insurance cover in the total cost as a premium,
+                                    which is valid for one year. After one year, you can get your policy renewed with
+                                    the same insurance provider or you can buy a new policy with a different insurance
+                                    provider. <br> Depending upon the kind of insurance
+                                    policy you choose and add-ons you select, the two wheeler insurance policy works for
+                                    the following:</p>
+                                <ul class="list2">
+                                    <li>Liability Cover</li>
+                                    <li>Comprehensive Coverage</li>
+                                    <li>Discount For Having Anti-Theft Devices</li>
+                                    <li>Damages Due To Accident</li>
+                                    <li>No Claim Bonus</li>
+                                    <li>Personal Accident Cover For Pillion Rider</li>
+                                    <li>Zero Depreciation Cover</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="section-divider">
+                    <div class="row">
+                        <div class="col-md-12 fh5co-section-heading  ">
+                            <h2>Eligibility, Documents And Process To Buy Online Two-wheeler Insurance
+                                <div class="heading-boder"></div>
+                            </h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="panel-group" id="accordion-alt1">
+                                <div class="panel">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#accordion-alt1"
+                                                href="#collapseone-alt1" class="collapsed"> <span><img
+                                                        src="assets/images/spend-arrow.png" width="20"
+                                                        alt=""></span>Eligibility</a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapseone-alt1" class="panel-collapse collapse in">
+                                        <div class="panel-body">
+                                            <p>If you're eligible to buy a two-wheeler, you're eligible to buy an
+                                                insurance policy. That is, if you're an adult with a valid driving
+                                                license, you can buy a policy. In fact, it is a must to have your
+                                                vehicle
+                                                covered under an insurance policy as per the laws and regulations.</p>
+                                            <p>The first bike/two wheeler insurance policy will come with your new
+                                                vehicle as part of the package valid for one year. After that, either
+                                                you can renew the policy with the same insurance provider or select a
+                                                new company and directly buy from them. You can buy a policy from an
+                                                insurance agent or you can opt to buy a new policy online after doing
+                                                thorough research and comparing various plans. Buying online does
+                                                give you a better deal as you can select a plan based on your needs and
+                                                requirements at a lower cost.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#accordion-alt1"
+                                                href="#collapsetwo-alt1" class="collapsed"> <span><img
+                                                        src="assets/images/spend-arrow.png" width="20"
+                                                        alt=""></span>Process</a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapsetwo-alt1" class="panel-collapse collapse" style="height: 0px;">
+                                        <div class="panel-body">
+                                            <p>At thepolicymall.com, we help with all your queries regarding two wheeler
+                                                insurance and strive to provide fair comparison between different plans
+                                                so that you can select the best bike/two wheeler insurance policy
+                                                for your vehicle.</p>
+
+                                            <p>All you need to do is submit basic details including your name, contact
+                                                details, bike/two wheeler model and make, registration number of the
+                                                vehicle, your city and thepolicymall.com will provide you with all possible
+                                                insurance plans and options to choose from.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#accordion-alt1"
+                                                href="#collapsethree-alt1" class="collapsed"> <span><img
+                                                        src="assets/images/spend-arrow.png" width="20" alt=""></span>Documents
+                                                Required</a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapsethree-alt1" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            <p><strong>The documents that you will need if you are buying online
+                                                    bike/two-wheeler insurance are:</strong></p>
+                                            <ul>
+                                                <li>Your current policy document, in case of renewal or switch</li>
+                                                <li>Your driving license copy</li>
+                                                <li>Your vehicle registration documents with the copy of RC
+                                                    (Registration Certificate)</li>
+                                                <li>Your address proof</li>
+                                                <li>A voided check in case you want to set up EFT (Electronic Funds
+                                                    Transfer) for premium payment. </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="section-divider">
+                    <div class="row">
+                        <div class="col-md-12 fh5co-section-heading  ">
+                            <h2>Key Advantages And Features of Bike Insurance!
+                                <div class="heading-boder"></div>
+                            </h2>
+                            <p>One should buy a bike insurance not only because it is mandatory under the law, but also
+                                because it provides a lot of benefits that can come handy in case of an accident, theft
+                                or any natural disaster.</p>
+                            <div class=" sec-heading">Let's share with you the key benefits and features of a two
+                                wheeler insurance:</div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h3>Accidental Coverage</h3>
+                            <p>With a comprehensive bike insurance policy, you can cover your financial expenses
+                                incurred on repairing your vehicle due to an accident. Even small repair and minor
+                                damages can be taken care of at a fraction of a cost, thanks
+                                to insurance.
+                            </p>
+                        </div>
+                        <div class="col-md-6">
+                            <h3>Coverage Against Theft/vandalism</h3>
+                            <p>You can be a victim of theft or robbery or probably get your vehicle damaged due to a
+                                riot. A bike insurance policy will take care of such disasters as well so that you don't
+                                lose your hard-earned money owing to factors out
+                                of your control.</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h3>Third Party Liability</h3>
+                            <p>In case of an accident, the insurance policy will provide cover to reimburse damages to
+                                the third party's vehicle. Not only that, medical expenses incurred for treatment or
+                                hospitalisation expenses are also taken care of. It
+                                even covers damage to third party's property so that you don't have to pay anything from
+                                your pocket!</p>
+                        </div>
+                        <div class="col-md-6">
+                            <h3>Add-on Covers</h3>
+                            <p>Apart from basic insurance coverage, such insurance policies also provide various add-on
+                                covers to provide a wholesome shield against unforeseen expenses by paying an extra
+                                amount. These can include coverage for cashless garage
+                                facility, free towing and the likes</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h3>No Claim Bonus</h3>
+                            <p>Even if you do not face any such situation throughout the year, you get a handsome no
+                                claim bonus (NCB) for not filing any two wheeler insurance claim. Your next bike
+                                insurance comes cheaper to you. </p>
+                        </div>
+                        <div class="col-md-6">
+                            <h3>Coverage Against Natural Disasters</h3>
+                            <p>Any damage caused due to floods, storms earthquake etc. is also covered by a
+                                comprehensive bike insurance policy.</p>
+                        </div>
+
+
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p>It is very important to buy a comprehensive bike policy at the earliest and if you
+                                already have coverage, get it renewed within time by easily comparing various policies
+                                at thepolicymall.com and remain tension free!</p>
+                        </div>
+                    </div>
+                </section>
+                <section class="section-divider">
+                    <div class="row">
+                        <div class="col-md-12 fh5co-section-heading  ">
+                            <h2>Exclusions: What Is Not Covered In A Two wheeler Insurance Policy!
+                                <div class="heading-boder"></div>
+                            </h2>
+                            <p>Even though a two wheeler insurance policy is designed to shield you from unforeseen
+                                financial expenses caused due to an accident or any natural/man-made disaster, there are
+                                certain situations, which your policy may not cover!</p>
+                            <p>It is important to study various insurance plans before buying them and your policy
+                                document in detail to understand such exceptions.</p>
+                            <div class="sec-heading">Here are a few conditions which are not covered by a two wheeler
+                                insurance policy:</div>
+                            <ul class="list2">
+                                <li>Any damage caused to the vehicle due to regular wear and tear</li>
+                                <li>Any damage caused to the vehicle when driven by a person without valid driver's
+                                    license</li>
+                                <li>Damages or loss caused due to electrical or mechanical breakdowns</li>
+                                <li>Regular depreciation of the vehicle</li>
+                                <li>Loss to tyres and tyre tubes</li>
+                                <li>If the person is found to be driving under the influence of liquor/alcohol/drugs
+                                </li>
+                                <li>Occurrence of loss or damage when the policy has expired or not active.</li>
+                                <li>Loss or damage as a result of war /mutiny /nuclear risks.</li>
+                                <li>If the Two-wheeler is used for any other purpose other than its intended use.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section-divider" id="section6">
+                    <div class="row">
+                        <div class="col-md-12 fh5co-section-heading  ">
+                            <h2>Add-on Covers With Your Bike Insurance!
+                                <div class="heading-boder"></div>
+                            </h2>
+                            <p>While the basic two wheeler insurance policy will cover the basic expenses incurred on
+                                your vehicle due to an accident or other unforeseen circumstances, there might be some
+                                sudden expenses that can also make a big hole in
+                                your pocket. To safeguard from such shocks, there is an option of selecting add-on
+                                covers.</p>
+                            <p>Add-on, also called riders, are additional coverage on your existing bike insurance
+                                policy that you can purchase by paying extra premium. Different add-ons are offered by
+                                various insurance providers and you can select the ones
+                                that meet your requirements.</p>
+                            <div class="sec-heading">Here are the add-ons that are on offer:</div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h3>Zero Depreciation Cover</h3>
+                                    <p> As a vehicle ages, depreciation causes the value of the vehicle to go down. Now,
+                                        in case of an accident, the insurance provider will only pay for repairs or
+                                        changing parts based on the depreciated value that can be
+                                        extremely less if it's an old vehicle. By buying zero dep cover, one can ensure
+                                        to have the value of vehicle calculated as a new vehicle and save money on
+                                        repair by claiming actual charges from the insurer.</p>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>
+                                    </p>
+                                    <h3>Road Assistance</h3> Purchasing this cover means you will get help in case your
+                                    vehicle breaks down in the middle of the road, anywhere. Insurers provide towing
+                                    facility, cashless garage facility, accommodation
+                                    benefits in case vehicle breaks down in a secluded place, any other emergencies and
+                                    the likes. It's like having a friend in need!<p></p>
+                                </div>
+
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h3>Accident Cover for Pillion</h3>
+                                    <p> It is an important add-on as it provides for medical expenses incurred in case a
+                                        pillion rider is injured in an accident. It covers the pillion rider in the
+                                        event of partial/permanent disability and in some cases even
+                                        death.
+                                    </p>
+                                </div>
+                                <div class="col-md-6">
+                                    <h3>Accessories Coverage</h3>
+                                    <p> In situations where you have to change or add electrical/non-electrical
+                                        accessories to your vehicle, the cost for the same will be borne by the
+                                        insurance providers.</p>
+                                </div>
+                            </div>
+                            <p>All of the above add-ons are optional but they are very useful in certain situations.
+                                Keeping in view your actual requirements, you may opt for some or all of them.</p>
+                        </div>
+                    </div>
+                </section>
+                <section class="section-divider">
+                    <div class="row">
+                        <div class="col-md-12 fh5co-section-heading">
+                            <h2>Importance of Having Bike Insurance
+                                <div class="heading-boder"></div>
+                            </h2>
+                            <p>A bike that you own is a prized possession that you have bought with hard-earned money.
+                                It is an asset that needs to be taken care of so that it doesn't become a liability for
+                                you. With two wheeler insurance, you can be rest
+                                assured that you only enjoy driving your vehicle and don't feel stressed because of it.
+                            </p>
+                            <div class="sec-heading">Here is why it is very important to have a bike insurance</div>
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <h3>Medical Coverage</h3>
+                                    <p>An accident can lead to physical injuries for everyone involved. A comprehensive
+                                        insurance policy pays for the medical treatment, legal expenses and even
+                                        provides financial assistance in case of loss of limbs or even
+                                        death of not only the owner of the vehicle, but also of the third party involved
+                                        in accident.</p>
+                                </div>
+
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <h3>Coverage Against Accidents</h3>
+                                    <p>Precaution is better than cure! An accident can happen anywhere with anyone and
+                                        it can lead to massive expenses to get your vehicle back in shape. two wheeler
+                                        insurance policy covers such unforeseen expenses and pays
+                                        for all kinds of damages so that your vehicle can be repaired without making a
+                                        big hole in your pocket.</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <h3>Man-made Disasters</h3>
+                                    <p>With increasing instances of theft, vandalism or rioting, it is better to have a
+                                        comprehensive bike insurance policy so that you're not penalised for something
+                                        that's not your mistake. The insurance cover reimburses
+                                        the cost of the vehicle damaged or stolen under such circumstances. </p>
+                                </div>
+
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <h3>Protection From Natural Disasters</h3>
+                                    <p>A flood, earthquake, fire or any such natural calamity can also result in you
+                                        losing your vehicle or it getting badly damaged. Having a bike insurance cover
+                                        ensures your financial losses are reduced or totally eliminated
+                                        without you having to spend a single rupee.</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <h3>Follow The Law</h3>
+                                    <p>Driving a bike without adequate insurance cover is illegal in the country as per
+                                        the Motor Vehicles Act that can lead to fines and penalties.</p>
+                                </div>
+                                <div class="col-md-12">
+                                    <p>If you already have an insurance cover, do remember to renew it on time. Getting
+                                        your bike covered under a third party or a comprehensive insurance policy is a
+                                        must, not only to save money, but also for peace of mind!</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </section>
+                <section class="section-divider">
+                    <div class="row">
+                        <div class="col-md-12 fh5co-section-heading  ">
+                            <h2>Types of Bike Insurance
+                                <div class="heading-boder"></div>
+                            </h2>
+
+                            <p>
+                                <a href="pdf/type-of-bike-insurance-Plans-infographic.pdf" target="_blank"><img
+                                        src="assets/images/type-of-bike-insurance-plans.png" class="mrgtop-info bike-float"
+                                        alt="Type of Bike Insurance Plans" title="Type of Bike Insurance Plans"
+                                        style=" float: right; "></a>Bike insurance
+                                is broadly offered under two major categories.
+                            </p>
+                            <div class="sec-heading">Here's a look at the types of bike insurance policies offered by
+                                various insurance providers:</div>
+                            <h3>1. Third Party or Liability Cover</h3>
+                            <ul class="list2">
+                                <li>This insurance cover is mandatory under the Motor Vehicles Act and driving without
+                                    this insurance is illegal in the country. </li>
+                                <li>The insurance policy helps you in covering damages to the third party's vehicle or
+                                    property involved in an accident with your vehicle. </li>
+                                <li>It also pays for any medical bills incurred due to injuries by the third party,
+                                    thereby reducing your financial liability arising out an accident.</li>
+                            </ul>
+                            <h3>2. Comprehensive Insurance Policy</h3>
+                            <ul class="list2">
+                                <li>This type of insurance policy provides financial assistance under all kinds of
+                                    unforeseen tragedies involving your vehicle. </li>
+                                <li>It provides for repair of damages caused to your vehicle/property and the third
+                                    party's vehicle and property as well. It also takes care of legal expenses, medical
+                                    costs to treat injuries, provide money for loss of limbs
+                                    or death, covers losses caused due to theft, vandalism and even natural disasters.
+                                </li>
+                                <li>The policy also offers to provide add-on features like No Claim Bonus (NCB), Zero
+                                    Depreciation Cover, Accessories cover etc. to provide a wholesome insurance coverage
+                                    for your vehicle. </li>
+                                <li>It is expensive compared to a third-party insurance policy, but in the long run it
+                                    helps in providing adequate financial cover to save you from unexpected losses.
+                                </li>
+                                <li>Even though it is not compulsory under law to have such a two wheeler insurance
+                                    policy, it is advisable to buy it to safeguard your financial interests. </li>
+                            </ul>
+                            <div class="sec-heading">Here is a quick comparison table to help you understand your need
+                                of Bike insurance:<p></p>
+                                <p></p>
+                            </div>
+
+                            <div class="row row-mrg0">
+                                <div class="col-xs-12 nopad-left nopad-right">
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered table-hover">
+                                            <tbody>
+                                                <tr>
+                                                    <th></th>
+                                                    <th>Third Party Coverage</th>
+                                                    <th>Comprehensive Policy</th>
+                                                </tr>
+                                                <tr>
+                                                    <td><strong>Damage ToThird Party's Vehicle</strong></td>
+                                                    <td>Yes</td>
+                                                    <td>Yes</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><strong>Damage to Own Bike</strong></td>
+                                                    <td>No</td>
+                                                    <td>Yes</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><strong>Low Premium</strong></td>
+                                                    <td>Yes</td>
+                                                    <td>No</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><strong>Coverage Other Than Collisions</strong></td>
+                                                    <td>No</td>
+                                                    <td>Yes</td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td><strong>Personal Accident Cover</strong></td>
+                                                    <td>No</td>
+                                                    <td>Yes</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><strong>Medical Expenses For Self </strong></td>
+                                                    <td>No</td>
+                                                    <td>Yes</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><strong>Medical Expenses For Third Party</strong></td>
+                                                    <td>Yes</td>
+                                                    <td>Yes</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><strong>Loss Due To Natural Calamities </strong></td>
+                                                    <td>No</td>
+                                                    <td>Yes</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><strong>Bike Theft </strong></td>
+                                                    <td>No</td>
+                                                    <td>Yes</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="section-divider">
+                    <div class="row">
+                        <div class="col-md-12 fh5co-section-heading  ">
+                            <h2>Tips To Buy Online Bike Insurance
+                                <div class="heading-boder"></div>
+                            </h2>
+                            <p>There are certain considerations to be kept in mind while buying a bike/twowheeler
+                                insurance policy.</p>
+                            <div class="sec-heading">Here are the most important tips to follow while doing research for
+                                the best policy:</div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="panel-group" id="accordion-alt2">
+                                        <div class="panel">
+                                            <div class="panel-heading">
+                                                <h4 class="panel-title">
+                                                    <a data-toggle="collapse" data-parent="#accordion-alt2"
+                                                        href="#collapsetwo-alt2" class="collapsed"> <span><img
+                                                                src="assets/images/spend-arrow.png" alt=""
+                                                                width="20"></span>Lowest Premium</a>
+                                                </h4>
+                                            </div>
+                                            <div id="collapsetwo-alt2" class="panel-collapse collapse"
+                                                style="height: 0px;">
+                                                <div class="panel-body">
+                                                    <ul>
+                                                        <li>Depending on vehicle it is important to get your vehicle
+                                                            inspected before selecting a policy. The premium will be
+                                                            dependent on the age, brand, make and model of your bike.
+                                                            compare two wheeler insurance
+                                                            policy available for your vehicle that meet your
+                                                            requirements and choose the one that offers best benefits at
+                                                            the lowest possible cost. </li>
+                                                        <li>Depending on Claims History Insurance providers offer No
+                                                            Claim Bonus (NCB) for not filing for claims in a given year.
+                                                            This can reduce the premium amount and makes it advisable
+                                                            not to file claims
+                                                            for petty repair work and damages. </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel">
+                                            <div class="panel-heading">
+                                                <h4 class="panel-title">
+                                                    <a data-toggle="collapse" data-parent="#accordion-alt2"
+                                                        href="#collapsethree-alt2" class="collapsed"> <span><img
+                                                                src="assets/images/spend-arrow.png" alt=""
+                                                                width="20"></span>Ways To Reduce Premium</a>
+                                                </h4>
+                                            </div>
+                                            <div id="collapsethree-alt2" class="panel-collapse collapse">
+                                                <div class="panel-body">
+                                                    <p><strong>The documents that you will need if you are buying online
+                                                            bike/two-wheeler insurance are:</strong></p>
+                                                    <ul>
+                                                        <li>Ensure the vehicle is driven by a single driver and who is a
+                                                            safe driver</li>
+                                                        <li>Remember to install an Automotive Research Association of
+                                                            India (ARAI) approved security feature in your vehicle to
+                                                            avoid burglary and theft. This can help in reducing the
+                                                            premium</li>
+                                                        <li>Don't file claims for every little damage or repair to enjoy
+                                                            No Claim Bonus in the following year at the time of renewal
+                                                        </li>
+                                                        <li>Some insurers offer you to pay premium in instalments in a
+                                                            given year, but making a one-time payment makes it
+                                                            economical<strong></strong></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                    <p>Just logon to thepolicymall.com and buy the best two wheeler insurance policy now!
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="section-divider">
+                    <div class="row">
+                        <div class="col-md-12 fh5co-section-heading  ">
+                            <h2>Bike Insurance - Online Vs. Offline Comparison!
+                                <div class="heading-boder"></div>
+                            </h2>
+                            <p>The bike insurance policy can be bought either from an insurance agent or by going online
+                                and buying it directly. The trend of more and more people buying it online is increasing
+                                and there are valid reasons for the same. </p>
+                            <div class="sec-heading">Let's present to you the comparison between the two mediums based
+                                <br>on following factors:</div>
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6 animated fadeIn delay-01" data-animation="fadeIn"
+                                    data-animation-delay="01">
+                                    <h3>convenience</h3>
+                                    <p>Instead of going to an insurance agent or calling one at your home, you can look
+                                        at various insurance plans online, do your research, compare various plans and
+                                        buy a policy from anywhere, anytime as per your convenience.</p>
+                                </div>
+
+                                <div class="col-md-6 col-sm-6  animated fadeIn delay-01" data-animation="fadeIn"
+                                    data-animation-delay="01">
+                                    <h3>Cost</h3>
+                                    <p>Every insurance company is able to offer you reduced and discounted premiums if
+                                        you buy a policy online as they don't have to worry about the agent's
+                                        commissions and other overhead costs. Hence, buying online means
+                                        extremely low premiums!</p>
+
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6 animated fadeIn delay-01" data-animation="fadeIn"
+                                    data-animation-delay="01">
+                                    <h3>Better Information</h3>
+                                    <p>Buying a bike insurance cover online also offers you the chance to gather
+                                        detailed information about the product so you can make an informed choice
+                                        compared to checking with an agent, who might not share complete details.</p>
+                                </div>
+
+                                <div class="col-md-6 col-sm-6  animated fadeIn delay-01" data-animation="fadeIn"
+                                    data-animation-delay="01">
+                                    <h3>Easy Payments</h3>
+                                    <p>Instead of writing a cheque and having to wait for payments to clear, you can
+                                        make online payments with various options at your disposal including net
+                                        banking, credit cards, debit cards etc.</p>
+
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6 animated fadeIn delay-01" data-animation="fadeIn"
+                                    data-animation-delay="01">
+                                    <h3>Customer Service</h3>
+                                    <p>Every insurer has a customer care centre where you can speak with a
+                                        representative over the phone to solve any query or doubt while buying the
+                                        policy rather than having to personally visit their office in case you decide
+                                        to buy offline!</p>
+                                </div>
+                                <div class="col-md-6 col-sm-6 animated fadeIn delay-01" data-animation="fadeIn"
+                                    data-animation-delay="01">
+                                    <h3>Secure</h3>
+                                    <p>The entire process of selecting, comparing, buying and paying for the policy is
+                                        absolutely secure online and your personal information is also kept confidential
+                                    </p>
+                                </div>
+                            </div>
+                            <p>ThePolicyMall.com can make the process of buying bike policy a cake-walk for you!</p>
+                        </div>
+                    </div>
+                </section>
+                <section class="section-divider">
+                    <div class="row">
+                        <div class="col-md-12 fh5co-section-heading  ">
+                            <h2>Expert Tips On Cutting Down Your Bike Insurance Cost!
+                                <div class="heading-boder"></div>
+                            </h2>
+                            <p>Just a bit of smartness can help you cut down your two wheeler insurance cost!</p>
+                            <div class="sec-heading">Here, allow thepolicymall.com to share some tips with you:</div>
+                        </div>
+                    </div>
+                    <div class="row scrollbox3">
+                        <div class="media-1">
+                            <div class="media-left"><span class="process-number">1</span></div>
+                            <div class="media-body">
+                                <p><strong>Purchase The Policy Online</strong></p>
+                                <ul class="list2">
+                                    <li>Not only it saves your time and effort, but also you don't have to pay
+                                        commission to insurance agents. Buying your two wheeler insurance policy online
+                                        turns out to be an easy and cost-effective way</li>
+                                    <li>For the insurance providers, it helps them to cut costs of maintaining
+                                        infrastructure, giving commission to their sales agents and other overheads.
+                                        These savings are passed on to you in the form of lower premiums.
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="media-1">
+                            <div class="media-left"><span class="process-number">2</span></div>
+                            <div class="media-body">
+                                <p><strong>Don't Make Small Claims</strong></p>
+                                <ul class="list2">
+                                    <li>Filing the claims with insurance providers for every little repair or damage may
+                                        save you a bit of money, but when the time comes for renewal of policy, the
+                                        premium goes up. This is because the insurers consider you
+                                        a high-risk customer and charge you hefty premium. Ensure you file claims only
+                                        for expensive damages or repairs.</li>
+                                    <li>Also, the moment you file for a claim, the discount on premium in the form of No
+                                        Claim Bonus (NCB) at the time of renewal of the policy goes out of the window.
+                                        Do remember that NCB starts at 20% at the end of first
+                                        claim-free year and can go up to a maximum 50%</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="media-1">
+                            <div class="media-left"><span class="process-number">3</span></div>
+                            <div class="media-body">
+                                <p><strong>Timely Renewal</strong><br> Renewing the insurance cover on time can help you
+                                    in saving money in many ways
+                                </p>
+                                <ul class="list2">
+                                    <li>If you don't renew the policy on time, there are fines and penalties that you
+                                        have to pay when you finally get it renewed based on the lapse time between the
+                                        policies.</li>
+                                    <li>If the policy remains expired for a considerable amount of time, you might have
+                                        to buy an entirely new policy that will attract a higher premium. Better to buy
+                                        within the time frame as advised by the insurer.</li>
+                                    <li>Driving on road without a valid insurance policy is illegal and there are fines
+                                        to be paid to the government for the same. Save money by renewing on time.</li>
+                                    <li>Another major risk is if your vehicle meets with an accident after your policy
+                                        gets expired, there will be no financial assistance from the insurer. The entire
+                                        cost will have to be borne by you!</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="media-1">
+                            <div class="media-left"><span class="process-number">4</span></div>
+                            <div class="media-body">
+                                <p><strong>Ensure Safe Driving</strong> </p>
+                            </div>
+                        </div>
+                        <div class="media-1">
+                            <div class="media-left"><span class="process-number">5</span></div>
+                            <div class="media-body">
+                                <p><strong>If the vehicle is old, buy a third-party insurance cover instead of
+                                        comprehensive policy to save costs</strong></p>
+                            </div>
+                        </div>
+                        <div class="media-1">
+                            <div class="media-left"><span class="process-number">6</span></div>
+                            <div class="media-body">
+                                <p><strong>Invest in an economical bike as higher the cost of the vehicle, higher the
+                                        premium for insurance cover</strong></p>
+                            </div>
+                        </div>
+                        <div class="media-1">
+                            <div class="media-left"><span class="process-number">7</span></div>
+                            <div class="media-body">
+                                <p><strong>Get your bike fitted with ARAI approved anti-theft device and cut further
+                                        cost on bike insurance</strong></p>
+                            </div>
+                        </div>
+                        <div class="media-1">
+                            <div class="media-left"><span class="process-number">8</span></div>
+                            <div class="media-body">
+                                <p><strong>Pay one time premium instead of paying in instalments</strong></p>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <p>With these handy cost cutting tips, it is time to pick your bike insurance policy form
+                                thepolicymall.com NOW!</p>
+                        </div>
+                    </div>
+                </section>
+                <section class="section-divider">
+                    <div class="row">
+                        <div class="col-md-12 fh5co-section-heading  ">
+                            <h2>Factors That Affect Your Bike Insurance Premium
+                                <div class="heading-boder"></div>
+                            </h2>
+                            <div class="sec-heading">The premium of your two wheeler insurance policy is calculated
+                                based on the following factors:</div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="panel-group" id="accordion-alt4">
+
+                                <div class="panel">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#accordion-alt4"
+                                                href="#collapsetwo-alt4" class="collapsed"> <span><img
+                                                        src="assets/images/spend-arrow.png" width="20" alt=""></span>Bike Model
+                                                and Variant</a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapsetwo-alt4" class="panel-collapse collapse" style="height: 0px;">
+                                        <div class="panel-body">
+                                            <p>A high end expensive bike with a higher cubic capacity (cc) will attract
+                                                a higher premium compared to an economical bike with lesser cc. There
+                                                are three categories for bikes when it comes to their cc: 0-150cc,
+                                                150-350cc and above 350cc. The premium goes up as cc goes higher.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#accordion-alt4"
+                                                href="#collapsethree-alt4" class="collapsed"> <span><img
+                                                        src="assets/images/spend-arrow.png" width="20" alt=""></span>Bike
+                                                Make/Year of Manufacture/IDV</a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapsethree-alt4" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            <p>New bikes attract higher premiums as the cost of repair and damages for
+                                                the newer parts is going to be expensive. Also, newer bikes have higher
+                                                Insured Declared Value (IDV), hence the insurers have to reimburse
+                                                a higher amount in case of accident or theft. Older bikes have lesser
+                                                IDV as per market values and thereby attract lower premiums.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#accordion-alt4"
+                                                href="#collapsefour-alt4" class="collapsed"> <span><img
+                                                        src="assets/images/spend-arrow.png" width="20" alt=""></span>No Claim
+                                                Bonus (NCB)</a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapsefour-alt4" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            <p>Not filing for claims in a single year make you eligible for No Claim
+                                                Bonus (NCB) in the following year that starts from 10% and goes up to
+                                                50% discount on the premium. There is also a provision of transferring
+                                                your NCB from one policy to another!</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#accordion-alt4"
+                                                href="#collapsefive-alt4" class="collapsed"> <span><img
+                                                        src="assets/images/spend-arrow.png" width="20" alt=""></span>Township
+                                                For Which The Insurance is Required</a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapsefive-alt4" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            <p>Living in an urban and densely populated area will attract a higher
+                                                premium since the chances of an accident are higher. Also, the areas
+                                                where cases of theft or vandalism are rampant will lead to higher
+                                                premium
+                                                being charged by the insurers.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#accordion-alt4"
+                                                href="#collapsesix-alt4" class="collapsed"> <span><img
+                                                        src="assets/images/spend-arrow.png" width="20" alt=""></span>Type of
+                                                Insurance</a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapsesix-alt4" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            <p>A third-party insurance cover is much economical than a comprehensive
+                                                bike insurance policy. Since comprehensive insurance provides a
+                                                wholesome financial coverage, the insurers charge a higher premium for
+                                                the
+                                                same.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#accordion-alt4"
+                                                href="#collapseseven-alt4" class="collapsed"> <span><img
+                                                        src="assets/images/spend-arrow.png" width="20" alt=""></span>Driving
+                                                History</a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapseseven-alt4" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            <p>The number of claims filed, records of accidents, rash driving etc. are
+                                                considered when calculating premium at the time of renewal. Higher of
+                                                such instances will result in higher premiums.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#accordion-alt4"
+                                                href="#collapseeight-alt4" class="collapsed"> <span><img
+                                                        src="assets/images/spend-arrow.png" width="20" alt=""></span>Anti-theft
+                                                Safety Discount </a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapseeight-alt4" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            <p>If your Bike is fitted with an ARAI (Automotive Research Association of
+                                                India) approved anti-theft device, you enjoy further discounts on
+                                                premium.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <p>At ThePolicyMall, you can key in all the factors and reach the best premium value as per
+                                your needs, in just a few clicks! </p>
+                        </div>
+                    </div>
+                </section>
+                <section class="section-divider">
+                    <div class="row">
+                        <div class="col-md-12 fh5co-section-heading  ">
+                            <h2>Bike Insurance Renewal Process
+                                <div class="heading-boder"></div>
+                            </h2>
+                            <p>Renewing bike insurance policy is one of the most important steps you can take to follow
+                                the law as well as keep it financially safe.<br> If your policy has expired or about to
+                                expire, you can get it renewed either at your
+                                insurer's website or at thepolicymall.com The process for doing the same is extremely easy
+                                and hassle-free.
+                                <br> Let us examine various scenarios about renewing the policy to have a better
+                                understanding:
+                            </p>
+                            <div class="sec-heading">Before The Policy Expires</div>
+                            <ul class="list2">
+                                <li>Contact your insurer and discuss the premium amount, documents required and arrange
+                                    for an agent to meet and collect the information from you</li>
+                                <li>Alternatively, you can log on to the insurer's website to check information that�ll
+                                    save your time, money and efforts</li>
+                                <li>Furnish the details as required and can also select any add-ons you may prefer with
+                                    your renewed policy</li>
+                                <li>If doing offline, write a cheque for premium payment. If buying it online, simply
+                                    swipe your credit/debit card or use net banking to make the payment instantly and
+                                    get the policy renewed immediately</li>
+                            </ul>
+                            <div class="sec-heading">After Policy Expires</div>
+                            <p>Even after the policy has expired, you still have a small window, called grace period, to
+                                get it renewed. This can vary between 3 and 30 days after the expiry date and not every
+                                insurer offers this period. Also, certain insurers
+                                may offer free renewal during this period and some may levy charges. Follow these steps
+                                if your policy lies within grace period:</p>
+                            <ul class="list2">
+                                <li>Check the late fee, if any, and make that payment</li>
+                                <li>Clear all past dues and pending premiums</li>
+                                <li>Choose the policy you want to buy, select any additional benefits or add-ons you
+                                    want to add to your renewed policy</li>
+                                <li>Submit the required details to the insurer, make the payment either online or
+                                    through an agent and the renewed policy will be delivered to you</li>
+                            </ul>
+                            <div class="sec-heading">Renewal Outside Grace Period</div>
+                            <p>
+                                If you failed to renew the policy within the grace period, your two wheeler insurance
+                                policy dies. If there is a significant loss of time after the expiry, you may not be
+                                eligible for a renewal with the same insurer. You may have to buy a new policy
+                                altogether.
+                                <br>
+                                <strong>Downsides Of Not Renewing Policy On Time:</strong>
+                            </p>
+                            <ul class="list2">
+                                <li>Higher Premiums</li>
+                                <li>Loss of Previous Benefits</li>
+                                <li>Fines Levied</li>
+                                <li>Fresh Inspection of The Vehicle</li>
+                                <li>Loss of NCB (No Claim Bonus)</li>
+                                <li>Lot of Legal Trouble With Police And Authorities Driving Without Insurance</li>
+                                <li>Huge Expenses In Case You Meet An Accident Without An Insurance Policy</li>
+                            </ul>
+                            <div class="sec-heading">Details To Be Furnished For two wheeler Insurance Policy Renewal:
+                            </div>
+                            <ul class="list2">
+                                <li>Your Name (As on official documents)</li>
+                                <li> Your Contact Number and E-mail id</li>
+                                <li>Your Vehicle Registration Number And Copy of The RC</li>
+                                <li>The Existing Insurance Policy Number</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+                <section class="section-divider div-brd">
+                    <div class="row">
+                        <div class="col-md-12 fh5co-section-heading  ">
+                            <h2>Claim Process For Bike Insurance!
+                                <div class="heading-boder"></div>
+                            </h2>
+                            <p><img src="assets/images/bike-insurance-claim-settlement.png"
+                                    style="float: right; padding: 0px 20px;" alt="bike insurance claim settlement"
+                                    title="bike insurance claim settlement" width="150">When you pay extra
+                                and buy a comprehensive two wheeler insurance, you expect to stay financially secured of
+                                all the unwanted expenses you may incur when you face an accident, theft or natural
+                                disaster.<br> Thus, you will always want your
+                                claim to pass through and you get all the reimbursement without any rejections.<br>
+                            </p>
+                            <div class="scrollbox3">
+                                <div class="sec-heading">Here is the process you must consider carefully, if you want
+                                    your insurer to settle your claim without any issues.</div>
+                                <ul class="list2">
+                                    <li>Note down the number of vehicles involved in the accident and their registration
+                                        numbers.</li>
+                                    <li>Take pictures of the accident spot and damaged vehicle. (such proofs will be
+                                        needed)</li>
+                                    <li>Inform your insurance provider about the accident.</li>
+                                    <li>Lodge an FIR at the nearest police station, if there is an utmost need, like
+                                        physical injury to a third-party, property damage to a third-party, or death of
+                                        third-party involved in the accident.</li>
+                                    <li>In case your bike is stolen, and you are filing a claim, then also a FIR is of
+                                        utmost importance.</li>
+                                    <li>Fill the online claim form available at insurer's website.</li>
+                                    <li>The assigned insurer's representative will contact you within 24 hours to have
+                                        your claim registered with the company and will also provide you with a claim
+                                        registration number to keep the track.</li>
+                                    <li>An insurance surveyor will be sent to inspect the vehicle before repair.</li>
+                                    <li>You will also be informed about the network repair shops or garages where you
+                                        can get your bike/two-wheeler repaired.</li>
+                                </ul>
+                                <div class="sec-heading">The documents, you need to file to have your cashless claim
+                                    settled:</div>
+                                <ul class="list2">
+                                    <li>Registration Certificate Copy </li>
+                                    <li>Tax Receipt Copy of your bike</li>
+                                    <li>Valid Bike Insurance Documents</li>
+                                    <li>Valid Driving License Copy</li>
+                                    <li>FIR copy in the event of theft, third-party injury, death or property damage.
+                                    </li>
+                                </ul>
+                                <div class="sec-heading">In case you get your vehicle repaired on your own, and file for
+                                    a reimbursement claim then you need these additional documents:</div>
+                                <ul class="list2">
+                                    <li>Bills and receipts of repair and replacement of parts <br><strong>In case of
+                                            bike theft, you may need these additional documents:</strong></li>
+                                    <li>Duly verified R.T.O. Paper</li>
+                                    <li>NOC letter in case of hypothecated bike</li>
+                                    <li>Letter of Subrogation and Indemnity issued by notary</li>
+                                </ul>
+                                <div class="sec-heading">In case you are making any third-party claims, then you need
+                                    these additional documents</div>
+                                <ul class="list2">
+                                    <li>Copy of the legal notice sent by the affected third party.</li>
+                                    <li>All original documents that you furnished for verification.</li>
+                                </ul>
+                                <p>Once the filing of claim is done with all the needed documents, forms duly filled,
+                                    and a green signal is given by the vehicle surveyor, then your insurance provider
+                                    will approve your claim. The insurer will pay the
+                                    cost of repair to the network repair shop, in case you filed for a cashless claim.
+                                </p>
+                            </div>
+                            <p>Rest claims made and approved (reimbursement/compensation) will be settled through NEFT
+                                or Check.</p>
+
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+        </div>
+    </section>
+
+</div>
+<div *ngIf="f === 'two-wheeler'">
+    <section class="common-gap choose-us-wrapper">
+        <h2 class="common-heading text-center">Why you <span>Choose Us </span> </h2>
+
+        <div class="choose-us-background-hld">
+            <div class="container">
+                <div class="row ">
+                    <div class="col-lg-9 mx-auto">
+                        <div class="row justify-content-between custom-col">
+                            <div class="col-md-4 col-lg-3">
+                                <div class="choose-us-box ">
+                                    <div class="top-blue-circle">
+                                        <img src="assets/images/icon/blue-circle.png" alt="">
+                                    </div>
+                                    <div class="choose-us-ico">
+                                        <img src="assets/images/icon/best_price.png" alt="">
+                                    </div>
+                                    <h4>Best Price</h4>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-lg-3">
+                                <div class="choose-us-box ">
+                                    <div class="top-blue-circle">
+                                        <img src="assets/images/icon/blue-circle.png" alt="">
+                                    </div>
+                                    <div class="choose-us-ico">
+                                        <img src="assets/images/icon/best_comparison.png" alt="">
+                                    </div>
+                                    <h4>Best Comparison</h4>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-lg-3">
+                                <div class="choose-us-box ">
+                                    <div class="top-blue-circle">
+                                        <img src="assets/images/icon/blue-circle.png" alt="">
+                                    </div>
+                                    <div class="choose-us-ico">
+                                        <img src="assets/images/icon/best_service.png" alt="">
+                                    </div>
+                                    <h4>Best Service</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!---why choose us end--->
+    <!--- Easy Steps start--->
+    <section class="common-gap easy-step">
+        <h2 class="common-heading text-center">4 Easy Steps <span>To Renew Your Policy</span> </h2>
+        <div class="container text-center custom-container">
+            <!-- <img src="images/icon/easy-plan.png" alt=""> -->
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="d-md-flex align-items-center justify-content-between text-capitalize">
+                        <div class="step-circle-wrapper">
+                            <div class="step-circle">
+                                <span>1</span>
+                                <img src="assets/images/icon/enter-your-details.png" alt="">
+                            </div>
+                            <p>Enter Your <br />Details</p>
+                        </div>
+                        <div class="step-circle-wrapper">
+                            <div class="step-circle">
+                                <span>2</span>
+                                <img src="assets/images/icon/choose-your.png" alt="">
+                            </div>
+                            <p>Choose your <br />plan</p>
+                        </div>
+                        <div class="step-circle-wrapper">
+                            <div class="step-circle">
+                                <span>3</span>
+                                <img src="assets/images/icon/payment.png" alt="">
+                            </div>
+                            <p>Make payment on the insurers portal</p>
+                        </div>
+                        <div class="step-circle-wrapper">
+                            <div class="step-circle">
+                                <span>4</span>
+                                <img src="assets/images/icon/inbox.png" alt="">
+                            </div>
+                            <p>Get your policy instantly on your inbox.</p>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--- Easy Steps us end--->
+    <section class="question-hld">
+        <div class="container question-hld-inner-bg p-4">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="m-0"><strong>have any question?</strong> Ask us anything, we'd love to answer!</p>
+                </div>
+                <div class="col-md-6 text-md-right">
+                    <a href="tel:++1 (305) 677-3952">
+                        <i class="fa fa-phone" aria-hidden="true"></i>
+                        <span>+1 (305) 677-3952</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <!--- OUR PARTNERS us end--->
+    <app-partners></app-partners>
+    <!--- OUR PARTNERS us end--->
+    <!--- Our satisfied clients start--->
+    <app-satisfied-client></app-satisfied-client>
+</div>
+
+<ng-template #successmodal>
+    <div class="modal-header">
+      <h4 class="modal-title pull-left">Success</h4>
+      <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+        Thank You Showing Interest.We Will get Back To You Soon
+    </div>
+</ng-template>

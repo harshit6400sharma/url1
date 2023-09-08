@@ -1,0 +1,76 @@
+<div class="log-compaints">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 panel-complaint p-5">
+                <!------form hld----->
+                <div class="d-md-flex justify-content-between complainth2sec align-items-center">
+                    <h2 class="fh5co-lead m-0">
+                        Complaints <span class="blue-text">Section</span></h2>
+                    <a href="javascript:" routerLink="/complaint-handling-process" class="complink0">Complaint Handling
+                        Process
+                    </a>
+
+                </div>
+
+                <form #complaintFrm="ngForm" (ngSubmit)="submit()">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="name"> Customer Name</label>
+                                <input type="text" name="name" class="form-control" [(ngModel)]="complaint.name"
+                                    placeholder="Enter your Name" id="name">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="email">Registered Email Id</label>
+                                <input type="email" class="form-control" name="email" [(ngModel)]="complaint.email"
+                                    placeholder="Enter your email" id="email">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="contactNumber">Your Mobile Number</label>
+                                <input type="text" maxlength="10" class="form-control"
+                                    [(ngModel)]="complaint.contactNumber" name="contactNumber" placeholder="Enter your Number"
+                                    id="contactNumber">
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="email">Product</label>
+                                <select class="form-control" name="product" [(ngModel)]="complaint.product">
+                                    <option value="">--Select--</option>
+                                    <option *ngFor="let product of products" [value]="product">{{product}}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="email">Type of Issue</label>
+                                <select class="form-control" name="issue_type" [(ngModel)]="complaint.issue_type" required>
+                                    <option value="">--Select--</option>
+                                    <option *ngFor="let issue of issues" [value]="issue">{{issue}}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="email">Description</label>
+                                <textarea rows="1" class="form-control" name="description" [(ngModel)]="complaint.description" placeholder="Pour your heart out" id="description" required>
+                    </textarea>
+                            </div>
+                        </div>
+                        <div class="col-md-12 text-center">
+                            <button class="btn btn-dark-blue" [disabled]="!complaintFrm.valid">Submit</button>
+                        </div>
+
+                    </div>
+                </form>
+                <!----------->
+
+            </div>
+        </div>
+    </div>
+</div>

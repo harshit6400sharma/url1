@@ -1,0 +1,1172 @@
+<main>
+    <section class="conmon-gap my-5">
+        <div class="container-fluid">
+            <div class="quotation-page-wrapper">
+                <div class="row">
+                    <!-----left side wrapper start-->
+                    <div class="nooutline col-md-4 col-lg-3  left_panel sidebar">
+                        <!----01.12.20 mobile left sidebar close--->
+                        <div id="mob_filter" class="d-block d-md-none p-3 text-right" (click)="closeLeftFilterPanel()">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+                                <path id="close.svg" class="cls-1"
+                                    d="M1419.99,33.847l-2.14,2.147L1412,30.147l-5.85,5.847-2.14-2.147L1409.85,28l-5.84-5.847,2.14-2.146,5.85,5.847,5.85-5.847,2.14,2.146L1414.15,28Z"
+                                    transform="translate(-1404 -20)"></path>
+                            </svg>
+                        </div>
+                        <!----01.12.20 mobile left sidebar close end--->
+                        <!---single block--->
+                        <div class="nooutline list-tilel-box ">
+                            <div class="d-block align-items-center">
+                                <h3>Select Coverage</h3>
+                                <div class="form-group d-flex border-box coverage-box align-items-center">
+                                    <div class="rs-sign-box">
+                                        <i class="fa fa-inr" aria-hidden="true"></i>
+                                    </div>
+                                    <select class="form-control" [(ngModel)]="premiumfilter"
+                                        (change)="changeSumInsured($event)">
+                                        <option [value]="coverage.val" *ngFor="let coverage of coveragearr">
+                                            {{coverage.key}}</option>
+                                        <option value="9950000-10000000">1C</option>
+                                    </select>
+
+                                </div>
+                                <div class="text-right">
+                                    <button class="btn clr-filter-btn" (click)="clearFilter()">Clear Filter</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="nooutline list-tilel-box">
+                            <h3 data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">Covers Pre Existing Disease
+
+                                <!-- Question Mark -->
+                                <span class="question-mark"
+                                    tooltip="Let's you select PED options & shows plans that cover them."
+                                    placement="top">
+
+                                    <label data-toggle="popover" class="m-0 p-0" data-container="body"
+                                        data-placement="top" type="button" data-html="true"
+                                        data-content="Click here to know the insurance terms better">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" focusable="false"
+                                            role="presentation">
+                                            <g fill-rule="evenodd">
+                                                <circle fill="currentColor" cx="12" cy="12" r="10"></circle>
+                                                <circle fill="inherit" cx="12" cy="18" r="1"></circle>
+                                                <path
+                                                    d="M15.89 9.05a3.975 3.975 0 0 0-2.957-2.942C10.321 5.514 8.017 7.446 8 9.95l.005.147a.992.992 0 0 0 .982.904c.552 0 1-.447 1.002-.998a2.004 2.004 0 0 1 4.007-.002c0 1.102-.898 2-2.003 2H12a1 1 0 0 0-1 .987v2.014a1.001 1.001 0 0 0 2.004 0v-.782c0-.217.145-.399.35-.472A3.99 3.99 0 0 0 15.89 9.05"
+                                                    fill="inherit"></path>
+                                            </g>
+                                        </svg>
+                                    </label>
+                                </span>
+                               
+
+                            </h3>
+                           
+                            <div id="collapseOne" class="panel-collapse collapse" role="tabpanel"
+                                aria-labelledby="headingOne">
+                                <label class="custom-checkbox" *ngFor="let ped of illness;let i = index">
+                                    {{ped.sf_name}}
+                                    <input type="checkbox" id="illness{{i}}" name="Illness" [value]="ped.sf_id"
+                                        (click)="selectIllness($event)">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+
+                        </div>
+                        <div class="nooutline list-tilel-box">
+                            <h3 data-toggle="collapse" data-target="#copayaccordian"
+                                aria-expanded="false" aria-controls="collapseTwo">Copay
+                                <!----question mark---->
+                                <span class="question-mark"
+                                    tooltip="The share of claim amount, which is paid by the customer" placement="top">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" focusable="false"
+                                        role="presentation">
+                                        <g fill-rule="evenodd">
+                                            <circle fill="currentColor" cx="12" cy="12" r="10"></circle>
+                                            <circle fill="inherit" cx="12" cy="18" r="1"></circle>
+                                            <path
+                                                d="M15.89 9.05a3.975 3.975 0 0 0-2.957-2.942C10.321 5.514 8.017 7.446 8 9.95l.005.147a.992.992 0 0 0 .982.904c.552 0 1-.447 1.002-.998a2.004 2.004 0 0 1 4.007-.002c0 1.102-.898 2-2.003 2H12a1 1 0 0 0-1 .987v2.014a1.001 1.001 0 0 0 2.004 0v-.782c0-.217.145-.399.35-.472A3.99 3.99 0 0 0 15.89 9.05"
+                                                fill="inherit"></path>
+                                        </g>
+                                    </svg>
+                                </span>
+                                <!----question mark---->
+                            </h3>
+                            <div id="copayaccordian" class="panel-collapse collapse" role="tabpanel"
+                                aria-labelledby="headingTwo">
+                                <label class="custom-checkbox" *ngFor="let ped of copay;let i = index">
+                                    {{ped.sf_name}}
+                                    <input type="checkbox" id="copay{{i}}" name="copay" [value]="ped.sf_id"
+                                        (click)="selectCopay($event)">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                        </div>
+                        <!------------- Room Rent Limit -------------->
+                        <div class="nooutline list-tilel-box maternity-cover-area">
+                            <h3 data-toggle="collapse" data-target="#roomrentlimitaccordian"
+                                aria-expanded="false" aria-controls="collapseFour">Room Rent Limit
+                                <!----question mark---->
+                                <span class="question-mark"
+                                    tooltip="Limit applicable as per your plan to choose the room category during hospitalization"
+                                    placement="top">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" focusable="false"
+                                        role="presentation">
+                                        <g fill-rule="evenodd">
+                                            <circle fill="currentColor" cx="12" cy="12" r="10"></circle>
+                                            <circle fill="inherit" cx="12" cy="18" r="1"></circle>
+                                            <path
+                                                d="M15.89 9.05a3.975 3.975 0 0 0-2.957-2.942C10.321 5.514 8.017 7.446 8 9.95l.005.147a.992.992 0 0 0 .982.904c.552 0 1-.447 1.002-.998a2.004 2.004 0 0 1 4.007-.002c0 1.102-.898 2-2.003 2H12a1 1 0 0 0-1 .987v2.014a1.001 1.001 0 0 0 2.004 0v-.782c0-.217.145-.399.35-.472A3.99 3.99 0 0 0 15.89 9.05"
+                                                fill="inherit"></path>
+                                        </g>
+                                    </svg>
+                                </span>
+                                <!----question mark---->
+                            </h3>
+                            <div id="roomrentlimitaccordian" class="panel-collapse collapse" role="tabpanel"
+                                aria-labelledby="headingFour">
+                                <label class="custom-checkbox" *ngFor="let rrl of roomrentlimit;let i = index">
+                                    {{rrl.sf_name}}
+                                    <input type="checkbox" id="roomrentlimit{{i}}" name="roomrentlimit{{i}}"
+                                        [value]="rrl.sf_id" (click)="selectRoomRentLimit($event)">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                        </div>
+                        <!-- Pre Existing Disease Waiting Period -->
+                        <div class="nooutline list-tilel-box">
+                            <h3 data-toggle="collapse" data-target="#waitperiodaccordian"
+                                aria-expanded="false" aria-controls="collapseThree">
+                                Pre Existing Disease Waiting Period
+                                <!----question mark---->
+                                <span class="question-mark"
+                                    tooltip="Time after which your plan will pay for the hospitalization expenses arising due to Pre-existing disease."
+                                    placement="top">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" focusable="false"
+                                        role="presentation">
+                                        <g fill-rule="evenodd">
+                                            <circle fill="currentColor" cx="12" cy="12" r="10"></circle>
+                                            <circle fill="inherit" cx="12" cy="18" r="1"></circle>
+                                            <path
+                                                d="M15.89 9.05a3.975 3.975 0 0 0-2.957-2.942C10.321 5.514 8.017 7.446 8 9.95l.005.147a.992.992 0 0 0 .982.904c.552 0 1-.447 1.002-.998a2.004 2.004 0 0 1 4.007-.002c0 1.102-.898 2-2.003 2H12a1 1 0 0 0-1 .987v2.014a1.001 1.001 0 0 0 2.004 0v-.782c0-.217.145-.399.35-.472A3.99 3.99 0 0 0 15.89 9.05"
+                                                fill="inherit"></path>
+                                        </g>
+                                    </svg>
+                                </span>
+                                <!----question mark---->
+                            </h3>
+                            <div id="waitperiodaccordian" class="panel-collapse collapse" role="tabpanel"
+                                aria-labelledby="headingThree">
+                                <label class="custom-checkbox" *ngFor="let ped of preexisdieseases;let i = index">
+                                    {{ped.sf_name}}
+                                    <input type="checkbox" id="ped{{i}}" class="clsped" name="ped{{i}}"
+                                        [value]="ped.sf_id" (click)="selectPed($event)">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                        </div>
+                        <!------------- Maternity ------------------>
+                        <div class="nooutline list-tilel-box maternity-cover-area">
+                            <h3 data-toggle="collapse" data-target="#maternityaccordian"
+                                aria-expanded="false" aria-controls="collapseFour">Maternity
+                                <!----question mark---->
+                                <span class="question-mark" tooltip="Plans covering maternity related expenses"
+                                    placement="top">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" focusable="false"
+                                        role="presentation">
+                                        <g fill-rule="evenodd">
+                                            <circle fill="currentColor" cx="12" cy="12" r="10"></circle>
+                                            <circle fill="inherit" cx="12" cy="18" r="1"></circle>
+                                            <path
+                                                d="M15.89 9.05a3.975 3.975 0 0 0-2.957-2.942C10.321 5.514 8.017 7.446 8 9.95l.005.147a.992.992 0 0 0 .982.904c.552 0 1-.447 1.002-.998a2.004 2.004 0 0 1 4.007-.002c0 1.102-.898 2-2.003 2H12a1 1 0 0 0-1 .987v2.014a1.001 1.001 0 0 0 2.004 0v-.782c0-.217.145-.399.35-.472A3.99 3.99 0 0 0 15.89 9.05"
+                                                fill="inherit"></path>
+                                        </g>
+                                    </svg>
+                                </span>
+                                <!----question mark---->
+                            </h3>
+                            <div id="maternityaccordian" class="panel-collapse collapse" role="tabpanel"
+                                aria-labelledby="headingFour">
+                                <label class="custom-checkbox" *ngFor="let ped of maternity;let i = index">
+                                    {{ped.sf_name}}
+                                    <input type="checkbox" id="matrnity{{i}}" name="maternity{{i}}" [value]="ped.sf_id"
+                                        (click)="selectMaternity($event)">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                        </div>
+                        <!------------- Preferred Insurance Companies-------------->
+                        <div class="nooutline list-tilel-box maternity-cover-area">
+                            <h3 data-toggle="collapse" data-target="#preferredaccordian"
+                                aria-expanded="false" aria-controls="collapseFour">Preferred Insurance Companies
+                                <!----question mark---->
+                                <span class="question-mark" tooltip="View plans from your preferred Insurance Companies"
+                                    placement="top">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" focusable="false"
+                                        role="presentation">
+                                        <g fill-rule="evenodd">
+                                            <circle fill="currentColor" cx="12" cy="12" r="10"></circle>
+                                            <circle fill="inherit" cx="12" cy="18" r="1"></circle>
+                                            <path
+                                                d="M15.89 9.05a3.975 3.975 0 0 0-2.957-2.942C10.321 5.514 8.017 7.446 8 9.95l.005.147a.992.992 0 0 0 .982.904c.552 0 1-.447 1.002-.998a2.004 2.004 0 0 1 4.007-.002c0 1.102-.898 2-2.003 2H12a1 1 0 0 0-1 .987v2.014a1.001 1.001 0 0 0 2.004 0v-.782c0-.217.145-.399.35-.472A3.99 3.99 0 0 0 15.89 9.05"
+                                                fill="inherit"></path>
+                                        </g>
+                                    </svg>
+                                </span>
+                                <!----question mark---->
+                            </h3>
+                            <div id="preferredaccordian" class="panel-collapse collapse" role="tabpanel"
+                                aria-labelledby="headingFour">
+                                <label class="custom-checkbox" *ngFor="let pio of preferredinsuranceopt;let i = index">
+                                    {{pio.company_name}}
+                                    <input type="checkbox" id="preferred{{i}}" name="preferred{{i}}"
+                                        [value]="pio.company_id" (click)="selectPreferredInsurance($event,i)"
+                                        [checked]="pio.checked">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-----left side wrapper end-->
+                    <!-----right side wrapper start-->
+                    <div class="nooutline col-md-8 col-lg-9   qu-right_panel wow fadeIn content">
+                        <!---top search result start---->
+                        <div class="top-search-result">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <h3 class="results-num1">Showing {{total}} plans.</h3>
+                                    <p>{{constructVal}}, {{(gender=='1')?'Male':'Female'}} , {{age}} Yrs, {{city}}
+                                        <span class="modifysearchdesknew" (click)="openModal(template)">Modify</span>
+                                    </p>
+                                </div>
+                                <div class="col-md-3 text-right">
+                                    <!-- <button style="background: transparent;"
+                                        class="btn float-right" (click)="goback()">
+                                        <svg viewBox="0 0 40.02 20.86" id="arrowleft" width="35px"
+                                            fill="#245ca9">
+                                            <path
+                                                d="M40.02 11.513V9.349H4.145l7.816-7.816L10.429.001 0 10.43l10.429 10.432 1.532-1.532-7.816-7.816z">
+                                            </path>
+                                        </svg>
+                                    </button> -->
+
+                                    <button class="btn btn-dark-blue mr-1" (click)="saveQuotes(savequotes)">Save &
+                                        Share</button>
+                                    <button class="btn btn-dark-blue ml-2" (click)="goback()"><i
+                                            class="fa fa-chevron-left"></i> Back</button>
+                                </div>
+                            </div>
+                            <!-----mobile filter--->
+                            <div class="filter-mob-icon d-block d-md-none" (click)="mobFilter()">
+
+
+                                <svg version="1.1" width="30px" height="30px" id="Capa_1"
+                                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                    x="0px" y="0px" viewBox="0 0 390 390" style="enable-background:new 0 0 390 390;"
+                                    xml:space="preserve">
+                                    <g>
+                                        <g>
+                                            <path d="M362.072,63c0.1-0.3-0.1-0.6-0.1-0.9V10c0.2-5.3-4-9.8-9.4-10c-0.1,0-0.2,0-0.3,0h-314.7c-5.3,0-9.7,4.4-9.6,9.7
+    c0,0.1,0,0.2,0,0.3v52.1c0,0.3-0.2,0.6-0.1,0.9c0,0.1-0.1,0.3,0,0.4c0,0.2,0,0.4,0,0.5c0,0.2,0,0.3,0.1,0.5
+    c0.1,0.2,0.1,0.3,0.1,0.4c0,0.1,0.1,0.3,0.1,0.5c0,0.1,0.1,0.3,0.1,0.4c0.1,0.2,0.1,0.3,0.2,0.5c0.1,0.1,0.1,0.3,0.2,0.4
+    c0.1,0.1,0.1,0.3,0.2,0.4c0.1,0.1,0.2,0.3,0.2,0.4c0,0.1,0.2,0.3,0.2,0.4c0.1,0.1,0.2,0.3,0.3,0.4s0.2,0.2,0.2,0.3
+    c0,0,0.2,0,0.3,0.1l119.9,141V380c-0.1,3.8,2,7.3,5.5,9c1.3,0.6,2.7,1,4.2,1c2.3,0,4.5-0.8,6.2-2.2l70.6-57.3
+    c2.3-1.9,3.6-4.8,3.5-7.8V209.6l119.8-141c0,0,0.1,0,0.2-0.1c0.1-0.1,0.2-0.2,0.3-0.3c0.1-0.1,0.2-0.3,0.3-0.4s0.2-0.3,0.3-0.4
+    c0.1-0.1,0.2-0.3,0.2-0.4c0.1-0.1,0.2-0.3,0.2-0.4c0.1-0.1,0.1-0.3,0.2-0.4c0.1-0.2,0.1-0.3,0.2-0.5c0.1-0.1,0.1-0.3,0.1-0.4
+    c0.1-0.2,0.1-0.3,0.1-0.5s0.1-0.3,0.1-0.4c0-0.1,0.1-0.3,0.1-0.5c0-0.2,0.1-0.4,0.1-0.5C362.172,63.3,361.972,63.1,362.072,63z
+    M222.572,199.4c-1.6,1.8-2.5,4.1-2.6,6.5v112l-50,41.1V205.9c-0.1-2.4-1-4.7-2.6-6.5L59.172,72h271.6L222.572,199.4z M341.972,52
+    h-294V20h294V52z"></path>
+                                        </g>
+                                    </g>
+                                </svg>
+                            </div>
+                            <!-----mobile filter icon--->
+                        </div>
+                        <!---top search result end---->
+
+                        <!----plan box start-------->
+                        <div class="plan box-wrapper">
+
+                            <!----looping row end-->
+                            <!----looping row start-->
+                            <div class="planbox-inner-wrapper" *ngFor="let data of quotesData;let i=index">
+                                <!-----single-planbox start--->
+                                <div class="single-planbox-wrapper nmdcard">
+                                    <div class="row position-relative">
+                                        <!---left area-->
+                                        <div class="col-lg-4">
+                                            <div class="row align-items-center">
+                                                <div class="col">
+                                                    <div class="imgareah">
+                                                        <img [src]="data.companylogo" class="imgwidth"
+                                                            alt="Company Logo">
+                                                    </div>
+
+                                                </div>
+                                                <div class="col">
+                                                    <h2 class="policy-name">{{data.plan_name}}</h2>
+                                                    <!-- <pre>
+                                                        {{data | json}}
+                                                    </pre> -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!----middle area-->
+                                        <div class="col-lg-3">
+                                            <div class="row align-items-center">
+                                                <div class="col-4">
+                                                    <p class="plan-des">Cover</p>
+                                                    <select class="no-border cover-dp" name="sum_insured"
+                                                        [(ngModel)]="data.sum_insured_id"
+                                                        (change)="changeCover($event,data)">
+                                                        <option [value]="cover.si_id"
+                                                            *ngFor="let cover of data.coverDropdown">
+                                                            {{cover.si_display}}</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-8 pr-0">
+                                                    <p class="plan-des">Cashless Hospitals</p>
+                                                    <label class="hospital-info">{{data.network_hospital}}</label>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <!----right area-->
+                                        <div class="col-lg-5">
+                                            <div class="row">
+                                                <div class="col text-center">
+                                                    <div *ngIf="data.one_yr_premium">
+                                                        <p class="plan-des">1 Year Plan</p>
+                                                        <button class="btn btn-dark-blue" (click)="buyNow(data,'1')"
+                                                            [disabled]="data.premium_with_gst <= 0">
+                                                            <i class="fa fa-inr"></i> {{data.premium_with_gst}}</button>
+                                                    </div>
+                                                </div>
+                                                <div class="col text-center">
+                                                    <div *ngIf="data.two_yr_premium">
+                                                        <p class="plan-des">2 Year Plan</p>
+                                                        <button class="btn btn-dark-blue" (click)="buyNow(data,'2')">
+                                                            <i class="fa fa-inr"></i>
+                                                            {{data.premium_with_gst_2}}</button>
+                                                        <p class="m-2" style="font-size: 12px;">You Save
+                                                            <i class="fa fa-inr"></i>{{data.saving_2yr}} <a
+                                                                href="javascript:void(0)"
+                                                                (click)="discountbreakupmodal(discount,data,'2')">
+                                                                Details</a>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <div class="col text-center">
+                                                    <div *ngIf="data.three_yr_premium">
+                                                        <p class="plan-des">3 Year Plan</p>
+                                                        <button class="btn btn-dark-blue" (click)="buyNow(data,'3')">
+                                                            <i class="fa fa-inr"></i>
+                                                            {{data.premium_with_gst_3}}</button>
+                                                        <p class="m-2" style="font-size: 12px">You Save
+                                                            <i class="fa fa-inr"></i>{{data.saving_3yr}}<a
+                                                                href="javascript:void(0)"
+                                                                (click)="discountbreakupmodal(discount,data,'3')">
+                                                                Details</a>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!----bottom area start--->
+                                    <div class="bottom-area m-text">
+                                        <div class="row align-items-center">
+                                            <div class="col-md-6">
+                                                <ng-template #highlightedFeatureDescz>
+                                                    <p>{{data.featuredPlan[0]['feature_desc']}}</p>
+                                                    <p [innerHtml]="data.featuredPlan[0]['content']"></p>
+                                                </ng-template>
+                                                <ng-template #highlightedFeatureDesco>
+                                                    <p>{{data.featuredPlan[1]['feature_desc']}}</p>
+                                                    <p [innerHtml]="data.featuredPlan[1]['content']"></p>
+                                                </ng-template>
+                                                <ng-template #highlightedFeatureDesct>
+                                                    <p>{{data.featuredPlan[2]['feature_desc']}}</p>
+                                                    <p [innerHtml]="data.featuredPlan[2]['content']"></p>
+                                                </ng-template>
+                                                <div class="blue-text smart-rider text-capitalize bottom-area-left">
+
+                                                    <a href="javascript:" [tooltip]="highlightedFeatureDescz"
+                                                        placement="bottom"
+                                                        *ngIf="data.featuredPlan.length > 0">{{data.featuredPlan[0]['feature_name']}}</a>
+
+                                                    <span class="px-2" *ngIf="data.featuredPlan.length > 1">|</span>
+
+                                                    <span data-toggle="popover" data-container="body"
+                                                        data-placement="top" type="button" data-html="true"
+                                                        data-content=" Click here to view the Special highlights of that plan"
+                                                        *ngIf="i == 0 && !gotit">
+                                                        <a href="javascript:" [tooltip]="highlightedFeatureDesco"
+                                                            placement="bottom"
+                                                            *ngIf="data.featuredPlan.length > 1">{{data.featuredPlan[1]['feature_name']}}</a>
+                                                    </span>
+
+                                                    <a href="javascript:" [tooltip]="highlightedFeatureDesco"
+                                                        placement="bottom"
+                                                        *ngIf="data.featuredPlan.length > 1">{{data.featuredPlan[1]['feature_name']}}</a>
+
+                                                    <span class="px-2" *ngIf="data.featuredPlan.length > 2">|</span>
+
+                                                    <a href="javascript:" [tooltip]="highlightedFeatureDesct"
+                                                        placement="bottom"
+                                                        *ngIf="data.featuredPlan.length > 2">{{data.featuredPlan[2]['feature_name']}}</a>
+
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div
+                                                    class="d-md-flex justify-content-end align-items-center bottom-area-right">
+                                                    <label class="custom-checkbox">Add to Compare
+                                                        <input type="checkbox" id="comparechk{{i}}"
+                                                            (click)="addtoCompare($event,data,i,'')">
+                                                        <span class="checkmark"></span>
+                                                    </label>
+
+
+                                                    <span data-toggle="popover" data-container="body"
+                                                        data-placement="top" type="button" data-html="true"
+                                                        data-content="Click here to view plan's features, network hospitals, waiting periods & more"
+                                                        *ngIf="i == 0 && !gotit">
+                                                        <a class="blue-text pl-2" data-toggle="collapse"
+                                                            href="#viewfeatures{{i}}" role="button"
+                                                            aria-expanded="false" aria-controls="viewfeatures"
+                                                            (click)="viewfeature(data,i)"> View
+                                                            Features <i class="fa fa-chevron-circle-down"></i></a>
+                                                    </span>
+
+                                                    <a class="blue-text pl-2" data-toggle="collapse"
+                                                        href="#viewfeatures{{i}}" role="button" aria-expanded="false"
+                                                        aria-controls="viewfeatures" (click)="viewfeature(data,i)"
+                                                        *ngIf="i == 0 && gotit"> View
+                                                        Features <i class="fa fa-chevron-circle-down"></i></a>
+
+                                                    <a class="blue-text pl-2" data-toggle="collapse"
+                                                        href="#viewfeatures{{i}}" role="button" aria-expanded="false"
+                                                        aria-controls="viewfeatures" (click)="viewfeature(data,i)"
+                                                        *ngIf="i > 0"> View
+                                                        Features <i class="fa fa-chevron-circle-down"></i></a>
+
+
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!----bottom area end--->
+                                    <div class="collapse multi-collapse features-accordian" id="viewfeatures{{i}}">
+                                        <div class="card card-body">
+                                            <!---tab area---->
+                                            <ul class="nav nav-tabs">
+                                                <li><a data-toggle="tab" href="#Features{{i}}"
+                                                        class="active">Features</a>
+                                                </li>
+                                                <!-- <li><a data-toggle="tab" href="#Covered{{i}}">Covered</a> 
+                                                </li>-->
+                                                <li><a data-toggle="tab" href="#not-covered{{i}}">Waiting Period &
+                                                        Exclusions</a></li>
+                                                <li><a data-toggle="tab" href="#network-hospital{{i}}">Network
+                                                        Hospitals({{data.network_hospital}})</a>
+                                                </li>
+                                                <!-- <li><a data-toggle="tab" href="#network-hospitals{{i}}">Network
+                                                        Hospitals</a> -->
+                                                <!-- <li><a data-toggle="tab" href="#menu2">Premium & covered Change</a>
+                                                </li>
+                                                <li><a data-toggle="tab" href="#menu2">Network Hospitals(44)</a>
+                                                </li>
+                                                <li><a data-toggle="tab" href="#menu2">Download</a></li> -->
+                                            </ul>
+                                            <!--tab content start--->
+                                            <div class="tab-content featuretab">
+                                                <!-- Features tab start -->
+                                                <div id="Features{{i}}" class="tab-pane fade in active show">
+                                                    <p class="bold mb-4" *ngIf="loading">
+                                                        <span>loading...</span>
+                                                    </p>
+                                                    <!-- <div class="col-4" *ngFor="let fd of featureDetail">
+                                                            <h6>{{(fd.feature_master)?fd.feature_master.feature_name:'...'}}
+                                                            </h6>
+                                                            <p [innerHTML]="fd.plan_feature_content"></p>
+                                                        </div> -->
+
+                                                    <div class="row mb-4">
+                                                        <div class="col-md-6"
+                                                            *ngFor="let fd of data.featureDetail;let j=index">
+                                                            <ng-template #popTemplate>
+                                                                <p>{{fd.feature_master.feature_desc || ''}}</p>
+                                                                <p [innerHtml]="fd.plan_feature_content"></p>
+                                                            </ng-template>
+                                                            <p class="d-flex align-items-center"
+                                                                [ngClass]="{'disabled-font': fd.set_style == 1}"
+                                                                style="font-size: 16px;">
+                                                                <span class="question-mark feature-cls"
+                                                                    [tooltip]="popTemplate" placement="top">
+                                                                    <svg width="24" height="24" viewBox="0 0 24 24"
+                                                                        focusable="false" role="presentation">
+                                                                        <g fill-rule="evenodd">
+                                                                            <circle fill="currentColor" cx="12" cy="12"
+                                                                                r="10"></circle>
+                                                                            <circle fill="inherit" cx="12" cy="18"
+                                                                                r="1">
+                                                                            </circle>
+                                                                            <path
+                                                                                d="M15.89 9.05a3.975 3.975 0 0 0-2.957-2.942C10.321 5.514 8.017 7.446 8 9.95l.005.147a.992.992 0 0 0 .982.904c.552 0 1-.447 1.002-.998a2.004 2.004 0 0 1 4.007-.002c0 1.102-.898 2-2.003 2H12a1 1 0 0 0-1 .987v2.014a1.001 1.001 0 0 0 2.004 0v-.782c0-.217.145-.399.35-.472A3.99 3.99 0 0 0 15.89 9.05"
+                                                                                fill="inherit"></path>
+                                                                        </g>
+                                                                    </svg>
+                                                                </span>
+                                                                {{(fd.feature_master)?fd.feature_master.feature_name:'...'}}
+                                                            </p>
+
+                                                        </div>
+                                                        <div class="col-md-6" *ngIf="data.featureDetail.length <= 0">
+                                                            <p class="text-center">-No Features Found-</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- Features tab end -->
+                                                <!-- <div id="Covered{{i}}" class="tab-pane fade">
+                                                    <p [innerHTML]="coverDetails.plan_feature_content"></p>
+                                                </div> -->
+                                                <div id="not-covered{{i}}" class="tab-pane fade">
+                                                    <!-- <p [innerHTML]="notcoverDetail.plan_feature_content"></p> -->
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <h6 style="color: #0d4ba0">Waiting Period</h6>
+                                                            <h6>Covered from Day 1</h6>
+                                                            <p>Claims arising due to an accident</p><br>
+                                                            <h6>After 30 days</h6>
+                                                            <p>
+                                                                Non-Accidental Medical Condition
+                                                            </p><br>
+                                                            <h6>After 2 years (specific illness)</h6>
+                                                            <p>
+                                                                Cataract, Hernia, Piles, Varicose Veins, Joint
+                                                                Replacement Surgeries, Gastric Ulcer, Hysterectomy,
+                                                                Slipped disc, Sinusitis, Tonsillitis, Benign Tumor,
+                                                                Prostrate Condition, Genito-Urinary Ailments, etc
+                                                            </p>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <h6 style="color: #0d4ba0">Exclusions</h6>
+                                                            <p>
+                                                                War related injuries, Cosmetic & Plastic surgery, Lasik
+                                                                eye treatments, Drugs or alcohol abuse, Attempted
+                                                                Suicide or Self-inflicated injuries, Injuries due to
+                                                                Hazardous or Adventure sports, Administratives expenses,
+                                                                Registration fees, etc
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div id="network-hospital{{i}}" class="tab-pane fade">
+                                                    <!-- <p [innerHTML]="notcoverDetail.feature_detail"></p> -->
+                                                    <p class="bold mb-4">
+                                                        <strong>Cashless treatment available at
+                                                            {{data.network_hospital}} Hospitals in your City</strong>
+                                                    </p>
+                                                    <div class="row network-name mb-4">
+                                                        <div class="col-md-4"
+                                                            *ngIf="data.networkHospitalList.length <= 0">
+                                                            <p class="text-center">-No Network Hospital Found-</p>
+                                                        </div>
+                                                        <div class="col-md-4"
+                                                            *ngFor="let nh of data.networkHospitalList">
+                                                            <p>{{nh.hospital_name | titlecase}}</p>
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-12 text-center" *ngIf="data.showmore">
+                                                            <button class="btn btn-default"
+                                                                (click)="showmoreNH(data)"><i class="fa fa-angle-down"
+                                                                    aria-hidden="true"></i> Show More</button>
+                                                        </div>
+                                                        <div class="col-md-12 text-center" *ngIf="!data.showmore">
+                                                            <button class="btn btn-default"
+                                                                (click)="showmoreNH(data)"><i class="fa fa-angle-up"
+                                                                    aria-hidden="true"></i> Show Less</button>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- <p class="text-center border-top mt-4 pt-4">
+                                                        <button class="btn btn-dark-theme-btn">Buy Now</button>
+                                                    </p> -->
+                                                </div>
+                                            </div>
+                                            <!--tab content end--->
+                                            <div style="border-top: 1px solid #ddd;"></div>
+                                            <div class="row mt-2">
+                                                <div class="col">
+                                                    <!-- <button class="btn btn-default get-quotes-btn float-right"
+                                                        (click)="buyNow(data,'1')">Buy Now</button> -->
+                                                </div>
+                                            </div>
+                                            <!---tab area end---->
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- //==========Addon Plan============= -->
+                                <div class="single-planbox-wrapper nmdcard hide-plan-box"
+                                    *ngFor="let addon of data.childplan;let j=index" [hidden]="addon.moreplan">
+                                    <div class="row position-relative">
+                                        <!-- <div class="hide-plan">Hide<br/>
+                                         <p class="m-0 arrow-up text-center"><i class="fa fa-angle-up"></i></p>
+                                        </div> -->
+                                        <!---left area-->
+                                        <div class="col-lg-4">
+                                            <div class="row align-items-center">
+                                                <div class="col">
+                                                    <div class="imgareah">
+                                                        <img [src]="addon.companylogo" class="imgwidth" alt="company">
+                                                    </div>
+
+                                                </div>
+                                                <div class="col">
+                                                    <h2 class="policy-name">{{addon.plan_name}}</h2>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!----middle area-->
+                                        <div class="col-lg-3">
+                                            <div class="row align-items-center">
+                                                <div class="col-4">
+                                                    <p class="plan-des">Cover</p>
+                                                    <select class="no-border cover-dp" name="sum_insured"
+                                                        [(ngModel)]="addon.sum_insured_id"
+                                                        (change)="changeCover($event,addon)">
+                                                        <option [value]="cover.si_id"
+                                                            *ngFor="let cover of addon.coverDropdown">
+                                                            {{cover.si_display}}</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-8">
+                                                    <p class="plan-des">Cashless Hospitals</p>
+                                                    <label class="hospital-info">{{addon.network_hospital}}</label>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <!----right area-->
+                                        <div class="col-lg-5">
+                                            <div class="row">
+                                                <div class="col text-center">
+                                                    <div *ngIf="addon.one_yr_premium">
+                                                        <p class="plan-des">1 Year Plan</p>
+                                                        <button class="btn btn-dark-blue" (click)="buyNow(addon,'1')">
+                                                            <i class="fa fa-inr"></i>
+                                                            {{addon.premium_with_gst}}</button>
+                                                    </div>
+
+
+                                                </div>
+                                                <div class="col text-center">
+                                                    <div *ngIf="addon.two_yr_premium">
+                                                        <p class="plan-des">2 Year Plan</p>
+                                                        <button class="btn btn-dark-blue" (click)="buyNow(addon,'2')">
+                                                            {{addon.premium_with_gst_2}}</button>
+                                                        <p class="m-2" style="font-size: 12px;">You Save
+                                                            <i class="fa fa-inr"></i> {{addon.saving_2yr}} <a
+                                                                href="javascript:void(0)"
+                                                                (click)="discountbreakupmodal(discount,addon,'2')">
+                                                                Details</a>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <div class="col text-center">
+                                                    <div *ngIf="addon.three_yr_premium">
+                                                        <p class="plan-des">3 Year Plan</p>
+                                                        <button class="btn btn-dark-blue" (click)="buyNow(addon,'3')">
+                                                            {{addon.premium_with_gst_3}}</button>
+                                                        <p class="m-2" style="font-size: 12px">You Save
+                                                            <i class="fa fa-inr"></i> {{addon.saving_3yr}}<a
+                                                                href="javascript:void(0)"
+                                                                (click)="discountbreakupmodal(discount,addon,'3')">
+                                                                Details
+                                                            </a>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!----Addon bottom area start--->
+                                    <div class="bottom-area m-text">
+                                        <div class="row align-items-center">
+                                            <div class="col-md-6">
+                                                <ng-template #highlightedFeatureDesczaddon>
+                                                    <p>{{addon.featuredPlan[0]['feature_desc']}}</p>
+                                                    <p [innerHtml]="addon.featuredPlan[0]['content']"></p>
+                                                </ng-template>
+                                                <ng-template #highlightedFeatureDescoaddon>
+                                                    <p>{{addon.featuredPlan[1]['feature_desc']}}</p>
+                                                    <p [innerHtml]="addon.featuredPlan[1]['content']"></p>
+                                                </ng-template>
+                                                <ng-template #highlightedFeatureDesctaddon>
+                                                    <p>{{addon.featuredPlan[2]['feature_desc']}}</p>
+                                                    <p [innerHtml]="addon.featuredPlan[2]['content']"></p>
+                                                </ng-template>
+                                                <div class="blue-text smart-rider text-capitalize bottom-area-left">
+                                                    <a href="javascript:" [tooltip]="highlightedFeatureDesczaddon"
+                                                        placement="bottom"
+                                                        *ngIf="addon.featuredPlan.length > 0">{{addon.featuredPlan[0]['feature_name']}}</a>
+                                                    <span class="px-2" *ngIf="addon.featuredPlan.length > 1">|</span>
+                                                    <a href="javascript:" [tooltip]="highlightedFeatureDescoaddon"
+                                                        placement="bottom"
+                                                        *ngIf="addon.featuredPlan.length > 1">{{addon.featuredPlan[1]['feature_name']}}</a>
+                                                    <span class="px-2" *ngIf="addon.featuredPlan.length > 2">|</span>
+                                                    <a href="javascript:" [tooltip]="highlightedFeatureDesctaddon"
+                                                        placement="bottom"
+                                                        *ngIf="addon.featuredPlan.length > 2">{{addon.featuredPlan[2]['feature_name']}}</a>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <div class="blue-text smart-rider text-capitalize bottom-area-left"
+                                                    *ngIf="data.childplan.length > 1">
+                                                    <a href="javascript:"
+                                                        (click)="morePlan(i)">{{addon.morePlanText}}</a>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div
+                                                    class="d-md-flex justify-content-end align-items-center bottom-area-right">
+                                                    <label class="custom-checkbox">Add to Compare
+                                                        <input type="checkbox" id="comparechk{{i}}{{j}}"
+                                                            (click)="addtoCompare($event,addon,i,j)">
+                                                        <span class="checkmark"></span>
+                                                    </label>
+                                                    <a class="blue-text pl-2" data-toggle="collapse"
+                                                        href="#viewfeatures{{i}}{{j}}" role="button"
+                                                        aria-expanded="false" aria-controls="viewfeatures"
+                                                        (click)="viewfeature(addon,i,j)"> View
+                                                        Features <i class="fa fa-chevron-circle-down"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!----bottom area end--->
+                                    <div class="collapse multi-collapse features-accordian "
+                                        id="viewfeatures{{i}}{{j}}">
+                                        <div class="card card-body">
+                                            <!---tab area---->
+                                            <ul class="nav nav-tabs">
+                                                <li><a data-toggle="tab" href="#Features{{i}}{{j}}"
+                                                        class="active">Features</a>
+                                                </li>
+
+                                                <li><a data-toggle="tab" href="#not-covered{{i}}{{j}}">Waiting Period &
+                                                        Exclusions</a>
+                                                </li>
+                                                <li><a data-toggle="tab" href="#network-hospital{{i}}{{j}}">Network
+                                                        Hospitals({{addon.network_hospital}})</a>
+                                                </li>
+
+                                            </ul>
+                                            <!--tab content start--->
+                                            <div class="tab-content">
+                                                <!-- Features tab start -->
+                                                <div id="Features{{i}}{{j}}" class="tab-pane fade in active show">
+                                                    <div class="row">
+                                                        <div class="col-12" *ngIf="loading">
+                                                            <span>loading...</span>
+                                                        </div>
+                                                        <!-- <div class="col-12" *ngFor="let fd of featureDetail">
+                                                            <h6>{{fd.feature_master.feature_name}}</h6>
+                                                            <p [innerHTML]="fd.plan_feature_content"></p>
+                                                        </div> -->
+                                                        <div class="col-md-6" *ngFor="let fd of addon.featureDetail">
+                                                            <ng-template #popTemplateone>
+                                                                <p>{{fd.feature_master.feature_desc || ''}}</p>
+                                                                <p [innerHtml]="fd.plan_feature_content"></p>
+                                                            </ng-template>
+                                                            <p class="d-flex align-items-center"
+                                                                [ngClass]="{'disabled-font': fd.set_style == 1}"
+                                                                style="font-size: 16px;">
+                                                                <span class="question-mark feature-cls"
+                                                                    [tooltip]="popTemplateone" placement="top">
+                                                                    <svg width="24" height="24" viewBox="0 0 24 24"
+                                                                        focusable="false" role="presentation">
+                                                                        <g fill-rule="evenodd">
+                                                                            <circle fill="currentColor" cx="12" cy="12"
+                                                                                r="10"></circle>
+                                                                            <circle fill="inherit" cx="12" cy="18"
+                                                                                r="1">
+                                                                            </circle>
+                                                                            <path
+                                                                                d="M15.89 9.05a3.975 3.975 0 0 0-2.957-2.942C10.321 5.514 8.017 7.446 8 9.95l.005.147a.992.992 0 0 0 .982.904c.552 0 1-.447 1.002-.998a2.004 2.004 0 0 1 4.007-.002c0 1.102-.898 2-2.003 2H12a1 1 0 0 0-1 .987v2.014a1.001 1.001 0 0 0 2.004 0v-.782c0-.217.145-.399.35-.472A3.99 3.99 0 0 0 15.89 9.05"
+                                                                                fill="inherit"></path>
+                                                                        </g>
+                                                                    </svg>
+                                                                </span>
+                                                                {{(fd.feature_master)?fd.feature_master.feature_name:'...'}}
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- Features tab end -->
+                                                <div id="Covered{{i}}{{j}}" class="tab-pane fade">
+                                                    <p [innerHTML]="coverDetails.plan_feature_content"></p>
+                                                </div>
+                                                <div id="not-covered{{i}}{{j}}" class="tab-pane fade">
+                                                    <!-- <p [innerHTML]="notcoverDetail.plan_feature_content"></p> -->
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <h6 style="color: #0d4ba0">Waiting Period</h6>
+                                                            <h6>Covered from Day 1</h6>
+                                                            <p>Claims arising due to an accident</p><br>
+                                                            <h6>After 30 days</h6>
+                                                            <p>
+                                                                Non-Accidental Medical Condition
+                                                            </p><br>
+                                                            <h6>After 2 years (specific illness)</h6>
+                                                            <p>
+                                                                Cataract, Hernia, Piles, Varicose Veins, Joint
+                                                                Replacement Surgeries, Gastric Ulcer, Hysterectomy,
+                                                                Slipped disc, Sinusitis, Tonsillitis, Benign Tumor,
+                                                                Prostrate Condition, Genito-Urinary Ailments, etc
+                                                            </p>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <h6 style="color: #0d4ba0">Exclusions</h6>
+                                                            <p>
+                                                                War related injuries, Cosmetic & Plastic surgery, Lasik
+                                                                eye treatments, Drugs or alcohol abuse, Attempted
+                                                                Suicide or Self-inflicated injuries, Injuries due to
+                                                                Hazardous or Adventure sports, Administratives expenses,
+                                                                Registration fees, etc
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div id="network-hospital{{i}}{{j}}" class="tab-pane fade">
+                                                    <!-- <p [innerHTML]="notcoverDetail.feature_detail"></p> -->
+                                                    <div class="row network-name mb-4">
+                                                        <div class="col-md-4"
+                                                            *ngIf="addon.networkHospitalList.length <= 0">
+                                                            <p class="text-center">-No Network Hospital Found-</p>
+                                                        </div>
+                                                        <div class="col-md-4"
+                                                            *ngFor="let nh of addon.networkHospitalList">
+                                                            <p>{{nh.hospital_name | titlecase}}</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-12 text-center" *ngIf="addon.showmore">
+                                                            <button class="btn btn-default"
+                                                                (click)="showmoreNH(addon)"><i class="fa fa-angle-down"
+                                                                    aria-hidden="true"></i> Show More</button>
+                                                        </div>
+                                                        <div class="col-md-12 text-center" *ngIf="!addon.showmore">
+                                                            <button class="btn btn-default"
+                                                                (click)="showmoreNH(addon)"><i class="fa fa-angle-up"
+                                                                    aria-hidden="true"></i> Show Less</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--tab content end--->
+                                            <div style="border-top: 1px solid #ddd;"></div>
+                                            <div class="row mt-2">
+                                                <div class="col">
+                                                    <!-- <button class="btn btn-default get-quotes-btn float-right"
+                                                        (click)="buyNow(data,'1')">Buy Now</button> -->
+                                                </div>
+                                            </div>
+                                            <!---tab area end---->
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- //==========Addon Plan end============= -->
+                            </div>
+                            <div class="alert alert-danger mt-2" style="text-align: center;" role="alert"
+                                *ngIf="total == 0">
+                                -No data found-
+                            </div>
+                        </div>
+                        <!----plan box wrapper end-------->
+
+                    </div>
+                    <!-----right side wrapper end-->
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+<!-- Modify search Modal -->
+<ng-template #template>
+    <div class="modal-header d-inline-block text-center modify-sr-header">
+        <h4 class="modal-title">Modify Your Search</h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18.03" height="18.031" viewBox="0 0 18.03 18.031">
+                <path id="close.svg" fill="#000000"
+                    d="M1422.25,525.005l7.51,7.508a0.885,0.885,0,0,1,0,1.243,0.876,0.876,0,0,1-1.24,0l-7.51-7.508-7.51,7.508a0.876,0.876,0,0,1-1.24,0,0.867,0.867,0,0,1,0-1.243l7.51-7.508-7.51-7.507a0.878,0.878,0,0,1,1.24-1.243l7.51,7.508,7.51-7.508a0.874,0.874,0,0,1,1.24,0,0.885,0.885,0,0,1,0,1.243Z"
+                    transform="translate(-1412 -516)" />
+            </svg>
+        </button>
+    </div>
+    <div class="modal-body modify-sr">
+        <form>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="inputEmail4">Adults</label>
+                    <select [(ngModel)]="modifySearchData.adult_member" name="adult_member" class="form-control">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="inputPassword4">Children</label>
+                    <select name="child_member" [(ngModel)]="modifySearchData.child_member" class="form-control">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label>Age</label>
+                    <select class="form-control" [(ngModel)]="modifySearchData.age" name="age">
+                        <option [value]="age" *ngFor="let age of agedropDown">{{age+' Yrs'}}</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="inputPassword4">Gender</label>
+                    <select name="gender" [(ngModel)]="modifySearchData.gender" class="form-control">
+                        <option value="1">Male</option>
+                        <option value="0">Female</option>
+                    </select>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="modal-footer modify-sr-footer">
+        <button type="button" class="btn btn-dark-blue" (click)="modifySearch()"><i class="fa fa-search"
+                aria-hidden="true"></i> Apply Filter</button>
+    </div>
+</ng-template>
+
+<!-- Discount break-up Modal -->
+<ng-template #discount>
+    <div class="modal-header d-block">
+        <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18.03" height="18.031" viewBox="0 0 18.03 18.031">
+                <path id="close.svg" fill="#000000"
+                    d="M1422.25,525.005l7.51,7.508a0.885,0.885,0,0,1,0,1.243,0.876,0.876,0,0,1-1.24,0l-7.51-7.508-7.51,7.508a0.876,0.876,0,0,1-1.24,0,0.867,0.867,0,0,1,0-1.243l7.51-7.508-7.51-7.507a0.878,0.878,0,0,1,1.24-1.243l7.51,7.508,7.51-7.508a0.874,0.874,0,0,1,1.24,0,0.885,0.885,0,0,1,0,1.243Z"
+                    transform="translate(-1412 -516)" />
+            </svg>
+        </button>
+        <h4 class="modal-title w-100 text-center">
+            <span>
+                <img [src]="discount_breakup_data.logo" class="mr-3">
+            </span>
+            <span class="planname-text ml-1">{{discount_breakup_data.plan_name}}</span>
+            <span class="discount-text">Discount</span>
+
+        </h4>
+
+    </div>
+    <div class="modal-body discountmodalclass px-4 pb-5">
+        <div class="row">
+            <div class="col">
+                <span class="mheading">1st Year</span>
+            </div>
+
+        </div>
+        <div class="form-group row">
+            <label for="staticEmail" class="col-6 col-form-label">Premium(A)</label>
+            <div class="col-6 text-right">
+                <i class="fa fa-inr"></i>{{discount_breakup_data.first_yr_premium}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <span class="mheading pt-4">2nd Year</span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="staticEmail" class="col-6 col-form-label">Premium(B)</label>
+            <div class="col-6 text-right">
+                <i class="fa fa-inr"></i>{{discount_breakup_data.first_yr_premium}}
+            </div>
+        </div>
+        <div class="row" *ngIf="discount_breakup_data.year === 3">
+            <div class="col">
+                <span class="mheading pt-4">3rd Year</span>
+            </div>
+        </div>
+        <div class="form-group row" *ngIf="discount_breakup_data.year === 3">
+            <label for="staticEmail" class="col-6 col-form-label">Premium(C)</label>
+            <div class="col-6 text-right">
+                {{discount_breakup_data.first_yr_premium | currency:'INR'}}
+            </div>
+        </div>
+        <div class="form-group row pt-3">
+            <div class="col-8">
+                <span class="mheading" *ngIf="discount_breakup_data.year === 2">Total (A+B)</span>
+                <span class="mheading" *ngIf="discount_breakup_data.year === 3">Total (A+B+c)</span>
+            </div>
+            <div class="col-4 text-right">
+                <strong><i class="fa fa-inr"></i>{{(discount_breakup_data.total_premium)}}</strong>
+            </div>
+        </div>
+        <div class="form-group row pt-3">
+            <div class="col-12">
+                <span class="mheading">Discount</span>
+            </div>
+            <!-- <div class="col-4 text-right">
+                <strong>{{(discount_breakup_data.first_yr_premium + discount_breakup_data.first_yr_premium | currency:'INR')}}</strong>
+            </div> -->
+        </div>
+
+        <div class="form-group row">
+            <label class="col-8 col-form-label mheading"><span class="mheading">Discount Amount</span></label>
+            <div class="col-4 text-right mheading">
+                <i class="fa fa-inr"></i>{{discount_breakup_data.saving_amt}}
+            </div>
+        </div>
+
+        <div class="form-group row pt-3">
+            <div class="col-8">
+                <span class="mheading ">Total Premium after Discount</span>
+            </div>
+            <div class="col-4 text-right">
+                <strong><i class="fa fa-inr"></i>{{discount_breakup_data.final_price}}</strong>
+            </div>
+        </div>
+
+        <div class="form-group row pt-3">
+            <div class="col-8">
+                <span class="mheading ">GST on Total (18%)</span>
+            </div>
+            <div class="col-4 text-right">
+                <strong>{{discount_breakup_data.gst | currency:'INR'}}</strong>
+            </div>
+        </div>
+        <div class="form-group row pt-4">
+            <div class="col-8">
+                <span class="mheading ">Final Price</span>
+            </div>
+            <div class="col-4 text-right">
+                <button class="btn btn-dark-blue"><i
+                        class="fa fa-inr"></i>{{discount_breakup_data.finalpremium}}</button>
+            </div>
+        </div>
+
+
+
+
+
+
+        <!-- <div class="form-group row">
+            <label for="staticEmail" class="col-6 col-form-label">1st Year Premium</label>
+            <div class="col-6 text-right">
+                {{discount_breakup_data.first_yr_premium | currency:'INR'}}
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="staticEmail"
+                class="col-6 col-form-label">{{discount_breakup_data.year+discount_breakup_data.prefix}} Year
+                Premium</label>
+            <div class="col-6 text-right">
+                {{discount_breakup_data.first_yr_premium*discount_breakup_data.year | currency:'INR'}}
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="staticEmail" class="col-6 col-form-label">Discount Amt.</label>
+            <div class="col-6 text-right">
+                {{discount_breakup_data.saving_amt | currency:'INR'}}
+            </div>
+        </div>
+        <div class="form-group row mt-3">
+            <label for="staticEmail" class="col-6 col-form-label"><strong>Final Price</strong></label>
+            <div class="col-6 text-right">
+                <span style="border: 1px solid blue;padding: 5px;border-radius: 5px;">
+                    <strong>{{discount_breakup_data.final_price | currency:'INR'}} </strong></span>
+            </div>
+        </div> -->
+
+        <!-- <p>
+            You will save {{discount_breakup_data.saving_amt | currency:'INR'}}
+        </p> -->
+    </div>
+
+</ng-template>
+
+<!-------25.11.20 compare right toogle--------->
+<div class="insure_compare_pop">
+    <div id="dismiss">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+            <path id="close.svg" class="cls-1"
+                d="M1419.99,33.847l-2.14,2.147L1412,30.147l-5.85,5.847-2.14-2.147L1409.85,28l-5.84-5.847,2.14-2.146,5.85,5.847,5.85-5.847,2.14,2.146L1414.15,28Z"
+                transform="translate(-1404 -20)"></path>
+        </svg>
+    </div>
+    <div class="insure_compare_pop-inner mt-5">
+
+        <div class="nooutline compare-item-box" *ngFor="let compare of compareArr;let x=index">
+            <!--cross button-->
+            <div class="cross-c-box" (click)="removeCompare(x)">
+                <svg viewBox="0 0 212.982 212.982" id="cross">
+                    <path
+                        d="M131.804 106.491l75.936-75.936c6.99-6.99 6.99-18.323 0-25.312-6.99-6.99-18.322-6.99-25.312 0L106.491 81.18 30.554 5.242c-6.99-6.99-18.322-6.99-25.312 0-6.989 6.99-6.989 18.323 0 25.312l75.937 75.936-75.937 75.937c-6.989 6.99-6.989 18.323 0 25.312 6.99 6.99 18.322 6.99 25.312 0l75.937-75.937 75.937 75.937c6.989 6.99 18.322 6.99 25.312 0 6.99-6.99 6.99-18.322 0-25.312l-75.936-75.936z">
+                    </path>
+                </svg>
+            </div>
+            <!--cross button-->
+            <div class="imgarea1">
+                <span class="imgcol1">
+                    <img [src]="compare.companylogo" alt="">
+                </span>
+
+            </div>
+            <h5 class="planname ng-binding">{{compare.plan_name}}</h5>
+        </div>
+
+        <div class="text-center mt-4">
+            <a class="btn btn-dark-blue d-block" (click)="gotoCompare()">Compare</a>
+            <!--image border box end-->
+        </div>
+    </div>
+</div>
+
+<!-------25.11.20 compare right toogle end--------->
+<!-- //========= Save Quotes============= -->
+<ng-template #savequotes>
+    <div class="modal-header">
+        <h4 class="modal-title pull-left">Confirm Your Email & Mobile No</h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef2.hide()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <div class="form-group">
+            <label for="email">Email ID</label>
+            <input type="email" class="form-control" id="email" name="emailId" placeholder="Enter email"
+                [(ngModel)]="savequotesObj.emailId">
+        </div>
+        <div class="form-group">
+            <label for="mobile">Mobile Number</label>
+            <input type="text" class="form-control" id="mobile" name="contactNumber" maxlength="10"
+                [(ngModel)]="savequotesObj.contactNumber" (keyup)="numericCheck($event)" autocomplete="off">
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-primary" (click)="sendQuotes()">Send</button>
+    </div>
+</ng-template>
+
+<div class="got-it-bttn-hld" *ngIf="!gotit">
+    <button class="btn btn-gotit">Got It</button>
+    <div class="modal-backdrop fade show"></div>
+</div>

@@ -1,0 +1,1598 @@
+<section class="motor-details-inner-wrapper">
+    <!------banner-tab show-hide-area------>
+    <div class="banner-tab-area">
+        <div class="container">
+            <div class="health-insurance">
+                <div class="tab-head-text text-center">
+                    <h1>Existing offer on <span>Motor Insurance</span></h1>
+                    <p>From 10+ insurance companies</p>
+                </div>
+            </div>
+            <div class="productformbox">
+
+                <div class="row full-width">
+                    <!---left side start-->
+                    <div class="col-md-6 border-right ">
+                        <div class="tab-left-area  ">
+                            <p class="right-nevigation">
+                                <span><i class="fa fa-home" aria-hidden="true"></i>
+                                    Home</span> >
+                                Motor Insurance
+                            </p>
+                            <div class="big-l-block blue-text text-uppercase mb-3">
+                                <h6>Instant - simple - smart</h6>
+                                <h2>Motor Insurance</h2>
+                            </div>
+                            <p class="l-sm-info">
+                                More than 50,000 satisfied customer<br>
+                                Best Rates Guaranteed<br>
+                                Dedicated Claims Desk
+                            </p>
+                            <div class="text-center">
+                                <img src="assets/images/motor-details/motor-insurance-four-whiller-1.png">
+                            </div>
+                        </div>
+                    </div>
+                    <!---left end-->
+                    <!---right side start-->
+                    <div class="col-md-6">
+                        <div class="tab-right-area">
+                            <div class="mo-details-r-head text-center">
+                                <span>Motor Insurance</span>
+                            </div>
+                            <!------>
+                            <div class="tab-pane ">
+                                <h4>Compare and Buy from 24+ insurance companies </h4>
+                                <form class="form-inline" (ngSubmit)="submit()">
+                                    <!-- individual-step-one -->
+                                    <div class="">
+                                        <div class="row">
+                                            <div class="col-md-12 pr-0">
+                                                <div class="form-group">
+                                                    <label class="control-label col-sm-2" for="email">Name</label>
+                                                    <div class="col-sm-10">
+                                                        <input type="text" class="form-control" id=""
+                                                            placeholder="Enter Name" name="motor_user_name"
+                                                            [(ngModel)]="motor.motor_user_name" />
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="control-label col-sm-4" for="">Email</label>
+                                                    <div class="col-sm-8">
+                                                        <input type="email" class="form-control" id=""
+                                                            placeholder="Enter Email" name="motor_user_email"
+                                                            [(ngModel)]="motor.motor_user_email">
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+
+                                            <div class="col-md-6">
+
+                                                <div class="form-group">
+                                                    <label class="control-label col-sm-4" for="">Mobile No</label>
+                                                    <div class="col-sm-8">
+                                                        <input type="number" class="form-control" id=""
+                                                            placeholder="Enter Mobile No." name="motor_user_mobile"
+                                                            [(ngModel)]="motor.motor_user_mobile" maxlength="10">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <label class="control-label col-sm-3" for="">Date Of Expiry</label>
+                                                    <div class="col-sm-9 jstartDt">
+                                                        <input type="text" class="form-control" id=""
+                                                            placeholder="DD/MM/YYYY" name="expiry_date"
+                                                            [(ngModel)]="motor.expiry_date"
+                                                            [bsConfig]="{ dateInputFormat: 'DD/MM/YYYY' }" bsDatepicker
+                                                            autocomplete="off" [isOpen]="isOpen">
+                                                        <i class="fa fa-calendar" (click)="isOpen = !isOpen"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+                                        <p class="text-center d-block full-width m-0">
+                                            <button type="submit" class="btn btn-default get-quotes-btn"
+                                                [disabled]="getQuoteBtn">Submit</button>
+                                        </p>
+                                    </div>
+
+
+
+                                </form>
+
+                            </div>
+                            <!------>
+                        </div>
+                    </div>
+                    <!---right side end-->
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+<!----container area start--->
+<!----details block start---->
+<div *ngIf="f === 'four-wheeler-insurance'">
+    <section class="motor-details-des section-divider">
+        <div class="container">
+            <div class="leftcontent">
+                <section class="section-divider">
+                    <div class="row">
+                        <div class="col-md-12 fh5co-section-heading">
+                            <h2>What Is Car Insurance?
+                                <div class="heading-boder"></div>
+                            </h2>
+                        </div>
+                        <div class="row m-0">
+                            <div class="col-md-7 nopad-left">
+                                <p>A car insurance is the policy which covers your car against financial losses that you
+                                    may face in case of accident or theft of car. You pay a certain amount as a premium
+                                    to the insurance company to buy this cover, and they
+                                    agree to pay for accidental damages and theft losses. As per IRDA <strong>(Insurance
+                                        Regulatory and Development Authority),</strong> it is mandatory for any vehicle
+                                    running on Indian roads to be covered under an active
+                                    <b><i>car insurance policy</i></b>.
+                                </p>
+                                <p class=" text-left"><strong>Based on the type of policy and add-ons that you opt for,
+                                        your car insurance policy may include:</strong></p>
+
+                                <div class="col-md-12 nopad-left">
+                                    <div class="col-lg-6 col-md-6 col-sm-6 nopad-left">
+                                        <ul class="list2">
+                                            <li>Liability Cover</li>
+                                            <li>Invoice Cover</li>
+                                            <li>Engine Protector</li>
+                                            <li>Tyre Cover</li>
+                                            <li>Electrical Accessories</li>
+                                            <li>PA For Unnamed Passenger</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 nopad nopad-left">
+                                        <ul class="list2">
+                                            <li>Consumable Cover</li>
+                                            <li>24*7 Roadside Assistance</li>
+                                            <li>No Claim Bonus</li>
+                                            <li>Key &amp; Lock Replacement</li>
+                                            <li>Non-Electrical Accessories</li>
+                                            <li>LL To Paid Driver</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-5 nopad-left ">
+                                <a href="" target="_blank"><img
+                                        src="assets/images/type-of-online-car-insurance-infographic.png"
+                                        class="mrgtop-info img-responsive" alt="types of Car Insurance"
+                                        title="online Car Insurance"></a>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </section>
+                <section class="section-divider">
+                    <div class="row">
+                        <div class="col-md-12 fh5co-section-heading">
+                            <h2>How Car Insurance Works
+                                <div class="heading-boder"></div>
+                            </h2>
+                            <p><b><i>Car insurance</i></b> is given to you based on various factors like the brand and
+                                model of your car, what kind of driver are you, and your past car insurance history. You
+                                may opt only for a <a href="#"><b><i>third party cover</i></b></a>
+                            </p>
+                            <p><img src="assets/images/car-accidental-insurance.png" style="float: right; padding: 0 20px 0 0;"
+                                    alt="accidental car insurance" title="accidental car insurance">The comprehensive
+                                policy is a package
+                                of different types of features (add-ons) like liability cover, accident cover, invoice
+                                cover, consumable cover, engine cover etc. All these are discussed in a separate section
+                                on our website. </p>
+                            <p>Please note, while buying a car insurance, you are required to choose a deductible, which
+                                is the amount you are willing to pay, against the losses incurred. This amount
+                                determines the annual premium you will pay
+                                for your car insurance. Higher the deductible, lower the premiums.</p>
+                            <p>The insurance company pays a part of the losses, while the deductible amount chosen by
+                                you will be paid by you. For example, if the total expenses you have to bear to get your
+                                car repaired after an accident are
+                                INR 20,000/-. Your chosen deductible is INR 5,000/-, then the insurance company will pay
+                                INR 15,000/- and you will pay INR 5,000/- from your pocket. <br> While buying a car
+                                policy, choosing a deductible is an
+                                important step as you pay the deductible for each and every situation in which you
+                                require your insurance company to cover damages. </p>
+                            <p>If you face a grievous situation with your car, simply claim for car insurance and you
+                                will be reimbursed as per the eligibility mentioned and add-ons attached with your type
+                                of policy. <br> You need not go anywhere!
+                                Buy your car policy online at thepolicymall.com after comparing all the policies and
+                                add-ons at just few clicks! </p>
+                        </div>
+                    </div>
+                </section>
+                <section class="section-divider">
+                    <div class="row">
+                        <div class="col-md-12 fh5co-section-heading  ">
+                            <h2>Eligibility, Documents And Process To Buy Online Car Insurance
+                                <div class="heading-boder"></div>
+                            </h2>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="panel-group" id="accordion-alt2">
+                                <div class="panel">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title"> <a data-toggle="collapse" data-parent="#accordion-alt2"
+                                                href="#collapseone-alt2" class="collapsed"> <span><img
+                                                        src="assets/images/spend-arrow.png" width="20"
+                                                        alt=""></span>Eligibility </a> </h4>
+                                    </div>
+                                    <div id="collapseone-alt2" class="panel-collapse collapse in">
+                                        <div class="panel-body">In India, if you own a car, you are eligible to buy car
+                                            insurance. In fact, it is mandatory, to have your car insured the moment you
+                                            become the owner. Driving a car without insurance is a legal offence.</div>
+                                    </div>
+                                </div>
+                                <div class="panel">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#accordion-alt2"
+                                                href="#collapsetwo-alt2" class="collapsed"> <span><img
+                                                        src="assets/images/spend-arrow.png" width="20" alt=""></span>Process
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapsetwo-alt2" class="panel-collapse collapse" style="height: 0px;">
+                                        <div class="panel-body">You can buy your insurance through the company you
+                                            bought your car from, or directly from a car insurance provider. You can do
+                                            this offline via car insurance agent, but the best is to buy online after
+                                            comparing various insurance
+                                            options as per your specific needs for car insurance.<br> At thepolicymall.com,
+                                            we provide you a comprehensive platform which provides answers to all your
+                                            car insurance related questions and helps you to compare and choose
+                                            the best car policy.<br> You simply have to fill in the required details
+                                            such as your name, contact details, car model and make, car registration
+                                            number, your city and you will get an access to all possible options on car
+                                            insurance policies to choose from.</div>
+                                    </div>
+                                </div>
+                                <div class="panel">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#accordion-alt2"
+                                                href="#collapsethree-alt2" class="collapsed"> <span><img
+                                                        src="assets/images/spend-arrow.png" width="20" alt=""></span>Documents
+                                                Required</a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapsethree-alt2" class="panel-collapse collapse">
+                                        <div class="panel-body"><strong>The documents that you will need if you are
+                                                buying the online car insurance are:</strong><br>
+                                            <ul>
+                                                <li>Your current policy document, in case of renewal or switch</li>
+                                                <li>Your driving license copy</li>
+                                                <li>Your vehicle registration documents with the copy of RC
+                                                    (Registration Certificate)</li>
+                                                <li>Your address proof</li>
+                                                <li>A voided check in case you want to set up EFT (Electronic Funds
+                                                    Transfer) for premium payment.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="section-divider">
+                    <div class="row">
+                        <div class="col-md-12 fh5co-section-heading  ">
+                            <h2>Key Advantages And Features
+                                <div class="heading-boder"></div>
+                            </h2>
+                            <p>ThePolicymall can guide you to the best suited car insurance for you, through its effective
+                                comparison tools and exact data driven statistics.
+                                <strong>Before you buy, you must know the key benefits and features of a online car
+                                    insurance:</strong>
+                            </p>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="panel-group" id="accordion-alt4">
+                                        <div class="panel">
+                                            <div class="panel-heading">
+                                                <h4 class="panel-title">
+                                                    <a data-toggle="collapse" data-parent="#accordion-alt4"
+                                                        href="#collapseone-alt4" class="collapsed"> <span><img
+                                                                src="assets/images/spend-arrow.png" width="20"
+                                                                alt=""></span>You Fulfill Legal Requirements </a>
+                                                </h4>
+                                            </div>
+                                            <div id="collapseone-alt4" class="panel-collapse collapse in">
+                                                <div class="panel-body">As per the Indian Motors Vehicle Act, third
+                                                    party insurance is mandatory on all the vehicles. Along with that,
+                                                    buying a comprehensive car insurance helps you to remain in
+                                                    compliance of regulations and set your mind
+                                                    free too.</div>
+                                            </div>
+                                        </div>
+                                        <div class="panel">
+                                            <div class="panel-heading">
+                                                <h4 class="panel-title">
+                                                    <a data-toggle="collapse" data-parent="#accordion-alt4"
+                                                        href="#collapsetwo-alt4" class="collapsed"> <span><img
+                                                                src="assets/images/spend-arrow.png" width="20"
+                                                                alt=""></span>You Can Bear Accidental Damages </a>
+                                                </h4>
+                                            </div>
+                                            <div id="collapsetwo-alt4" class="panel-collapse collapse"
+                                                style="height: 0px;">
+                                                <div class="panel-body">If your car meets with an accident, you can
+                                                    simply claim insurance and bear the expenses without shedding loads
+                                                    of money from your own pocket.</div>
+                                            </div>
+                                        </div>
+                                        <div class="panel">
+                                            <div class="panel-heading">
+                                                <h4 class="panel-title">
+                                                    <a data-toggle="collapse" data-parent="#accordion-alt4"
+                                                        href="#collapsethree-alt4" class="collapsed"> <span><img
+                                                                src="assets/images/spend-arrow.png" width="20"
+                                                                alt=""></span>Third Party Cover Is Very Important </a>
+                                                </h4>
+                                            </div>
+                                            <div id="collapsethree-alt4" class="panel-collapse collapse">
+                                                <div class="panel-body">If you cause a damage to another person's car or
+                                                    the driver gets hurt, you can bear the damage or loss of limb by
+                                                    claiming your third party insurance, which covers hospitalization
+                                                    and legal expenses too.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel">
+                                            <div class="panel-heading">
+                                                <h4 class="panel-title">
+                                                    <a data-toggle="collapse" data-parent="#accordion-alt4"
+                                                        href="#collapsefour-alt4" class="collapsed"> <span><img
+                                                                src="assets/images/spend-arrow.png" width="20"
+                                                                alt=""></span>Car Damages Due To Natural Calamities Are
+                                                        Covered </a>
+                                                </h4>
+                                            </div>
+                                            <div id="collapsefour-alt4" class="panel-collapse collapse">
+                                                <div class="panel-body">If your car is damaged due to flood, fire or
+                                                    earthquake, your car insurance policy will come in handy to claim
+                                                    for the damages.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel">
+                                            <div class="panel-heading">
+                                                <h4 class="panel-title">
+                                                    <a data-toggle="collapse" data-parent="#accordion-alt4"
+                                                        href="#collapsefive-alt4" class="collapsed"> <span><img
+                                                                src="assets/images/spend-arrow.png" width="20"
+                                                                alt=""></span>You Can Claim Against Theft and
+                                                        Vandalism</a>
+                                                </h4>
+                                            </div>
+                                            <div id="collapsefive-alt4" class="panel-collapse collapse">
+                                                <div class="panel-body">Comprehensive car insurance provides you cover
+                                                    against theft and vandalism. You can get your hard-earned money back
+                                                    if your car gets stolen.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel">
+                                            <div class="panel-heading">
+                                                <h4 class="panel-title">
+                                                    <a data-toggle="collapse" data-parent="#accordion-alt4"
+                                                        href="#collapsefix-alt4" class="collapsed"> <span><img
+                                                                src="assets/images/spend-arrow.png" width="20"
+                                                                alt=""></span>Enjoy No Claim Bonus</a>
+                                                </h4>
+                                            </div>
+                                            <div id="collapsefix-alt4" class="panel-collapse collapse">
+                                                <div class="panel-body">Even if you do not face any such situation
+                                                    throughout the year, you get a handsome no claim bonus(NCB) for not
+                                                    filing any car insurance claim. Your next online car insurance comes
+                                                    cheaper to you. It is very important
+                                                    to buy a comprehensive car policy at the earliest and if you already
+                                                    have coverage, get it renewed within time by easily comparing
+                                                    various policies at thepolicymall.com and remain tension free!
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section-divider">
+                    <div class="row">
+                        <div class="col-md-12 fh5co-section-heading  ">
+                            <h2>Exclusions: What Is Not Covered In A Car Insurance?
+                                <div class="heading-boder"></div>
+                            </h2>
+                            <p>Your car insurance policy covers you against financial losses that you may incur during
+                                an accident or theft. However, there are certain events, which your policy may not
+                                cover!<br> When you search for the best car insurance quote
+                                at thepolicymall.com, it is important to understand how your policy works, so that you are
+                                better prepared in the unfortunate event of a claim!</p>
+
+                            <div class="col-lg-12 col-md-12 col-sm-12 nopad-left">
+                                <p><strong>Here are a few conditions which are not covered by a car insurance
+                                        policy:</strong></p>
+                                <ul class="list2">
+                                    <li>Occurrence of loss or damage when the policy has expired or not active.</li>
+                                    <li>Normal wear and tear of the car and its parts.</li>
+                                    <li>Usual depreciation on the car.</li>
+                                    <li>When the person driving does not possess a valid driving license.</li>
+                                    <li>Electrical or mechanical breakdown.</li>
+                                    <li>If the person is found to be driving under the influence of
+                                        liquor/alcohol/drugs.</li>
+                                    <li>Loss or damage as a result of war /mutiny /nuclear risks.</li>
+                                    <li>Damage to engine due to oil leakage.</li>
+                                    <li>If the car faces a mishap while being driven outside India.</li>
+                                    <li>If the car is used for any other purpose other than its intended use.</li>
+                                </ul>
+                                <p>For any queries, please do write to us, or get in touch with us through our 9:00 am
+                                    to 7:00 pm chat assistance.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="section-divider">
+                    <div class="row">
+                        <div class="col-md-12 fh5co-section-heading pl-0">
+                            <h2>Add-on Covers With Your Car Insurance!
+                                <div class="heading-boder"></div>
+                            </h2>
+                            <p class="text-center">Add-on is an additional benefit added to your car policy which covers
+                                your car against unforeseen expenses. You can buy add-ons, also known as riders, by
+                                paying extra premium.<br> There are various types of add-ons offered by insurance
+                                companies, but you should select the one according to your specific requirements.</p>
+                        </div>
+                    </div>
+                    <div class="row offer-sec">
+                        <div class="row row-mrg0">
+                            <div class="col-md-6 col-sm-6 animated fadeIn delay-01" data-animation="fadeIn"
+                                data-animation-delay="01">
+                                <h4>Accidental Cover
+                                    <div class="border-cm"></div>
+                                </h4>
+                                <p>This add-on is applicable on the owner(if he is driving the car) as well as the paid
+                                    driver. With this add-on in place, the insurance company will pay a lump sum amount
+                                    as a compensation to the driver, if they die or suffer a serious
+                                    injury in a car accident. This is one of the most important add-ons to have on your
+                                    car policy.</p>
+                            </div>
+                            <div class="col-md-6 col-sm-6 animated fadeIn delay-01" data-animation="fadeIn"
+                                data-animation-delay="01">
+                                <h4>Zero Depreciation
+                                    <div class="border-cm"></div>
+                                </h4>
+                                <p>After an accident, some of the car parts need to be changed. Depending on how old the
+                                    car is, the insurer will pay as per the depreciated value of those spare parts. If
+                                    you have zero depreciation cover attached to your policy,
+                                    you get the insurance claim as per the actual value of spare parts, which helps you
+                                    save a lot of money on car repair.</p>
+                            </div>
+                        </div>
+                        <div class="row row-mrg0">
+                            <div class="col-md-6 col-sm-6 animated fadeIn delay-01" data-animation="fadeIn"
+                                data-animation-delay="01">
+                                <h4>Engine Cover
+                                    <div class="border-cm"></div>
+                                </h4>
+                                <p>Engine is the most important part of your car and it is likely to get damaged by
+                                    incidents like flooding. As your policy does not covers damage caused due to
+                                    flooding, engine cover add-on helps you to bear the engine repair or
+                                    replacement expenses through your car insurance policy.</p>
+                            </div>
+                            <div class="col-md-6 col-sm-6 animated fadeIn delay-01" data-animation="fadeIn"
+                                data-animation-delay="01">
+                                <h4>Assistance on Road
+                                    <div class="border-cm"></div>
+                                </h4>
+                                <p>This add-on cover ensures that the insurance company arranges for your car to be
+                                    towed away to a garage and get you help to reach your destination, in case your car
+                                    gets broken in a secluded place.</p>
+
+                            </div>
+
+                        </div>
+                        <div class="row row-mrg0">
+                            <div class="col-md-6 col-sm-6 animated fadeIn delay-01" data-animation="fadeIn"
+                                data-animation-delay="01">
+                                <h4>Daily Allowance
+                                    <div class="border-cm"></div>
+                                </h4>
+                                <p>If your car is at a garage for repairs, this cover helps you with cash to arrange for
+                                    an alternative mode of transport till you get your car back. It is normally given
+                                    for a period of 10-15 days and ranges from Rs. 500-Rs. 1000
+                                    depending on the model of the car.</p>
+
+                            </div>
+                            <div class="col-md-6 col-sm-6 animated fadeIn delay-01" data-animation="fadeIn"
+                                data-animation-delay="01">
+                                <h4>Lock And Key Replacement Benefit
+                                    <div class="border-cm"></div>
+                                </h4>
+                                <p>If you lose your key and require getting a new key and lock, this add-on can help you
+                                    get the actual cost of it rather than just a limited amount that insurance companies
+                                    normally offer.</p>
+
+                            </div>
+                        </div>
+                        <div class="row row-mrg0">
+                            <div class="col-md-6 col-sm-6 animated fadeIn delay-01" data-animation="fadeIn"
+                                data-animation-delay="01">
+                                <h4>Consumables Cover
+                                    <div class="border-cm"></div>
+                                </h4>
+                                <p>If your car is not older than three years, you can buy this add-on to claim for any
+                                    money spent on nuts &amp; bolts, screen washers, engine oil, bearings and other
+                                    consumable parts, when your car meets with an accident. This is usually
+                                    not covered in a car policy. All of the above add-ons are optional but they are very
+                                    useful in certain situations. Keeping in view your actual requirements, you may opt
+                                    for some or all of them.
+                                </p>
+
+                            </div>
+                            <div class="col-md-6 col-sm-6  animated fadeIn delay-01" data-animation="fadeIn"
+                                data-animation-delay="01">
+                                <h4>Return to Invoice Cover
+                                    <div class="border-cm"></div>
+                                </h4>
+                                <p>Usually your car is valued as per the Insured Declared Value (IDV) or current market
+                                    value, which is lower than the actual value of the car. If your car gets totally
+                                    damaged in an accident or gets stolen, the insurance company
+                                    will pay you the claim as per IDV. But with this add-on in your policy, you can get
+                                    the actual value of your car without deducting the registration charges, road tax
+                                    and any depreciation calculated on it.</p>
+
+                            </div>
+                        </div>
+
+                        <div class="row row-mrg0">
+                            <div class="col-md-12 col-sm-12 animated fadeIn delay-01" data-animation="fadeIn"
+                                data-animation-delay="01">
+                                <h4>No Claim Bonus (NCB) Cover
+                                    <div class="border-cm"></div>
+                                </h4>
+                                <p>If you do not file for any insurance claim throughout the year of your car insurance
+                                    policy, you get to enjoy <a href="#"><b><i>no claim bonus</i></b></a>.
+                                    This comes in form of discounts on premiums for your next policies. For example, you
+                                    get 20% discount on the premium you pay for your next policy after a claim free
+                                    year. This can go up to 50% if you do not claim an insurance
+                                    for 5 continuous years. In case, you are required to file even a single claim in an
+                                    unforeseen event, your NCB will become zero. But, with NCB cover in your policy, you
+                                    can keep your bonus intact and <a href="#"><b><i>claim insurance</i></b></a>.
+                                </p>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </section>
+                <section class="section-divider">
+                    <div class="row">
+                        <div class="col-md-12 fh5co-section-heading  ">
+                            <h2>Importance of Buying Online Car Insurance
+                                <div class="heading-boder"></div>
+                            </h2>
+                            <p>If you are driving a car on the roads, you definitely need a car insurance! It is very
+                                important to remain insured, safe and secure under an adequate car insurance policy.
+                                This helps you to save on money and a lot of mental stress.
+                            </p>
+                            <h3>Here is why it is very important to have a car insurance:</h3>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6 animated fadeIn delay-01 nopad1" data-animation="fadeIn"
+                            data-animation-delay="01">
+                            <div class="help-box radius-bx">
+                                <div class="benefits-icon"> <i class="fa  help-icon"><img src="assets/images/help2.png"
+                                            width="28" height="29" alt=""></i> </div>
+                                <div class="benefits-content">
+                                    <p><strong>To Cover Accidental Damages </strong><br> You can encounter an accident
+                                        anytime, no matter how careful a driver you are. The damages that you incur
+                                        during accidents bring down a whole lot of expenses. A comprehensive
+                                        car insurance policy helps to cover all the expenses for all damages to your
+                                        car, or to another car in collision. </p>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-6 col-sm-6 animated fadeIn delay-01 nopad1" data-animation="fadeIn"
+                            data-animation-delay="01">
+                            <div class="help-box radius-bx">
+                                <div class="benefits-icon"> <i class="fa  help-icon"><img src="assets/images/help2.png"
+                                            width="28" height="29" alt=""></i> </div>
+                                <div class="benefits-content">
+                                    <p><strong>To Remain Covered For Medical Bills</strong><br> In case of an accident,
+                                        cost is to be incurred for injuries, loss of life or limb. A third party car
+                                        insurance helps to bear the expenses for damages to the other driver’s
+                                        vehicle as well as provide money for any loss of life or limb along with
+                                        hospitalization and legal expenses. </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-sm-6 animated fadeIn delay-01 nopad1" data-animation="fadeIn"
+                            data-animation-delay="01">
+                            <div class="help-box radius-bx">
+                                <div class="benefits-icon"> <i class="fa  help-icon"><img src="assets/images/help2.png"
+                                            width="28" height="29" alt=""></i> </div>
+                                <div class="benefits-content">
+                                    <p><strong>Natural Calamities </strong><br> You can drive with utmost safety and
+                                        never meet an accident. But, if the car is damaged due to a flood, fire or
+                                        earthquake, there is little you can do about it. It is better to have
+                                        a comprehensive car insurance policy to have such damages reimbursed. </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6 animated fadeIn delay-01 nopad1" data-animation="fadeIn"
+                            data-animation-delay="01">
+                            <div class="help-box radius-bx">
+                                <div class="benefits-icon"> <i class="fa  help-icon"><img src="assets/images/help2.png"
+                                            width="28" height="29" alt=""></i> </div>
+                                <div class="benefits-content">
+                                    <p><strong>Theft and Vandalism</strong><br> With increasing crime rates you need to
+                                        be safe and secure. Comprehensive car insurance provides you cover for instances
+                                        involving theft and physical damages due to vandalism. If your
+                                        car is insured, you get the value and are saved from great losses.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-sm-12  animated fadeIn delay-01 nopad1" data-animation="fadeIn"
+                            data-animation-delay="01">
+                            <div class="help-box radius-bx">
+                                <div class="benefits-icon"> <i class="fa  help-icon"><img src="assets/images/help2.png"
+                                            width="28" height="29" alt=""></i> </div>
+                                <div class="benefits-content">
+                                    <p><strong>To Fulfill Legal Requirements </strong><br> As per the Indian Motors
+                                        Vehicle Act, <a href=""><b><i>third party insurance</i></b></a> is mandatory on
+                                        all the vehicles. Not adhering to this law can result in fines and penalties.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p><strong>Here is a clear comparison table to help you understand your insurance needs:</strong>
+                    </p>
+                    <div class="row row-mrg0">
+                        <div class="col-xs-12 nopad-left nopad-right">
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-hover">
+                                    <tbody>
+                                        <tr>
+                                            <th></th>
+                                            <th>THIRD PARTY COVERAGE</th>
+                                            <th>COLLISION COVER</th>
+                                            <th>COMPREHENSIVE POLICY</th>
+                                        </tr>
+                                        <tr>
+                                            <td>Damage To Third Party's Vehicle
+                                            </td>
+                                            <td>Yes
+                                            </td>
+                                            <td>No
+                                            </td>
+                                            <td>Yes
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Damage to Own Car
+                                            </td>
+                                            <td>No
+                                            </td>
+                                            <td>Yes
+                                            </td>
+                                            <td>Yes
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Low Premium
+                                            </td>
+                                            <td>Yes
+                                            </td>
+                                            <td>Yes
+                                            </td>
+                                            <td>No
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Coverage Other Than Collisions
+                                            </td>
+                                            <td>No
+                                            </td>
+                                            <td>No
+                                            </td>
+                                            <td>Yes
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Personal Accident Cover
+                                            </td>
+                                            <td>No
+                                            </td>
+                                            <td>Yes
+                                            </td>
+                                            <td>Yes
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Coverage of Loss of Belongings in The Car
+                                            </td>
+                                            <td>No
+                                            </td>
+                                            <td>No
+                                            </td>
+                                            <td>Yes
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Medical Expenses For Self
+                                            </td>
+                                            <td>No
+                                            </td>
+                                            <td>No
+                                            </td>
+                                            <td>Yes
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Medical Expenses For Third Party
+                                            </td>
+                                            <td>Yes
+                                            </td>
+                                            <td>No
+                                            </td>
+                                            <td>Yes
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Loss Due To Natural Calamities
+                                            </td>
+                                            <td>No
+                                            </td>
+                                            <td>No
+                                            </td>
+                                            <td>Yes
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Car Theft
+                                            </td>
+                                            <td>No
+                                            </td>
+                                            <td>No
+                                            </td>
+                                            <td>Yes
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                            </div>
+                            <p>It is very important to get your car insured at the earliest. If you already have
+                                coverage, get it renewed on time. Whether you go for a cheap car insurance policy like
+                                the third party insurance or a bit expensive one like comprehensive
+                                car policy, what matters is that your car is insured against all kinds of unforeseen
+                                risks.</p>
+                        </div>
+                    </div>
+                </section>
+                <section class="section-divider">
+                    <div class="row">
+                        <div class="col-md-12 fh5co-section-heading  ">
+                            <h2>Types of Online Car Insurance Policies
+                                <div class="heading-boder"></div>
+                            </h2>
+                            <p class="text-center">Car Insurance in India comes in three major forms.
+                                <strong>Here is a quick list of all types of car insurance available with insurance
+                                    providers:</strong>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row ">
+                        <div class="col-md-6 col-sm-6 animated fadeIn delay-01" data-animation="fadeIn"
+                            data-animation-delay="01">
+                            <h4>Third Party or Liability Cover
+                                <div class="border-cm"></div>
+                            </h4>
+                            <p>In case you are liable for an accident and damages to someone else's vehicle, this type
+                                of insurance comes in force. It is mandatory by law to have a third party insurance
+                                cover, before you start driving on roads. Liability insurance
+                                will cover the cost of repairs for any third party property damaged by an accident as
+                                well as the medical bills for the other person from resulting injuries. This cover is
+                                mandatory for all cars. </p>
+
+                        </div>
+                        <div class="col-md-6 col-sm-6  animated fadeIn delay-01" data-animation="fadeIn"
+                            data-animation-delay="01">
+                            <h4>Collision Cover
+                                <div class="border-cm"></div>
+                            </h4>
+                            <p>In case you meet with an accident and your car is damaged severely, this cover helps to
+                                bear the repair expenses. Also, if the damages are such that the repair expenses are
+                                exceeding the total value of the car, the collision cover
+                                pays the value of the car. This cover is important for expensive high-end cars. </p>
+
+                        </div>
+                        <div class="col-md-12 col-sm-12  animated fadeIn delay-01" data-animation="fadeIn"
+                            data-animation-delay="01">
+                            <h4>Comprehensive Cover
+                                <div class="border-cm"></div>
+                            </h4>
+                            <p>This type of car insurance covers all types of damages under all unfortunate situations
+                                you may face with your car. It covers accidental damages, medical expenses to self and
+                                others and also, damages due to weather, natural calamities,
+                                car theft, and vandalism, which are not covered in other two insurances, are covered in
+                                comprehensive cover. It is not compulsory by law to have comprehensive coverage, but if
+                                it suits your budget, it is one of the most important
+                                insurance policies to have in your kitty if you are a regular driver. It can further be
+                                enhances by adding on the riders like NCB (No Claim Bonus), accessories cover, invoice
+                                cover etc. With the all-inclusive features that this
+                                cover comes with, it is expensive than the rest two.</p>
+
+                        </div>
+                    </div>
+                </section>
+                <section class="section-divider">
+                    <div class="row">
+                        <div class="col-md-12 fh5co-section-heading  ">
+                            <h2>Tips To Buy Online Car Insurance Policy
+                                <div class="heading-boder"></div>
+                            </h2>
+                            <p>ThePolicymall, your best insurance advisor, is here to share some important <a
+                                    href=""><b><i>tips to buy car insurance</i></b></a>. Please make
+                                sure to consider these points while making your search.</p>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h3>Choosing The Insurance </h3>
+                                    <p>
+                                        <!-- <iframe class="ifram-vedio" src="https://www.youtube.com/embed/HYgoQTAmuvs"
+                                            frameborder="0" allowfullscreen=""
+                                            style="float: right; padding: 20px;">
+                                        </iframe> -->
+                                            <strong>There are two types of
+                                            car insurance in India: </strong><br>
+                                        <strong>Third Party Liability Insurance-</strong> This is a compulsory plan for
+                                        all vehicle owners and it covers damage to property, accidental death and injury
+                                        to a third party to the contract. The first two parties are
+                                        the insured and the insurance provider.
+                                    </p>
+                                    <p><strong>Comprehensive Plan</strong> This plan covers damage to own vehicle as
+                                        well as the third party obligations. It also covers theft and damages caused by
+                                        events like fire, earthquake, cyclones, floods etc.
+                                        <br>
+                                        Go for a comprehensive plan as you remain safe and secure from all sides, in an
+                                        unfortunate event
+                                    </p>
+                                </div>
+                                <div class="col-md-12">
+                                    <h3>How To Reach Best Premium</h3>
+                                    <p><strong>Based on Vehicle -</strong> Get your car inspected before you choose a
+                                        policy. Depending on the age, brand, make, model and fuel of your car, compare
+                                        car insurance online plans and go for the one which offers all inclusive
+                                        plan in a lower premium. </p>
+                                    <p><strong>Based on Claims History -</strong> Claimless policies lead to no claim
+                                        bonus the following year which means you pay a lower premium. Make sure you do
+                                        not claim petty amounts for small accidental repair. </p>
+                                    <p><strong>Based on Driver-</strong> Keep your car a single user drive. A vehicle
+                                        driven by multiple people attracts higher premiums.</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h3>How To Reduce Premium? </h3>
+                                    <p>If you choose a higher deductible (amount to be paid from your own pocket in case
+                                        of accidental repairs), the premium goes down.<br> If your car has in-built
+                                        security features, approved by Automotive Research Association of
+                                        India (ARAI), you enjoy further discounts on premium. <br> Not filing for claims
+                                        consecutively for 3-4 years can lead to a no claim bonus of as much as 40-50%
+                                        lesser premium in the fifth year!
+                                    </p>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <h3>Precautions - Do not make these mistakes while buying car insurance </h3>
+                                    <p>Declaring reduced value of the car in the insurance form may reduce the premium
+                                        initially, but in case of an accident or theft, this proves real costly, as the
+                                        insurance provider will settle the claims as per IDV (insured declared
+                                        value), only. Hence, always try to provide the right value of the car to gain
+                                        maximum claim benefits. <br> Never forget to renew your policy in time. You get
+                                        a grace period of a week from policy expiry date. Post that,
+                                        you lose discounts and other lowered premium benefits!</p>
+                                </div>
+                                <div class="col-md-12 text-align-center">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="section-divider" id="section6">
+                    <div class="row">
+                        <div class="col-md-12 fh5co-section-heading  ">
+                            <h2>Get Discounts On Your Online Car Insurance Policy<br>Save Money, Buy Smart!
+                                <div class="heading-boder"></div>
+                            </h2>
+                            <p><strong>Here is a range of smart discounts on your car insurance policy for you to save
+                                    money and buy smart! </strong><br> While you can't do much about the rise in fuel
+                                prices or vehicle buying costs, you surely can make a few smart
+                                decisions to ensure that you pay a discounted price on your car insurance!</p>
+                            <div class="row ">
+                                <div class="col-md-6 col-sm-6 animated fadeIn delay-01" data-animation="fadeIn"
+                                    data-animation-delay="01">
+                                    <h4>Age Discount
+                                        <div class="border-cm"></div>
+                                    </h4>
+                                    <p>If you are aged between 35 to 45 years, you are eligible to enjoy a discount of
+                                        5% on the OD premium. This discount further increases to 10%, if you belong to
+                                        the age bracket of 46 to 60 years.</p>
+                                </div>
+
+                                <div class="col-md-6 col-sm-6 animated fadeIn delay-01" data-animation="fadeIn"
+                                    data-animation-delay="01">
+                                    <h4>Anti-Theft Discount
+                                        <div class="border-cm"></div>
+                                    </h4>
+                                    <p>When you install an ARAI approved anti-theft device in your car, your insurer
+                                        gives you a reward by providing you with a 2.5% discount on the Own Damage (OD)
+                                        premium.</p>
+                                </div>
+                            </div>
+                            <div class="row ">
+                                <div class="col-md-6 col-sm-6 animated fadeIn delay-01" data-animation="fadeIn"
+                                    data-animation-delay="01">
+                                    <h4>No Claim Bonus
+                                        <div class="border-cm"></div>
+                                    </h4>
+                                    <p>For every claim free year, you are entitled to receive a discount, which may
+                                        start at 20% and increase steadily to a whopping 50% of the renewal premium
+                                        amount. Whatâ€™s more, this NCB is transferable, every time you buy a
+                                        new car or switch to a new insurer.</p>
+                                </div>
+                                <div class="col-md-6 col-sm-6 animated fadeIn delay-01" data-animation="fadeIn"
+                                    data-animation-delay="01">
+                                    <h4>Professional Discount
+                                        <div class="border-cm"></div>
+                                    </h4>
+                                    <p>Are you a practicing chartered accountant, doctor, defense personnel, a teacher
+                                        in a Government recognized institution, or an employee of the State/Central
+                                        Government? If yes, then you are up for an additional discount on the
+                                        OD premium!</p>
+                                </div>
+                            </div>
+                            <div class="row ">
+                                <div class="col-md-6 col-sm-6 animated fadeIn delay-01" data-animation="fadeIn"
+                                    data-animation-delay="01">
+                                    <h4>AAI Discount
+                                        <div class="border-cm"></div>
+                                    </h4>
+
+                                    <p>In addition to NCB, there are <b>additional discounts</b> available under <b>Own
+                                            Damage Premium</b> for membership of Automobile Association of India.</p>
+                                    <p>If you are a member of an automobile association such as Automobile Association
+                                        of India <b>(AAI)</b> or Western India Automobile Association <b>(WIAA)</b>, the
+                                        insurance company will offer you a discount in premium.</p>
+                                </div>
+                                <div class="col-md-6 col-sm-6 animated fadeIn delay-01" data-animation="fadeIn"
+                                    data-animation-delay="01">
+                                    <h4>Voluntary Excess Discount
+                                        <div class="border-cm"></div>
+                                    </h4>
+                                    <p>Voluntary Excess or a deductible is the minimum amount you declare to pay in the
+                                        event of a claim. The higher the voluntary excess, the lower will be your
+                                        premium! Now, when you are looking for a car insurance quote at thepolicymall.com,
+                                        donâ€™t miss out to mention these details! A little forethought can go a long
+                                        way to get you extra discounts!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="section-divider">
+                    <div class="row">
+                        <div class="col-md-12 fh5co-section-heading  ">
+                            <h2>Expert Tips On Cutting Down Your Car Insurance Cost!
+                                <div class="heading-boder"></div>
+                            </h2>
+                            <p>Looking for some expert tips for cutting your car insurance costs? <strong>Hunt no
+                                    further, ThePolicymall is your best advisor on everything related to
+                                    insurance:</strong></p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="panel-group" id="accordion-alt5">
+                                <div class="panel">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#accordion-alt5"
+                                                href="#collapseone-alt5" class="collapsed"> <span><img
+                                                        src="assets/images/spend-arrow.png" alt="" width="20"></span>Always Buy
+                                                Your Car Policy Online </a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapseone-alt5" class="panel-collapse collapse in">
+                                        <div class="panel-body">When you buy your car policy online, you save a lot of
+                                            time and effort, and nail the best deal without paying your hard-earned
+                                            money to the brokers. <br> While making an online deal, since, you are
+                                            buying directly from
+                                            the insurance company, any distributor's margin or commissions thereof, are
+                                            completely eliminated. <br> One more secret is, when entire policy selling
+                                            and buying process is carried online, which cuts down the cost
+                                            substantially,
+                                            the insurance company shares the savings with the customers in the form of
+                                            lower premiums.</div>
+                                    </div>
+                                </div>
+                                <div class="panel">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#accordion-alt5"
+                                                href="#collapsetwo-alt5" class="collapsed"> <span><img
+                                                        src="assets/images/spend-arrow.png" alt="" width="20"></span>Making
+                                                Small Claims Below INR 5000/- Goes Against You </a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapsetwo-alt5" class="panel-collapse collapse" style="height: 0px;">
+                                        <div class="panel-body"><strong>Making small claims which are close or less than
+                                                the deductible (damage to be borne by the customer) makes no point
+                                                because:</strong> You gain very little or almost nothing. You lose on
+                                            your
+                                            <a href=""><b><i>NCB (No Claim Bonus)</i></b></a> while renewing your
+                                            policy.NCB usually starts at 20% at the end
+                                            of the first claim-free year and increases steadily with every claim-free
+                                            year reaching to a maximum of 50%
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#accordion-alt5"
+                                                href="#collapsethree-alt5" class="collapsed"> <span><img
+                                                        src="assets/images/spend-arrow.png" alt="" width="20"></span>Save By
+                                                Renewing Your Policy Before It Expires</a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapsethree-alt5" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            <p>As per law, your vehicle must be insured if it is being driven on the
+                                                roads. If it is not insured, you are entitled to get penalized by the
+                                                road traffic authorities. Therefore, car insurance online renewal in
+                                                time are
+                                                must which help you to cut your insurance cost too. <strong>Here's
+                                                    how:</strong></p>
+                                            <p>If the policy has lapsed for a considerable period of time due to
+                                                non-renewal then you may be required to buy a new car insurance policy
+                                                in order to comply with the law which can cost you much higher than the
+                                                previous
+                                                one. Renew before the previous one expires and save your money. </p>
+                                            <p>Save on the fine and late fee which will be based on the lapse time
+                                                between the policies. In the time lapse, when your car is running on the
+                                                roads without an insurance, you are attracting a lot of risk. Moreover,
+                                                if
+                                                you encounter an accident or a car theft in that period, you will have
+                                                to bear all the expenses on your own. With these handy cost cutting
+                                                tips, it is time to compare car insurance online policy form
+                                                thepolicymall.com
+                                                NOW!
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+
+                <section class="section-divider">
+                    <div class="row">
+                        <div class="col-md-12 fh5co-section-heading  ">
+                            <h2>Factors That Affect Your Car Insurance Premium
+                                <div class="heading-boder"></div>
+                            </h2>
+                            <p><strong>Here are some important factors that affect your car insurance premium:</strong>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row factors-p">
+                        <div class="col-md-6 col-sm-6  animated fadeIn delay-01 nopad1" data-animation="fadeIn"
+                            data-animation-delay="01">
+                            <div class="help-box radius-bx">
+                                <div class="benefits-content">
+                                    <h3>Age and Gender</h3>
+                                    <p>
+                                        If you are in the age group of 18-25 years, you will have to pay a higher
+                                        premium as this is an accident prone age group, as per the insurance statistics.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6 animated fadeIn delay-01 nopad1" data-animation="fadeIn"
+                            data-animation-delay="01">
+                            <div class="help-box radius-bx">
+                                <div class="benefits-content">
+                                    <h3>Anti-theft Safety Discount</h3>
+                                    <p>
+                                        If your car is fitted with an ARAI (Automotive Research Association of India)
+                                        approved anti-theft device, you enjoy an additional discount of 2.5%.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6 animated fadeIn delay-01 nopad1" data-animation="fadeIn"
+                            data-animation-delay="01">
+                            <div class="help-box radius-bx">
+                                <div class="benefits-content">
+                                    <h3>Fuel Type You Use for Your Car </h3>
+                                    <p>If you drive petrol car, you pay lower premium, if you drive a CNG, your
+                                        insurance comes at higher premium, because the chances of unforeseen damage are
+                                        higher.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-sm-6 animated fadeIn delay-01 nopad1" data-animation="fadeIn"
+                            data-animation-delay="01">
+                            <div class="help-box radius-bx">
+                                <div class="benefits-content">
+                                    <h3>Car Model and Variant</h3>
+                                    <p>If you own a high priced or high end car model, such as Bentley, Audi or BMW, you
+                                        will pay a much higher premium. Simply because the theft rates for such vehicles
+                                        are higher, the value of the vehicle is much higher and the
+                                        damage cost is also quite costly. </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6 animated fadeIn delay-01 nopad1" data-animation="fadeIn"
+                            data-animation-delay="01">
+                            <div class="help-box radius-bx">
+                                <div class="benefits-content">
+                                    <h3>No Claim Bonus (NCB) </h3>
+                                    <p>If you did not make any claims throughout your insured year, you automatically
+                                        get entitled to NCB which varies from 10% to 50% discount on premium, depending
+                                        upon number of claim-less years. You can even transfer your NCB
+                                        to another policy. </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6 animated fadeIn delay-01 nopad1" data-animation="fadeIn"
+                            data-animation-delay="01">
+                            <div class="help-box radius-bx">
+                                <div class="benefits-content">
+                                    <h3>Township For Which The Insurance is Required </h3>
+                                    <p>If you live in a posh colony or an active township, you pay higher premium. In
+                                        urban areas where chances of accidents are higher than scarcely populated areas,
+                                        the <a href=""><b><i>vehicle insurance</i></b></a> is provided at a fairly high
+                                        premium. </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6 animated fadeIn delay-01 nopad1" data-animation="fadeIn"
+                            data-animation-delay="01">
+                            <div class="help-box radius-bx">
+                                <div class="benefits-content">
+                                    <h3>Car Make/Year of Manufacture/IDV</h3>
+                                    <p>
+                                        Older car, lesser premium, new car higher premium you pay. It is very simple.
+                                        The year of manufacture directly effects the IDV (Insured Declared Value) of
+                                        your car. The older is the car, lesser is IDV which is calculated as per the
+                                        current market value
+                                        of the car. The lesser is the IDV, lesser goes the premium.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6 animated fadeIn delay-01 nopad1" data-animation="fadeIn"
+                            data-animation-delay="01">
+                            <div class="help-box radius-bx">
+                                <div class="benefits-content">
+                                    <h3>Additional Discounts Based On Profession</h3>
+                                    <p>
+                                        If you belong to the category of defense personnel, doctors, government
+                                        employees, or police force, you are entitled to get an additional discount on
+                                        the premium, by default, as per all the insurance companies regulations. </p>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                    <p>At ThePolicymall, you can key in all the factors and reach the best premium value as per your needs,
+                        in just a few clicks!</p>
+                </section>
+                <section class="section-divider">
+                    <div class="row">
+                        <div class="col-md-12 fh5co-section-heading  ">
+                            <h2>How ThePolicymall Helps To Reach The Best Car Insurance!
+                                <div class="heading-boder"></div>
+                            </h2>
+                            <p>A car insurance is must if you are driving on Indian roads. ThePolicymall is a comprehensive
+                                platform where you can gather all information and buy the best car policy without any
+                                hassle. <strong>Simply because with us, buying a car policy is:</strong> </p>
+                            <h3><strong>1. Easy</strong> <strong>2. Affordable</strong> <strong>3. Trustworthy</strong>
+                            </h3>
+                            <p></p>
+
+                            <div class="col-md-12 nopad-left">
+                                <div class="col-lg-12 col-md-12 col-sm-12 nopad-left">
+                                    <strong>We offer:</strong>
+                                    <ul class="list2">
+                                        <li>Customized quotes matching with your exact requirements, resulting in huge
+                                            savings on your car policy.</li>
+                                        <li>Compare car insurance online, to filter your requirements through our rapid,
+                                            accurate and reliable algorithms.</li>
+                                        <li>Best and affordable quotes after comparing the premiums with various
+                                            insurance providers across the plethora.</li>
+                                        <li>The best car insurance policy, which will come across so perfect, that you
+                                            will never have to worry.</li>
+                                    </ul>
+                                    <p>At ThePolicymall.com you are also benefitted with expert advice and hands on
+                                        assistance based on your key needs.<br>
+                                        <strong>We provide you:</strong>
+                                    </p>
+                                    <ul class="list2">
+                                        <li>Informed, unbiased, and clear results to help you choose the car policy best
+                                            suited to your vehicle.</li>
+                                        <li>The help to go through the car policy purchase process, so that you sail
+                                            smoothly and land at the best insurance plan.</li>
+                                        <li>Instant policy in your mailbox, without going through long overtaxing
+                                            process of filing forms.</li>
+                                        <li>Quick, easy and reliable online payment methods to save time and effort.
+                                        </li>
+                                    </ul>
+                                    <p><strong>All this is absolutely FREE of Charge and involves no paper-work at
+                                            all!</strong>
+                                        <br> From changes in your existing policy to the tricky questions you are too
+                                        scared to ask, we have a quick, easy and friendly solution to all.
+                                        <br> Here's a quick run through of the insurance bounties being offered at <a
+                                            href="/car-insurance"><b><i>ThePolicymall</i></b></a>, for quick and easy car
+                                        policy purchase.
+                                    </p>
+                                    <ul class="list2">
+                                        <li>1) Simple Hassle-free Process </li>
+                                        <li>2) Quick And Easy Purchase &amp; Renewals</li>
+                                        <li>3) Claims Assistance At All Times </li>
+                                        <li>4) Short and Simple Forms To Be Filled </li>
+                                        <li>5) Nationwide Documents Pick Up Facility </li>
+                                        <li>6) Live Policy Tracking Resource </li>
+                                        <li>7) Advanced Feature Filters for Customized Needs</li>
+                                    </ul>
+                                    <p>We are more than glad to tend to any queries you may have. Call us or write to
+                                        us!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="section-divider" id="section11">
+                    <div class="row">
+                        <div class="col-md-12 fh5co-section-heading  ">
+                            <h2>Car Insurance Online Renewal Process
+                                <div class="heading-boder"></div>
+                            </h2>
+                            <p>Car Insurance Renewal is one of the most important, thoughtful and responsible steps to
+                                take, in order to keep your car safe and your expenses in check. In case your car
+                                insurance policy has expired or about to expire, it is very easy
+                                to get it renewed at your insurer's website or at thepolicymall.com. Always remember that
+                                switching to another insurer or renewing your policy with the same insurer, both will be
+                                hassle-free and easy processes if you do it before
+                                your policy expires or within the grace period.</p>
+                            <p><strong>What is Grace Period?</strong> <br> Some insurance providers offer grace period
+                                which allows you a time of 3 to 30 days after the your policy expired, to get it renewed
+                                without a lot of additional cost.Â Do not overuse it or
+                                take undue advantage of it. Use it only when you absolutely need it. Some insurers may
+                                levy a late fee for using the grace period. The point to remember is that not all
+                                companies offer a grace period. You must make sure at the
+                                time of buying the policy, whether you are entitled to grace period or not. If you have
+                                missed the renewal before expiry or within the grace period, you can still get it
+                                renewed, but with a little more effort and a little more
+                                money.
+                            </p>
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="panel-group" id="accordion-alt6">
+                                <p><strong>Let us go through the important steps of car insurance online
+                                        renewal:</strong></p>
+                                <div class="panel">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#accordion-alt6"
+                                                href="#collapseone-alt6" class="collapsed"> <span><img
+                                                        src="assets/images/spend-arrow.png" alt="" width="20"></span>Renewal
+                                                Before The Policy Expiry</a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapseone-alt6" class="panel-collapse collapse in">
+                                        <div class="panel-body">
+                                            <ul>
+                                                <li>Get in touch with your insurance provider and ask them for the <a
+                                                        href=""><b><i>documents for policy renewal</i></b></a>.
+                                                    The agent will visit you and help you to file a renewal without much
+                                                    of paper-work</li>
+                                                <li>Alternatively, visit the insurance provider's website and go for
+                                                    online renewal, saving a lot of time, efforts and additional costs.
+                                                </li>
+                                                <li>Furnish the information required by the insurance provider.</li>
+                                                <li>Choose the add-ons or benefits you want with your renewed policy.
+                                                </li>
+                                                <li>Make payment through crossed cheque or online transfer and be the
+                                                    owner of a valid car insurance policy.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse"
+                                                data-parent="#collapsetwo-alt6" class="collapsed">
+                                                <span><img src="assets/images/spend-arrow.png" alt="" width="20"></span>Renewal
+                                                Within Grace Period</a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapsetwo-alt6" class="panel-collapse collapse" style="height: 0px;">
+                                        <div class="panel-body">
+                                            <ul>
+                                                <li>Find out the late fee of renewing the policy in grace period and
+                                                    pay.</li>
+                                                <li>Make sure you have all the dues and pending premiums paid.</li>
+                                                <li>Choose the policy you want to go for, after checking thoroughly for
+                                                    any changes or add-ons you may need in renewed policy.</li>
+                                                <li>Furnish the required information by the insurance provider and
+                                                    gather your renewed policy after making due payments online or
+                                                    through a cheque to the insurance agent.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#accordion-alt6"
+                                                href="#collapsethree-alt6" class="collapsed"> <span><img
+                                                        src="assets/images/spend-arrow.png" alt="" width="20"></span>Renewal
+                                                Outside Grace Period</a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapsethree-alt6" class="panel-collapse collapse">
+                                        <div class="panel-body">If you failed to renew the policy within the grace
+                                            period your car insurance policy dies. If there is a significant loss of
+                                            time after the expiry, you may not be eligible for a renewal with the same
+                                            insurer. You may have
+                                            to buy a new policy altogether. <p></p>
+                                            <p><strong>Here are the adversities of not renewing your policy within
+                                                    time:</strong></p>
+                                            <ul>
+                                                <li>Higher Premiums</li>
+                                                <li>Loss of Previous Benefits</li>
+                                                <li>Fines Levied</li>
+                                                <li>Fresh Inspection of The Vehicle</li>
+                                                <li>Loss of NCB (No Claim Bonus)</li>
+                                                <li>Lot of Legal Trouble With Police And Authorities Driving Without
+                                                    Insurance</li>
+                                                <li>Huge Expenses In Case You Meet An Accident Without An Insurance
+                                                    Policy</li>
+                                            </ul>
+                                            <p><strong>Details To Be Furnished For Car Insurance Policy
+                                                    Renewal:</strong></p>
+                                            <ul>
+                                                <li>Your Name (As on official documents) </li>
+                                                <li>Your Contact Number and E-mail id </li>
+                                                <li>Your Vehicle Registration Number And Copy of The RC</li>
+
+                                                <li>The Existing Insurance Policy Number</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="section-divider div-brd">
+                    <div class="row row mrg0">
+                        <div class="col-md-12 nopad-left nopad-right fh5co-section-heading">
+                            <h2>How To Claim Your Car Insurance!
+                                <div class="heading-boder"></div>
+                            </h2>
+                            <p>Here we bring you a few imperative pointers on how to claim your car insurance, in any of
+                                the following scenarios. </p>
+                        </div>
+                    </div>
+                    <div class="row mrg0">
+                        <div class="col-md-12 nopad-left nopad-right col-sm-12 mr-15">
+                            <h3><span>When Your Car Meets An Accident! </span></h3>
+                            <div class="media-1">
+                                <div class="media-left"><span class="process-number">1</span></div>
+                                <div class="media-body">
+                                    <p>Keep the copies of your insurance paperwork up to date and intact. These are the
+                                        most important instruments that can get you your claim.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="media-1">
+                                <div class="media-left"><span class="process-number">2</span></div>
+                                <div class="media-body">
+                                    <p>After an accidental damage, immediately take pictures of the damage done. It
+                                        should be done in both the cases, if the accident was your mistake, or someone
+                                        else caused the damage.</p>
+                                </div>
+                            </div>
+                            <div class="media-1">
+                                <div class="media-left"><span class="process-number">3</span></div>
+                                <div class="media-body">
+                                    <p>Call for the cops. It is of utmost importance to activate the legal process
+                                        immediately which will help immensely at the time of filing for claims. Let the
+                                        cops inspect the vehicle and take note of the involved people and vehicles.</p>
+                                </div>
+                            </div>
+                            <div class="media-1">
+                                <div class="media-left"><span class="process-number">4</span></div>
+                                <div class="media-body">
+                                    <p>If it is possible, if the other party has not run away, record the details of the
+                                        other vehicle including the model number, vehicle number, make of the car and
+                                        more of such details. These details will be required to file and
+                                        get the claim smoothly.</p>
+                                </div>
+                            </div>
+                            <div class="media-1">
+                                <div class="media-left"><span class="process-number">5</span></div>
+                                <div class="media-body">
+                                    <p>File an FIR which is very important for the claim process. Filing FIR is
+                                        mandatory in the third party liability claim and without it, to make a claim
+                                        will be very difficult for you.</p>
+                                </div>
+                            </div>
+                            <div class="media-1">
+                                <div class="media-left"><span class="process-number">6</span></div>
+                                <div class="media-body">
+                                    <p>Make a call to the representative of the insurance company you have been dealing
+                                        with, at the earliest.</p>
+                                </div>
+                            </div>
+                            <div class="media-1">
+                                <div class="media-left"><span class="process-number">7</span></div>
+                                <div class="media-body">
+                                    <p>Take guidance from the representative on how to proceed and what forms or
+                                        documents will be required to support your claim.</p>
+                                </div>
+                            </div>
+                            <div class="media-1">
+                                <div class="media-left"><span class="process-number">8</span></div>
+                                <div class="media-body">
+                                    <p>Your insurance company will require a "proof of damage" form as well as records
+                                        relating to your claim (such as medical bills, car repair bills and a copy of
+                                        the FIR). They may or may not be covered in your policy depending
+                                        upon the type of policy and riders.</p>
+                                </div>
+                            </div>
+                            <div class="media-1">
+                                <div class="media-left"><span class="process-number">9</span></div>
+                                <div class="media-body">
+                                    <p>Present all the correct and validated information to the representative which is
+                                        the right thing to do for claiming the insurance.</p>
+                                </div>
+                            </div>
+                            <div class="media-1">
+                                <div class="media-left"><span class="process-number">10</span></div>
+                                <div class="media-body">
+                                    <p>Inspection officials will be sent by your insurance provider to inspect and
+                                        evaluate. This will include inspection and verification of the damage to the
+                                        car, examining the evidence of any injury claims, and an initial payment.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 nopad-left">
+                            <div class="block-heading-two">
+                                <h3>In Case of A Car Theft</h3>
+                                <div class="media-1">
+                                    <div class="media-left"><span class="process-number">1</span></div>
+                                    <div class="media-body">
+                                        <p>Lodge an FIR with local police station immediately without wasting any time.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="media-1">
+                                    <div class="media-left"><span class="process-number">2</span></div>
+                                    <div class="media-body">
+                                        <p>Call the insurance provider office and inform the theft.</p>
+                                    </div>
+                                </div>
+                                <div class="media-1">
+                                    <div class="media-left"><span class="process-number">3</span></div>
+                                    <div class="media-body">
+                                        <p>Call the RTO (Road Transport Office) and inform the theft.</p>
+                                    </div>
+                                </div>
+                                <div class="media-1">
+                                    <div class="media-left"><span class="process-number">4</span></div>
+                                    <div class="media-body">
+                                        <p>Fill the claim form offered by the insurance company, providing the
+                                            information such as policy number, vehicle registration number, RC number,
+                                            date time and little description of the incident where the theft took place
+                                        </p>
+
+                                    </div>
+                                </div>
+                                <h3>Submit the following to your insurance provider</h3>
+                                <div class="col-md-12">
+                                    <ul class="list2">
+                                        <li> The Duly Signed Claim Form</li>
+                                        <li>The Original Copy of the FIR</li>
+                                        <li>Copy of The Policy Documents</li>
+                                        <li>A Copy of The Driving License</li>
+                                        <li>The Original Keys of The Car</li>
+                                        <li>Copy of the letter addressed to the RTO intimating theft</li>
+                                        <li>Copy of The Vehicle’s RC</li>
+                                        <li>RTO Transfer Papers Duly Signed Along With The Necessary Forms (Form 28, 29,
+                                            30 And 35).</li>
+                                    </ul>
+                                </div>
+                                <p>Once the local police station submits the final no-trace which means the vehicle
+                                    could not be found and the claim is approved, you must transfer the RC of the stolen
+                                    car in favour of the insurance company, hand over all sets of
+                                    keys and issue a letter of subrogation to the <a href="#"><b><i>insurance
+                                                company</i></b></a>. Although filing a car insurance claim is fairly
+                                    straight forward, it is important to
+                                    do it properly or else the claim can become null and void. </p>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+            </div>
+        </div>
+    </section>
+</div>
+<div *ngIf="f === 'four-wheeler'">
+
+
+    <!---why choose us end--->
+    <!--- Easy Steps start--->
+
+
+    <!--- Easy Steps us end--->
+
+    <!--- OUR PARTNERS us end--->
+    <app-partners></app-partners>
+    <!--- OUR PARTNERS us end--->
+    <!--- Our satisfied clients start--->
+    <app-satisfied-client></app-satisfied-client>
+</div>
+
+<!-- Success Modal -->
+<ng-template #successmodal>
+    <div class="modal-header">
+      <h4 class="modal-title pull-left">Success</h4>
+      <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+        Thank You Showing Interest.We Will get Back To You Soon
+    </div>
+</ng-template>

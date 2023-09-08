@@ -1,0 +1,51 @@
+<section class="common-gap our-clients pt-0">
+    <h2 class="common-heading text-center">Our <span>Happy Customers</span> </h2>
+    <div class="client-wrapper-hld">
+        <div class="container">
+            <div class="row ">
+                <div class="col-md-10 mx-auto">
+                    <div class="d-flex  justify-content-between our-clients-row">
+                        <!----owl carasol start-->
+                        <div class="owl-carousel owl-theme">
+                            <div class="item" *ngFor="let data of testimonals;">
+                                <div class="testimonial-box text-center">
+                                    <div class="user-box">
+                                        <img [src]="data.file_path" alt="">
+
+                                    </div>
+                                    <span class="d-block text-left" style="font-weight: bold;"><img src="assets/images/icon/q-start.png"
+                                            alt="">{{data.customer_name}}</span>
+                                    <p class="text-left my-2">
+                                        {{data.review | slice:0:review_length}}<br>
+                                        <a href="javascript:" *ngIf="data.reviewlength > review_length" (click)="openModal(readmore,data)">Read More</a>
+                                    </p>
+                                    <span class="d-block text-right"><img src="assets/images/icon/q-end.png"
+                                            alt=""></span>
+                                </div>
+                            </div>
+
+
+
+                        </div>
+                        <!----owl carasol end-->
+
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<ng-template #readmore>
+    <div class="modal-header">
+      <h4 class="modal-title pull-left">{{reviewdetail.customer_name | titlecase}}</h4>
+      <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      {{reviewdetail.review}}
+    </div>
+</ng-template>

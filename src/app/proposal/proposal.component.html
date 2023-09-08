@@ -1,0 +1,2067 @@
+<div class="container">
+    <div class="Steps">
+        <ul>
+            <li>
+                <div class="step done" data-desc="Proposer"><i class="icon-valid"></i>1</div>
+            </li>
+            <li>
+                <div class="step" [ngClass]="[ proposer_step ? 'done' : '']" data-desc="Insured Members"><i
+                        class="icon-valid"></i> 2</div>
+            </li>
+            <li>
+                <div class="step" [ngClass]="[ insured_member_step ? 'done' : '']" data-desc="Nominee"><i
+                        class="icon-valid"></i> 3</div>
+            </li>
+            <li>
+                <div class="step" [ngClass]="[ nominee_step ? 'done' : '']" data-desc="Medical History"><i
+                        class="icon-valid"></i> 4</div>
+            </li>
+            <!-- <li>
+                <div class="step" data-desc="Lifestyle Details"> <i class="icon-valid"></i> 5</div>
+            </li> -->
+            <li>
+                <div class="step" [ngClass]="[ medical_history_step ? 'done' : '']" data-desc="Review"><i
+                        class="icon-valid"></i> 5</div>
+            </li>
+            <!--         <li><div class="step" data-desc="Other">7</div></li> -->
+        </ul>
+    </div>
+
+</div>
+<section class="proposal-page mt-5">
+    <div class="container">
+        <div class="row">
+
+            <!----PROPOSER--->
+            <div class="col-md-8 p-from-wrapper order-md-2 order-2" id="proposer" *ngIf="step1">
+
+                <!-- <i class="arrow-left" id="back" (click)="backClicked()">
+                    <svg viewBox="0 0 40.02 20.86" style="fill: #00adef !important;left:44px">
+                        <path
+                            d="M40.02 11.513V9.349H4.145l7.816-7.816L10.429.001 0 10.43l10.429 10.432 1.532-1.532-7.816-7.816z">
+                        </path>
+                    </svg>
+                </i> -->
+                <!----first step start---->
+                <div class="proposal-l-area px-0 from-block">
+                    <button class="btn back-button ml-1" (click)="backClicked()"
+                        *ngIf="backbtnhidefromapp == '0' || backbtnhidefromapp == 'true'">Back to Quotes</button>
+                    <div class="text-center p-r-head">
+                        <h5 class="mt-3">Proposer</h5>
+                        <p class="pb-3">Person paying for the policy</p>
+                        <!-- <img src="assets/images/icon/proposal-user.png" alt="proposer-user.png">
+                        <p class="pt-2 mb-0">User</p> -->
+                    </div>
+                    <!---head end-->
+
+                    <!----form start------>
+                    <div class="from-block pb-0">
+
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label>First Name</label>
+                                    <input type="text" class="form-control" [(ngModel)]="proposal.first_name"
+                                        name="first_name" placeholder="Enter First Name">
+                                    <!-- <div class="invalid-feedback">
+                                        First Name is required
+                                    </div> -->
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label>Middle Name</label>
+                                    <input type="text" class="form-control" [(ngModel)]="proposal.middle_name"
+                                        name="middle_name" placeholder="Enter Middle Name">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label>Last Name</label>
+                                    <input type="text" class="form-control" [(ngModel)]="proposal.last_name"
+                                        name="last_name" placeholder="Enter Last Name">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Email</label>
+                                    <input type="text" class="form-control" name="emailId"
+                                        [(ngModel)]="proposal.emailId" placeholder="Enter here">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Mobile</label>
+                                    <input type="number" class="form-control" name="contactNumber"
+                                        [(ngModel)]="proposal.contactNumber" placeholder="Enter here" maxlength="10">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group mb-0">
+                                    <label>Date of birth</label>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <select class="form-control" name="dd" [(ngModel)]="proposal.dob.dd">
+                                        <option value="">-DD-</option>
+                                        <option [value]="dd" *ngFor="let dd of dd">{{dd}}</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <select class="form-control" name="mm" [(ngModel)]="proposal.dob.mm">
+                                        <option value="">--MM--</option>
+                                        <option value="01">JAN</option>
+                                        <option value="02">FEB</option>
+                                        <option value="03">MAR</option>
+                                        <option value="04">APR</option>
+                                        <option value="05">MAY</option>
+                                        <option value="06">JUN</option>
+                                        <option value="07">JUL</option>
+                                        <option value="08">AUG</option>
+                                        <option value="09">SEP</option>
+                                        <option value="10">OCT</option>
+                                        <option value="11">NOV</option>
+                                        <option value="12">DEC</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <select class="form-control" name="yy" [(ngModel)]="proposal.dob.yy"
+                                        [disabled]="false">
+                                        <option value="">--YYYY--</option>
+                                        <option [value]="yy" *ngFor="let yy of YY">{{yy}}</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Marital status</label>
+                                    <select class="form-control" name="marital_status"
+                                        [(ngModel)]="proposal.marital_status" (change)="changeMaritalStatus()">
+                                        <option value="">-Select Marital Status-</option>
+                                        <option value="Single">Single</option>
+                                        <option value="Married">Married</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Gender</label>
+                                    <select class="form-control" name="gender" [(ngModel)]="proposal.gender"
+                                        [disabled]="false">
+                                        <option value="">-Select Gender-</option>
+                                        <option value="MALE">Male</option>
+                                        <option value="FEMALE">Female</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label>Height</label>
+                                    <select class="form-control" name="height_ft" [(ngModel)]="proposal.height.ft">
+                                        <option value="">-Feet-</option>
+                                        <option value="2">2 Ft.</option>
+                                        <option value="3">3 Ft.</option>
+                                        <option value="4">4 Ft.</option>
+                                        <option value="5">5 Ft.</option>
+                                        <option value="6">6 Ft.</option>
+                                        <option value="7">7 Ft.</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label>&nbsp;</label>
+                                    <select class="form-control" name="height_inch"
+                                        [(ngModel)]="proposal['height']['inch']">
+                                        <option value="">-Inch-</option>
+                                        <option value="0">0 inch</option>
+                                        <option value="1">1 inch</option>
+                                        <option value="2">2 inch</option>
+                                        <option value="3">3 inch</option>
+                                        <option value="4">4 inch</option>
+                                        <option value="5">5 inch</option>
+                                        <option value="6">6 inch</option>
+                                        <option value="7">7 inch</option>
+                                        <option value="8">8 inch</option>
+                                        <option value="9">9 inch</option>
+                                        <option value="10">10 inch</option>
+                                        <option value="11">11 inch</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label>Weight</label>
+                                    <select class="form-control" [(ngModel)]="proposal['weight']">
+                                        <option value="">-Select Weight-</option>
+                                        <option [value]="w" *ngFor="let w of weight">{{w}} Kg</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label>Annual Income</label>
+                                    <input type="number" class="form-control" name="annual_income"
+                                        [(ngModel)]="proposal.annual_income" placeholder="Enter here"
+                                        autocomplete="off">
+                                </div>
+                            </div>
+                            <div class="col-md-4" *ngIf="company_special_id == '4'">
+                                <div class="form-group">
+                                    <label>Select ID Proof</label>
+                                    <select class="form-control" name="IDProofType" [(ngModel)]="proposal.IDProofType">
+                                        <option value="">-Select ID Proof-</option>
+                                        <option value="IDNO3">Driving License</option>
+                                        <option value="IDNO2">PAN</option>
+                                        <option value="IDNO1">Passport</option>
+                                        <option value="IDNO4">Voter ID</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-4" *ngIf="company_special_id == '4'">
+                                <div class="form-group">
+                                    <label>IDProof Number</label>
+                                    <input type="text" class="form-control" name="IDProofNumber"
+                                        [(ngModel)]="proposal.IDProofNumber" placeholder="Enter your IDProof No."
+                                        maxlength="10" autocomplete="off">
+                                </div>
+                            </div>
+                            <div class="col-md-4" *ngIf="plandetails.OneyearFinalPremium >= 50000">
+                                <div class="form-group">
+                                    <label>PAN</label>
+                                    <input type="text" class="form-control" name="pan" [(ngModel)]="proposal.pan"
+                                        placeholder="Enter your PAN No." maxlength="10" autocomplete="off">
+                                </div>
+                            </div>
+                            <div class="col-md-4" *ngIf="company_special_id != '1'">
+                                <div class="form-group">
+                                    <label>Occupation</label>
+                                    <select class="form-control" name="occupation" [(ngModel)]="proposal.occupation">
+                                        <option value="">-Select Occupation-</option>
+                                        <option [value]="occu.occupation_code" *ngFor="let occu of occupation">
+                                            {{occu.occupation_name}}</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!----form end------>
+
+                </div>
+                <!---first step end ----->
+                <!--repeat block start-->
+
+                <div class="proposal-l-area  from-block">
+                    <h5 class="mt-1 mb-4">Address for Insured Members</h5>
+                    <!----form start------>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label>Flat/House no, Street</label>
+                                <input type="text" class="form-control" [(ngModel)]="proposal.address.house_no"
+                                    name="houseno" placeholder="Enter here" maxlength="60">
+                                <small class="form-text text-muted">Max 60 characters</small>    
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label>PIN Code</label>
+                                <!-- <input type="text" class="form-control" [(ngModel)]="proposal.address.pincode"
+                                    name="pincode" placeholder="Enter Your Pincode" maxlength="6"> -->
+                                <input [(ngModel)]="this.proposal.address.pincode" [typeahead]="avlbPincodes"
+                                    maxlength="6" [isAnimated]="true" class="form-control" autocomplete="off"
+                                    [typeaheadMinLength]="3" (typeaheadOnSelect)="onPincodeSelect($event)"
+                                    (typeaheadOnBlur)="onPincodeSelect($event)">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label>State</label>
+                                <select class="form-control" [(ngModel)]="proposal.address.state_id" name="state"
+                                    (change)="getcityList($event)" disabled>
+                                    <option>-Select State-</option>
+                                    <option [value]="state.state_id" *ngFor="let state of stateList">
+                                        {{state.state_name}}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label>City</label>
+                                <select class="form-control" [disabled]="cityDisabled"
+                                    [(ngModel)]="proposal.address.city_id" name="city" (change)="getAreaID()">
+                                    <option>-Select City-</option>
+                                    <option [value]="city.id" *ngFor="let city of cityList">{{city.city_name}}
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label>Area</label>
+                                <input type="text" class="form-control" [(ngModel)]="proposal.address.area" name="area"
+                                    placeholder="Enter here" *ngIf="company_special_id != '2'" maxlength="60">
+                                <small class="form-text text-muted" *ngIf="company_special_id != '2'">Max 60 characters</small> 
+                                <select class="form-control" [(ngModel)]="proposal.address.area" name="area"
+                                    *ngIf="company_special_id == '2'">
+                                    <option>-Select Area-</option>
+                                    <option [value]="area.areaID" *ngFor="let area of areaList">{{area.areaName}}
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label>Landmark</label>
+                                <input type="text" class="form-control" [(ngModel)]="proposal.address.landmark"
+                                    name="landmark" placeholder="Enter here" maxlength="60">
+                                <small class="form-text text-muted">Max 60 characters</small> 
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label>Nationality</label>
+                                <select class="form-control" name="gender" [(ngModel)]="proposal.address.nationality">
+                                    <option value="">-Select Nationality-</option>
+                                    <option value="Indian">Indian</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <!----form end------>
+
+                </div>
+
+                <!--repeat block end-->
+                <!--repeat block start-->
+
+                <!-- <div class="proposal-l-area  from-block">
+                   
+                    <div class="row">
+                       
+
+                    </div>
+                    
+
+                </div> -->
+
+                <!--repeat block end-->
+                <!-- <div class="button-area text-center pt-3">
+                    <button type="button" *ngIf="!previewFlag" (click)="goto('2')"
+                        class="btn btn-dark-blue">Next</button>
+                    <button type="button" *ngIf="previewFlag" (click)="goto('6')"
+                        class="btn btn-dark-blue">Update</button>
+                </div> -->
+                <div class="button-area text-center pt-3 d-md-flex justify-content-between">
+                    <button type="button" class="btn btn-dark-blue" (click)="savenShare(savequotes,'proposer')">Save &
+                        Share</button>
+                    <button type="button" (click)="goto('2')" class="btn btn-dark-blue float-right">Next</button>
+                    <!-- <button type="button" *ngIf="previewFlag" (click)="goto('6')"
+                        class="btn btn-dark-blue">Update</button> -->
+
+                </div>
+            </div>
+            <!----INSURED MEMBERS---->
+            <div class="col-md-8 p-from-wrapper order-md-2 order-2" id="insured_member" [hidden]="!step2">
+                <div class="proposal-l-area   px-0 from-block" *ngFor="let im of proposal.insured_member;let i=index">
+                    <!----form start------>
+                    <div class="p-r-head second-head" *ngIf="i == 0">
+                        <h5 class="mt-3">
+                            <a href="javascript:" (click)="back('1')" class="back-page pr-2">
+                                <img src="assets/images/icon/left-arrow.png"> INSURED MEMBERS</a>
+
+                        </h5>
+                        <!-- <p class="">&nbsp;</p>
+                        <span class="text-center d-inline-block">
+                            <img src="assets/images/icon/proposal-user.png" alt="proposal-user.png">
+                            <p class="pt-2 mb-0">User</p>
+                        </span> -->
+                    </div>
+                    <div class="p-r-head second-head" *ngIf="i > 0">
+                        <h5 class="mt-12">
+                            {{im.memberDef}}
+                        </h5>
+                    </div>
+                    <!---head end-->
+                    <div class="from-block pb-0">
+                        <div class="row">
+                            <div class="col-12" *ngIf="i == 0">
+                                <h5 class="p-1">{{im.memberDef}}</h5>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label>Relationship with proposer</label>
+                                    <select class="form-control " [(ngModel)]="im.relationship_with_user"
+                                        name="relationship_with_proposer" (change)="changeRelation($event,i)">
+                                        <option value="">-Select Relation-</option>
+                                        <option [value]="rel.key" *ngFor="let rel of im.relArr">
+                                            {{rel.value}}</option>
+                                        <!-- <option [value]="rel.relation_code" *ngFor="let rel of relationShip">
+                                            {{rel.relation_name}}</option> -->
+                                    </select>
+                                </div>
+
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label>First Name</label>
+                                    <input type="text" class="form-control" [disabled]="im.isdisabled"
+                                        [(ngModel)]="im['first_name']" name="first_name{{i}}">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label>Middle Name</label>
+                                    <input type="text" class="form-control" [disabled]="im.isdisabled"
+                                        [(ngModel)]="im['middle_name']" name="middle_name{{i}}">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label>Last Name</label>
+                                    <input type="text" class="form-control" [disabled]="im.isdisabled"
+                                        name="last_name{{i}}" [(ngModel)]="im['last_name']">
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group mb-0">
+                                    <label>Date of birth</label>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <select class="form-control" name="dd{{i}}" [(ngModel)]="im['date_of_birth']['dd']"
+                                        [disabled]="im.isdisabled">
+                                        <option value="">-DD-</option>
+                                        <option [value]="dd" *ngFor="let dd of dd">{{dd}}</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <select class="form-control" [(ngModel)]="im['date_of_birth']['mm']" name="mm{{i}}"
+                                        [disabled]="im.isdisabled">
+                                        <option value="">--MM--</option>
+                                        <option value="01">JAN</option>
+                                        <option value="02">FEB</option>
+                                        <option value="03">MAR</option>
+                                        <option value="04">APR</option>
+                                        <option value="05">MAY</option>
+                                        <option value="06">JUN</option>
+                                        <option value="07">JUL</option>
+                                        <option value="08">AUG</option>
+                                        <option value="09">SEP</option>
+                                        <option value="10">OCT</option>
+                                        <option value="11">NOV</option>
+                                        <option value="12">DEC</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <select class="form-control" [disabled]="im.isdisabled"
+                                        [(ngModel)]="im['date_of_birth']['yy']" name="yy{{i}}"
+                                        (change)="calculateAgeofInsuredMember($event,i)">
+                                        <option value="">-YYYY-</option>
+                                        <option [value]="yy" *ngFor="let yy of im.dateOfBirthYear">{{yy}}</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6" *ngIf="im.marital_status_flag">
+                                <div class="form-group">
+                                    <label>Marital status</label>
+                                    <select class="form-control" [disabled]="im.isdisabled || im.maritaldropdown"
+                                        name="marital_status{{i}}" [(ngModel)]="im['marital_status']">
+                                        <option value="">-Select Marital Status-</option>
+                                        <option value="Single">Single</option>
+                                        <option value="Married">Married</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Gender</label>
+                                    <select class="form-control" [disabled]="im.isdisabled || im.genderfreez"
+                                        name="gender{{i}}" [(ngModel)]="im['gender']">
+                                        <option value="">-Select Gender-</option>
+                                        <option value="MALE">Male</option>
+                                        <option value="FEMALE">Female</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label>Height</label>
+                                    <select class="form-control" name="height_ft{{i}}" [(ngModel)]="im['height']['ft']"
+                                        [disabled]="im.isdisabled">
+                                        <option value="">-Feet-</option>
+                                        <option value="2">2 Ft.</option>
+                                        <option value="3">3 Ft.</option>
+                                        <option value="4">4 Ft.</option>
+                                        <option value="5">5 Ft.</option>
+                                        <option value="6">6 Ft.</option>
+                                        <option value="7">7 Ft.</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label>&nbsp;</label>
+                                    <select class="form-control" name="height_inch{{i}}"
+                                        [(ngModel)]="im['height']['inch']" [disabled]="im.isdisabled">
+                                        <option value="">-Inch-</option>
+                                        <option value="0">0 inch</option>
+                                        <option value="1">1 inch</option>
+                                        <option value="2">2 inch</option>
+                                        <option value="3">3 inch</option>
+                                        <option value="4">4 inch</option>
+                                        <option value="5">5 inch</option>
+                                        <option value="6">6 inch</option>
+                                        <option value="7">7 inch</option>
+                                        <option value="8">8 inch</option>
+                                        <option value="9">9 inch</option>
+                                        <option value="10">10 inch</option>
+                                        <option value="11">11 inch</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label>Weight</label>
+                                    <select class="form-control" [(ngModel)]="im['weight']" [disabled]="im.isdisabled">
+                                        <option value="">-Select Weight-</option>
+                                        <option [value]="w" *ngFor="let w of weight">{{w}} Kg</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" *ngIf="company_special_id == '4'">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Email</label>
+                                    <input type="text" class="form-control" name="imemailId" [(ngModel)]="im.emailId"
+                                        placeholder="Enter here" [disabled]="im.isdisabled">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Mobile</label>
+                                    <input type="number" class="form-control" name="imcontactNumber"
+                                        [disabled]="im.isdisabled" [(ngModel)]="im.contactNumber"
+                                        placeholder="Enter here" maxlength="10">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Select ID Proof</label>
+                                    <select class="form-control" name="IDProofType" [(ngModel)]="im.IDProofType"
+                                        [disabled]="im.isdisabled">
+                                        <option value="">-Select ID Proof-</option>
+                                        <option value="IDNO3">Driving License</option>
+                                        <option value="IDNO2">PAN</option>
+                                        <option value="IDNO1">Passport</option>
+                                        <option value="IDNO4">Voter ID</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>IDProof Number</label>
+                                    <input type="text" class="form-control" name="IDProofNumber"
+                                        [(ngModel)]="im.IDProofNumber" placeholder="Enter your IDProof No."
+                                        autocomplete="off" [disabled]="im.isdisabled">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" *ngIf="company_special_id != '1'">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label>Occupation</label>
+                                    <select class="form-control" [disabled]="im.isdisabled" name="occupation{{i}}"
+                                        [(ngModel)]="im['occupation']">
+                                        <option value="">-Select Occupation-</option>
+                                        <option [value]="occu.occupation_code" *ngFor="let occu of occupation">
+                                            {{occu.occupation_name}}</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- LifeStyle Section-->
+                        <div class="row" *ngIf="company_special_id != '1'">
+                            <div class="col-12">
+                                <div class="p-r-head second-head"></div>
+                                <h5 class="mt-3">
+                                    Life Style Details
+                                </h5>
+                            </div>
+                            <div class="col-12">
+                                <div class="from-block py-0 mb-0 px-0">
+                                    <!-- checkbox-wrapper start-->
+                                    <div class="checkbox-wrapper" *ngFor="let ls of im.lifestyle;let x=index">
+                                        <div class="checkbox-text">
+                                            <label class="custom-checkbox">{{ls.lifestyle_name}}
+                                                <input type="checkbox" (click)="checkLifeStyle($event,ls,i)"
+                                                    [value]="ls.lifestyle_id" [checked]="ls.checked">
+                                                <span class="checkmark"></span>
+                                            </label>
+                                        </div>
+                                        <!---checkbox-accordian start-->
+                                        <!---checkbox-accordian end-->
+                                        <div *ngIf="ls.checked">
+                                            <div class="form-group row mt-2">
+                                                <label class="col-sm-3 col-form-label">Consumes Years</label>
+                                                <div class="col-sm-4">
+                                                    <select name="numberOfYears" class="form-control"
+                                                        [(ngModel)]="ls.numberOfYears">
+                                                        <option value="">-Select Year-</option>
+                                                        <option value="1">1 Yr</option>
+                                                        <option value="2">2 Yr</option>
+                                                        <option value="3">3 Yr</option>
+                                                        <option value="4">4 Yr</option>
+                                                        <option value="5">5 Yr</option>
+                                                        <option value="6">6 Yr</option>
+                                                        <option value="7">7 Yr</option>
+                                                        <option value="8">8 Yr</option>
+                                                        <option value="9">9 Yr</option>
+                                                        <option value="10">10 Yr</option>
+                                                        <option value="12">12 Yr</option>
+                                                        <option value="15">15 Yr</option>
+                                                        <option value="18">18 Yr</option>
+                                                        <option value="20">20 Yr</option>
+                                                        <option value="25">Above 20 Yr</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row mt-2">
+                                                <label class="col-sm-3 col-form-label">Consumption
+                                                    {{ls.interval}}</label>
+                                                <div class="col-sm-4">
+                                                    <input type="number" class="form-control" name="consumes"
+                                                        [(ngModel)]="ls.consumes" [placeholder]="ls.placeholder">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <!-- checkbox-wrapper end -->
+
+                                    <!-- checkbox-wrapper end -->
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!----form end------>
+
+                </div>
+
+                <!--repeat block end-->
+
+
+                <div class="button-area text-center pt-3 d-md-flex justify-content-between">
+                    <button type="button" class="btn btn-dark-blue"
+                        (click)="savenShare(savequotes,'insuredmembers')">Save & Share</button>
+                    <button type="button" (click)="goto('3')" class="btn btn-dark-blue"
+                        [disabled]="step2nextbtn">Next</button>
+                    <!-- <button type="button" *ngIf="previewFlag" (click)="goto('6')"
+                        class="btn btn-dark-blue">Update</button> -->
+
+                </div>
+            </div>
+            <!----NOMINEE---->
+            <div class="col-md-8 p-from-wrapper order-md-2 order-2" id="nominee" *ngIf="step3">
+
+                <!--repeat block start-->
+
+                <div class="proposal-l-area   px-0 from-block ">
+                    <!----form start------>
+                    <div class="p-r-head second-head">
+                        <h5 class="mt-3">
+                            <a href="javascript:" (click)="back('2')" class="back-page pr-2"><img
+                                    src="assets/images/icon/left-arrow.png"></a>NOMINEE
+                        </h5>
+
+                    </div>
+                    <!---head end-->
+                    <div class="from-block pb-0">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>First Name</label>
+                                    <input type="text" class="form-control" id="nominee_first_name"
+                                        name="nominee_first_name" [(ngModel)]="proposal.nominee.first_name">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Last Name</label>
+                                    <input type="text" class="form-control " id="nominee_last_name"
+                                        name="nominee_last_name" [(ngModel)]="proposal.nominee.last_name">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Age</label>
+                                    <select class="form-control" [(ngModel)]="proposal.nominee.age" name="nomineeAge"
+                                        (change)="selectNomineeAge($event)">
+                                        <option value="">-Select Age-</option>
+                                        <option value="0">Less than 1 Yr</option>
+                                        <option [value]="age" *ngFor="let age of age">{{age}} Yrs.</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Relationship with proposer</label>
+                                    <select class="form-control " id="relationship_with_proposer"
+                                        [(ngModel)]="proposal.nominee.relationship_with_proposer"
+                                        name="relationship_with_proposer" (change)="relationshipVal()">
+                                        <option value="">-Select Relation-</option>
+                                        <option [value]="rel.key" *ngFor="let rel of nomineeRelations">
+                                            {{rel.value}}</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="row" *ngIf="company_special_id == '3'">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Mobile No</label>
+                                    <input type="text" class="form-control" name="nomobileno"
+                                        [(ngModel)]="proposal.nominee.mobileno" placeholder="Enter Nominee Mobile No">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" *ngIf="company_special_id == '4'">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Address Line 1</label>
+                                    <input type="text" class="form-control" name="addressline1"
+                                        [(ngModel)]="proposal.nominee.addressline1">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Address Line 2</label>
+                                    <input type="text" class="form-control" id="addressline2" name="addressline2"
+                                        [(ngModel)]="proposal.nominee.addressline2">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label>State</label>
+                                    <select class="form-control" [(ngModel)]="proposal.nominee.state"
+                                        name="nomineestate" (change)="getcityListNominee($event)">
+                                        <option>-Select State-</option>
+                                        <option [value]="state.state_id" *ngFor="let state of stateList">
+                                            {{state.state_name}}</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label>City</label>
+                                    <select class="form-control" [(ngModel)]="proposal.nominee.city" name="nomineecity" (change)="selectNomineeCity($event)">
+                                        <option>-Select City-</option>
+                                        <option [value]="city.hdfc_code" *ngFor="let city of cityList2">
+                                            {{city.city_name}}
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label>Pincode</label>
+                                    <input type="text" class="form-control" id="nominee_pincode" name="nominee_pincode"
+                                        [(ngModel)]="proposal.nominee.pincode" maxlength="6">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" *ngIf="appointee">
+                            <div class="col-md-12">
+                                <h4>Appointee Details</h4>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group mb-0">
+                                    <label>Appointee Name</label>
+                                    <input type="text" class="form-control" id="appointeeName" name="appointeeName"
+                                        [(ngModel)]="proposal.appointee.appointeeName">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Appointee Age</label>
+                                    <select class="form-control" [(ngModel)]="proposal.appointee.appointeeAge"
+                                        name="appointeeAge">
+                                        <option value="">-Select Age-</option>
+                                        <option [value]="a" *ngFor="let a of appointeeAge">{{a}} Yrs.</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Relationship with Appointee</label>
+                                    <select class="form-control" [(ngModel)]="proposal.appointee.appointeeRelationship"
+                                        name="appointeeRelationship">
+                                        <option value="">-Select Relation-</option>
+                                        <option [value]="rel.relation_name" *ngFor="let rel of relationShip">
+                                            {{rel.relation_name}}</option>
+
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!----form end------>
+
+                </div>
+
+                <div class="button-area text-center pt-3 d-md-flex justify-content-between">
+                    <button type="button" class="btn btn-dark-blue" (click)="savenShare(savequotes,'nominee')">Save &
+                        Share</button>
+                    <button type="button" (click)="goto('4')" class="btn btn-dark-blue">Next</button>
+                    <!-- <button type="button" (click)="goto('6')" class="btn btn-dark-blue"
+                        *ngIf="countmedicalQus == 0">Next</button> -->
+                    <!-- <button type="button" *ngIf="previewFlag" (click)="goto('6')"
+                        class="btn btn-dark-blue">Update</button> -->
+
+                </div>
+
+            </div>
+            <!----MEDICAL HISTORY---->
+            <div class="col-md-8 p-from-wrapper" id="medical_history" [hidden]="!step14">
+                <div class="proposal-l-area   p-0 from-block">
+                    <div class="p-r-head second-head life-style">
+                        <h5 class="mt-3">
+                            <a href="javascript:" (click)="back('3')" class="back-page pr-2"><img
+                                    src="assets/images/icon/left-arrow.png"></a> MEDICAL HISTORY
+                        </h5>
+                        <p class="pb-0" style="font-size: large;">Does any insured member have a pre-existing disease?
+                        </p>
+                    </div>
+                    <div class="from-block py-0 mb-0 px-0" *ngFor="let member of proposal.insured_member;let i=index">
+                        <div class="checkbox-wrapper">
+                            <div class="checkbox-text">
+                                <span class="ml-2"> {{member.first_name+' '+member.middle_name+'
+                                    '+member.last_name}}</span>
+                                <label class="switch">
+                                    <input type="checkbox" (click)="medicalHistorySelect($event,member)"
+                                        [checked]="member.has_ped">
+                                    <div class="slider round">
+                                        <span class="on">Yes</span><span class="off">No</span>
+                                    </div>
+                                </label>
+                                <!-- <label class="custom-checkbox">{{member.first_name+' '+member.middle_name+'
+                                    '+member.last_name}}
+                                    <input type="checkbox" (click)="medicalHistorySelect($event,member)">
+                                    <span class="checkmark"></span>
+                                </label> -->
+                                <!-- <span class="map-count"> 1 </span> -->
+                            </div>
+                            <div *ngIf="member.has_ped">
+                                <div class="form-check" *ngFor="let disease of member.medical_history;let j=index">
+                                    <input class="form-check-input" type="checkbox" value=""
+                                        (click)="selectDisease($event,member,disease)">
+                                    <label class="form-check-label" for="defaultCheck1" style="margin-left: 10px;">
+                                        {{disease.medical_history_name}}
+                                    </label>
+                                    <!-- //=========Medical Form starts======== -->
+                                    <div class="m-history-acc" *ngIf="disease.formvisible">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>Current Status</label>
+                                                    <select name="current_status{{i}}{{j}}" class="form-control"
+                                                        [(ngModel)]="disease.current_status">
+                                                        <option value="Complete">Complete</option>
+                                                        <option value="Partial Recovery">Partial Recovery
+                                                        </option>
+                                                        <option value="Ongoing Treatment">Ongoing Treatment
+                                                        </option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>Symptom Starts Month</label>
+                                                    <select class="form-control"
+                                                        [(ngModel)]="disease.symptom_start_date.mm"
+                                                        name="symptom_start_date_mm{{i}}{{j}}">
+                                                        <option value="">--MM--</option>
+                                                        <option value="01">JAN</option>
+                                                        <option value="02">FEB</option>
+                                                        <option value="03">MAR</option>
+                                                        <option value="04">APR</option>
+                                                        <option value="05">MAY</option>
+                                                        <option value="06">JUN</option>
+                                                        <option value="07">JUL</option>
+                                                        <option value="08">AUG</option>
+                                                        <option value="09">SEP</option>
+                                                        <option value="10">OCT</option>
+                                                        <option value="11">NOV</option>
+                                                        <option value="12">DEC</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>Symptom Starts Yr.</label>
+                                                    <select class="form-control"
+                                                        [(ngModel)]="disease.symptom_start_date.yy"
+                                                        name="symptom_start_date_yy{{i}}{{j}}">
+                                                        <option value="">-YYYY-</option>
+                                                        <option [value]="yy" *ngFor="let yy of member.symptomStartYr">
+                                                            {{yy}}</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <label>Has any proposal for Health insurance been declined?</label>
+                                                    <select class="form-control" name="health_declined{{i}}{{j}}"
+                                                        [(ngModel)]="disease.health_declined">
+                                                        <option value="">-Select-</option>
+                                                        <option value="Yes">Yes</option>
+                                                        <option value="No">No</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- //===========Medical form ends============ -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="proposal-l-area   p-0 from-block">
+                    <div class="p-r-head second-head life-style">
+                        <h5 class="mt-3">
+                            Medical Questionnaries
+                        </h5>
+
+                    </div>
+                    <div class="from-block" *ngFor="let qus of proposal.questions;let i=index">
+                        <p class="pb-0" style="font-size: large;">
+                            {{i+1}}. {{qus.question_title}}
+                        </p>
+                        <div class="row" *ngIf="qus.question_code == 'illness'">
+                            <div class="col">
+                                <input type="text" class="form-control" [(ngModel)]="qus.illness" name="illness"
+                                    placeholder="Define your illness in detail">
+                                <small class="form-text text-muted">If not applicable keet it as blank</small>
+                            </div>
+                        </div>
+                        <div class="row" *ngIf="qus.question_code == 'WinterSports'">
+                            <div class="col">
+                                <input type="text" class="form-control" [(ngModel)]="qus.WinterSports"
+                                    name="WinterSports" placeholder="Define winter sport activity if any">
+                                <small class="form-text text-muted">If not applicable keet it as blank</small>
+                            </div>
+                        </div>
+                        <div class="row" *ngIf="qus.question_code == 'ManualLabour'">
+                            <div class="col">
+                                <input type="text" class="form-control" [(ngModel)]="qus.ManualLabour"
+                                    name="ManualLabour" placeholder="Declare any manual labor activity">
+                                <small class="form-text text-muted">If not applicable keet it as blank</small>
+                            </div>
+                        </div>
+                        <div class="row" *ngIf="qus.question_code == 'criticalIllness'">
+                            <div class="checkbox-text" style="border-bottom: none;">
+                                <label class="custom-checkbox">Yes
+                                    <input type="radio" [(ngModel)]="qus.criticalIllness" name="criticalIllness"
+                                        value="true">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                            <div class="checkbox-text" style="border-bottom: none;">
+                                <label class="custom-checkbox">No
+                                    <input type="radio" [(ngModel)]="qus.criticalIllness" name="criticalIllness"
+                                        value="false">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="row" *ngIf="qus.question_code == 'isPersonalAccidentApplicable'">
+                            <div class="checkbox-text" style="border-bottom: none;"
+                                *ngFor="let member of proposal.insured_member;let i=index">
+                                <label class="custom-checkbox">{{member.first_name+' '+member.middle_name+'
+                                    '+member.last_name}}
+                                    <input type="checkbox" [(ngModel)]="member.isPersonalAccidentApplicable"
+                                        name="isPersonalAccidentApplicable" value="true">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="from-block pb-0" *ngIf="qus.question_code == 'isDiabetes'">
+                            <div class="row" *ngFor="let member of proposal.insured_member;let i=index">
+                                <div class="col-md-12">
+                                    <p class="py-3" style="font-size: large;font-weight: bold;">
+                                        {{member.first_name+' '+member.middle_name+' '+member.last_name}}
+                                    </p>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="noofyr">No Of Years Suffering</label>
+                                        <select id="noofyr" class="form-control" name="diabetesMellitus{{i}}"
+                                            [(ngModel)]="member.diabetes.diabetesMellitus">
+                                            <option value="">-Select-</option>
+                                            <option [value]="yr" *ngFor="let yr of noofyear">{{yr}} Yr</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="noofyr">Is Taking Insulin</label>
+                                        <div class="checkbox-text" style="border-bottom: none;">
+                                            <label class="custom-checkbox">Yes
+                                                <input type="radio" [(ngModel)]="member.diabetes.insulinProblem"
+                                                    name="insulinProblem{{i}}" value="true">
+                                                <span class="checkmark"></span>
+                                            </label>
+                                        </div>
+                                        <div class="checkbox-text" style="border-bottom: none;">
+                                            <label class="custom-checkbox">No
+                                                <input type="radio" [(ngModel)]="member.diabetes.insulinProblem"
+                                                    name="insulinProblem{{i}}" value="false">
+                                                <span class="checkmark"></span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="noofyr">No Of Years Taking Insuline</label>
+                                        <select id="noofyr" class="form-control" name="insulinFrom{{i}}"
+                                            [(ngModel)]="member.diabetes.insulinFrom">
+                                            <option value="">-Select-</option>
+                                            <option [value]="yr" *ngFor="let yr of noofyear">{{yr}} Yr</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="noofyr">Suger Level</label>
+                                        <input type="text" class="form-control" name="bloodSugar{{i}}"
+                                            [(ngModel)]="member.diabetes.bloodSugar">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="noofyr">Serum Creatinine Level</label>
+                                    <input type="text" class="form-control" name="serumCreatinine{{i}}"
+                                        [(ngModel)]="member.diabetes.serumCreatinine">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="noofyr">HBA1C Level</label>
+                                    <input type="text" class="form-control" name="HBA1C{{i}}"
+                                        [(ngModel)]="member.diabetes.HBA1C">
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+                <div class="button-area text-center pt-3 d-md-flex justify-content-between">
+                    <button type="button" class="btn btn-dark-blue" (click)="savenShare(savequotes,'medical')">Save &
+                        Share</button>
+                    <button type="button" (click)="goto('6')" class="btn btn-dark-blue">Next</button>
+                    <!-- <button type="button" *ngIf="previewFlag" (click)="goto('6')"
+                        class="btn btn-dark-blue">Update</button> -->
+                </div>
+            </div>
+            <!-- MEDICAL QUESTIONARRIES -->
+            <div class="col-md-8 p-from-wrapper" id="medical_questionarrie" [hidden]="!step4">
+                <div class="proposal-l-area   p-0 from-block">
+                    <div class="p-r-head second-head life-style">
+                        <h5 class="mt-3">
+                            <a href="javascript:" (click)="back('3')" class="back-page pr-2">
+                                <img src="assets/images/icon/left-arrow.png">
+                            </a>
+                            Medical Details (Please Define If Any Insured Member Has Any Health Problem)
+                        </h5>
+                    </div>
+                    <div class="from-block py-0 mb-0 px-0" *ngFor="let member of proposal.insured_member;let i=index">
+                        <div class="checkbox-wrapper">
+                            <div class="checkbox-text">
+                                <span class="ml-2" style="font-size: large;">
+                                    {{member.first_name+'
+                                    '+member.middle_name+'
+                                    '+member.last_name}}
+                                </span>
+                                <label class="switch">
+                                    <input type="checkbox" (click)="medicalHistorySelect($event,member)"
+                                        [checked]="member.has_ped" value="true" [(ngModel)]="member.has_ped">
+                                    <div class="slider round">
+                                        <span class="on">Yes</span><span class="off">No</span>
+                                    </div>
+                                </label>
+                            </div>
+                            <div *ngIf="member.has_ped">
+                                <div class="form-check px-3" *ngFor="let qus of member.medical_questions;let j=index">
+                                    <p class="pb-0" style="font-size: large;"
+                                        *ngIf="company_special_id == '2' || company_special_id == '3'">
+                                        {{j+1}}. {{qus.question_title}}
+                                    </p>
+                                    <p class="pb-0" style="font-size: large;" *ngIf="company_special_id == '1'">
+                                        {{j+1}}. {{qus.question_desc}}
+                                    </p>
+                                    <!--CARE && CARE FREEDOM -->
+                                    <div class="row"
+                                        *ngIf="plandetails.plan_code == '12001002' || plandetails.plan_code == '12001003' || plandetails.plan_code == '10001101'">
+                                        <div class="col-md-12" *ngIf="qus.question_code != 'AddInfo'">
+                                            <select name="response{{i}}" class="form-control col-md-6"
+                                                [(ngModel)]="qus.response">
+                                                <option value="">-Choose Yes/No-</option>
+                                                <option value="YES">YES</option>
+                                                <option value="NO">NO</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-12" *ngIf="qus.existing_since_code && qus.response =='YES'">
+                                            <div class="row mt-1">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label>Existing Since Month</label>
+                                                        <select class="form-control" [(ngModel)]="qus.existing_since.mm"
+                                                            name="existing_since_mm{{i}}">
+                                                            <option value="">--MM--</option>
+                                                            <option value="01">JAN</option>
+                                                            <option value="02">FEB</option>
+                                                            <option value="03">MAR</option>
+                                                            <option value="04">APR</option>
+                                                            <option value="05">MAY</option>
+                                                            <option value="06">JUN</option>
+                                                            <option value="07">JUL</option>
+                                                            <option value="08">AUG</option>
+                                                            <option value="09">SEP</option>
+                                                            <option value="10">OCT</option>
+                                                            <option value="11">NOV</option>
+                                                            <option value="12">DEC</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6" *ngIf="qus.existing_since_code">
+                                                    <div class="form-group">
+                                                        <label>Existing Since Yr.</label>
+                                                        <select class="form-control" [(ngModel)]="qus.existing_since.yy"
+                                                            name="existing_since_yy{{i}}">
+                                                            <option value="">-YYYY-</option>
+                                                            <option [value]="yy"
+                                                                *ngFor="let yy of member.symptomStartYr">
+                                                                {{yy}}</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12"
+                                            *ngIf="qus.question_code == '210' || qus.question_code == '504' || qus.question_code == 'AddInfo'">
+                                            <div class="form-group">
+                                                <label>Description</label>
+                                                <textarea name="desc{{i}}" class="form-control"
+                                                    [(ngModel)]="qus.additional_info"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Aditya Birla -->
+                                    <div class="row" *ngIf="company_special_id == '3'">
+                                        <div class="col-md-6">
+                                            <select name="response{{i}}" class="form-control col-md-6"
+                                                [(ngModel)]="qus.response">
+                                                <option value="">-Choose Yes/No-</option>
+                                                <option value="YES">YES</option>
+                                                <option value="NO">NO</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-12" *ngIf="qus.existing_since_code && qus.response =='YES'">
+                                            <div class="row mt-1">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label>Existing Since Month</label>
+                                                        <select class="form-control" [(ngModel)]="qus.existing_since.mm"
+                                                            name="existing_since_mm{{i}}">
+                                                            <option value="">--MM--</option>
+                                                            <option value="01">JAN</option>
+                                                            <option value="02">FEB</option>
+                                                            <option value="03">MAR</option>
+                                                            <option value="04">APR</option>
+                                                            <option value="05">MAY</option>
+                                                            <option value="06">JUN</option>
+                                                            <option value="07">JUL</option>
+                                                            <option value="08">AUG</option>
+                                                            <option value="09">SEP</option>
+                                                            <option value="10">OCT</option>
+                                                            <option value="11">NOV</option>
+                                                            <option value="12">DEC</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6" *ngIf="qus.existing_since_code">
+                                                    <div class="form-group">
+                                                        <label>Existing Since Yr.</label>
+                                                        <select class="form-control" [(ngModel)]="qus.existing_since.yy"
+                                                            name="existing_since_yy{{i}}">
+                                                            <option value="">-YYYY-</option>
+                                                            <option [value]="yy"
+                                                                *ngFor="let yy of member.symptomStartYr">
+                                                                {{yy}}</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12 mt-1" *ngIf="qus.response == 'YES' && (qus.question_code == 'Q101' || qus.question_code == 'Q102' || qus.question_code == 'Q244' || qus.question_code == 'Q115')">
+                                            <div class="form-group">
+                                                <label style="font-size: large;">Description</label>
+                                                <textarea name="additional_info" [(ngModel)]="qus.additional_info"
+                                                    class="form-control" placeholder="Enter Details"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- STAR -->
+                                    <div class="row" *ngIf="qus.question_code == 'illness'">
+                                        <div class="col">
+                                            <input type="text" class="form-control" [(ngModel)]="qus.illness"
+                                                name="illness{{i}}" placeholder="Define your illness in detail">
+                                            <small class="form-text text-muted">If not applicable keep it as
+                                                blank</small>
+                                        </div>
+                                    </div>
+                                    <div class="row" *ngIf="qus.question_code == 'WinterSports'">
+                                        <div class="col">
+                                            <input type="text" class="form-control" [(ngModel)]="qus.WinterSports"
+                                                name="WinterSports{{i}}"
+                                                placeholder="Define winter sport activity if any">
+                                            <small class="form-text text-muted">If not applicable keep it as
+                                                blank</small>
+                                        </div>
+                                    </div>
+                                    <div class="row" *ngIf="qus.question_code == 'ManualLabour'">
+                                        <div class="col">
+                                            <input type="text" class="form-control" [(ngModel)]="qus.ManualLabour"
+                                                name="ManualLabour{{i}}"
+                                                placeholder="Declare any manual labor activity">
+                                            <small class="form-text text-muted">If not applicable keep it as
+                                                blank</small>
+                                        </div>
+                                    </div>
+                                    <div class="row" *ngIf="qus.question_code == 'criticalIllness'">
+                                        <div class="checkbox-text" style="border-bottom: none;">
+                                            <label class="custom-checkbox">Yes
+                                                <input type="radio" [(ngModel)]="qus.criticalIllness"
+                                                    name="criticalIllness{{i}}" value="true">
+                                                <span class="checkmark"></span>
+                                            </label>
+                                        </div>
+                                        <div class="checkbox-text" style="border-bottom: none;">
+                                            <label class="custom-checkbox">No
+                                                <input type="radio" [(ngModel)]="qus.criticalIllness"
+                                                    name="criticalIllness{{i}}" value="false">
+                                                <span class="checkmark"></span>
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="row" *ngIf="qus.question_code == 'eyeProblem'">
+                                        <div class="checkbox-text" style="border-bottom: none;">
+                                            <label class="custom-checkbox">Yes
+                                                <input type="radio" [(ngModel)]="qus.eyeProblem" name="eyeProblem{{i}}"
+                                                    value="Yes">
+                                                <span class="checkmark"></span>
+                                            </label>
+                                        </div>
+                                        <div class="checkbox-text" style="border-bottom: none;">
+                                            <label class="custom-checkbox">No
+                                                <input type="radio" [(ngModel)]="qus.eyeProblem" name="eyeProblem{{i}}"
+                                                    value="No">
+                                                <span class="checkmark"></span>
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="row" *ngIf="qus.question_code == 'kidneyProblem'">
+                                        <div class="checkbox-text" style="border-bottom: none;">
+                                            <label class="custom-checkbox">Yes
+                                                <input type="radio" [(ngModel)]="qus.kidneyProblem"
+                                                    name="kidneyProblem{{i}}" value="Yes">
+                                                <span class="checkmark"></span>
+                                            </label>
+                                        </div>
+                                        <div class="checkbox-text" style="border-bottom: none;">
+                                            <label class="custom-checkbox">No
+                                                <input type="radio" [(ngModel)]="qus.kidneyProblem"
+                                                    name="kidneyProblem{{i}}" value="No">
+                                                <span class="checkmark"></span>
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="row" *ngIf="qus.question_code == 'nonHealing'">
+                                        <div class="checkbox-text" style="border-bottom: none;">
+                                            <label class="custom-checkbox">Yes
+                                                <input type="radio" [(ngModel)]="qus.nonHealing" name="nonHealing{{i}}"
+                                                    value="Yes">
+                                                <span class="checkmark"></span>
+                                            </label>
+                                        </div>
+                                        <div class="checkbox-text" style="border-bottom: none;">
+                                            <label class="custom-checkbox">No
+                                                <input type="radio" [(ngModel)]="qus.nonHealing" name="nonHealing{{i}}"
+                                                    value="No">
+                                                <span class="checkmark"></span>
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="row" *ngIf="qus.question_code == 'isPersonalAccidentApplicable'">
+                                        <div class="checkbox-text" style="border-bottom: none;">
+                                            <label class="custom-checkbox">Yes
+                                                <input type="radio" [(ngModel)]="qus.isPersonalAccidentApplicable"
+                                                    name="isPersonalAccidentApplicable{{i}}" value="true">
+                                                <span class="checkmark"></span>
+                                            </label>
+                                        </div>
+                                        <div class="checkbox-text" style="border-bottom: none;">
+                                            <label class="custom-checkbox">No
+                                                <input type="radio" [(ngModel)]="qus.isPersonalAccidentApplicable"
+                                                    name="isPersonalAccidentApplicable{{i}}" value="false">
+                                                <span class="checkmark"></span>
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="from-block pb-0" *ngIf="qus.question_code == 'isDiabetes'">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="noofyr">No Of Years Suffering</label>
+                                                    <select id="noofyr" class="form-control"
+                                                        name="diabetesMellitus{{i}}"
+                                                        [(ngModel)]="qus.diabetes.diabetesMellitus">
+                                                        <option value="">-Select-</option>
+                                                        <option value="1">1 Yr</option>
+                                                        <option [value]="yr" *ngFor="let yr of noofyear">{{yr}} Yr
+                                                        </option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="noofyr">Is Taking Insulin</label>
+                                                    <div class="checkbox-text" style="border-bottom: none;">
+                                                        <label class="custom-checkbox">Yes
+                                                            <input type="radio"
+                                                                [(ngModel)]="qus.diabetes.insulinProblem"
+                                                                name="insulinProblem{{i}}" value="true">
+                                                            <span class="checkmark"></span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="checkbox-text" style="border-bottom: none;">
+                                                        <label class="custom-checkbox">No
+                                                            <input type="radio"
+                                                                [(ngModel)]="qus.diabetes.insulinProblem"
+                                                                name="insulinProblem{{i}}" value="false">
+                                                            <span class="checkmark"></span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6" *ngIf="qus.diabetes.insulinProblem == 'true'">
+                                                <div class="form-group">
+                                                    <label for="noofyr">No Of Years Taking Insuline</label>
+                                                    <select id="noofyr" class="form-control" name="insulinFrom{{i}}"
+                                                        [(ngModel)]="qus.diabetes.insulinFrom">
+                                                        <option value="">-Select-</option>
+                                                        <option value="1">1 Yr</option>
+                                                        <option [value]="yr" *ngFor="let yr of noofyear">{{yr}} Yr
+                                                        </option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="noofyr">Suger Level</label>
+                                                    <input type="text" class="form-control" name="bloodSugar{{i}}"
+                                                        [(ngModel)]="qus.diabetes.bloodSugar">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="noofyr">Serum Creatinine Level</label>
+                                                <input type="text" class="form-control" name="serumCreatinine{{i}}"
+                                                    [(ngModel)]="qus.diabetes.serumCreatinine">
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="noofyr">HBA1C Level</label>
+                                                <input type="text" class="form-control" name="HBA1C{{i}}"
+                                                    [(ngModel)]="qus.diabetes.HBA1C">
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="form-check px-3 text-center" *ngIf="member.medical_questions.length == 0">
+                                    --No Question has been added yet--
+                                </div>
+
+
+                                <!-- //==================Other Questions============== -->
+                                <!-- <div class="form-check px-3" *ngIf="member.medical_history.length > 0">
+                                    <p class="pb-0" style="font-size: large;">
+                                        Click Below If You Have Any Of The Following Diseases
+                                    </p>
+                                    <div class="row" *ngFor="let disease of member.medical_history;let j=index">
+                                        <div class="checkbox-text" style="border-bottom: none;">
+                                            <label class="custom-checkbox">{{disease.medical_history_name}}
+                                                <input type="checkbox" [checked]="disease.formvisible"
+                                                    (click)="selectDisease($event,member,disease)">
+                                                <span class="checkmark"></span>
+                                            </label>
+
+                                            
+                                            <div class="m-history-acc" *ngIf="disease.formvisible">
+                                                <div class="row">
+                                                    <div class="col-md-3">
+                                                        <div class="form-group">
+                                                            <label>Current Status</label>
+                                                            <select name="current_status{{i}}{{j}}" class="form-control"
+                                                                [(ngModel)]="disease.current_status">
+                                                                <option value="Complete">Complete</option>
+                                                                <option value="Partial Recovery">Partial Recovery
+                                                                </option>
+                                                                <option value="Ongoing Treatment">Ongoing Treatment
+                                                                </option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <div class="form-group">
+                                                            <label>Symptom Starts Month</label>
+                                                            <select class="form-control"
+                                                                [(ngModel)]="disease.symptom_start_date.mm"
+                                                                name="symptom_start_date_mm{{i}}{{j}}">
+                                                                <option value="">--MM--</option>
+                                                                <option value="01">JAN</option>
+                                                                <option value="02">FEB</option>
+                                                                <option value="03">MAR</option>
+                                                                <option value="04">APR</option>
+                                                                <option value="05">MAY</option>
+                                                                <option value="06">JUN</option>
+                                                                <option value="07">JUL</option>
+                                                                <option value="08">AUG</option>
+                                                                <option value="09">SEP</option>
+                                                                <option value="10">OCT</option>
+                                                                <option value="11">NOV</option>
+                                                                <option value="12">DEC</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <div class="form-group">
+                                                            <label>Symptom Starts Yr.</label>
+                                                            <select class="form-control"
+                                                                [(ngModel)]="disease.symptom_start_date.yy"
+                                                                name="symptom_start_date_yy{{i}}{{j}}">
+                                                                <option value="">-YYYY-</option>
+                                                                <option [value]="yy"
+                                                                    *ngFor="let yy of member.symptomStartYr">
+                                                                    {{yy}}</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <div class="form-group">
+                                                            <label>Has any proposal for Health insurance been
+                                                                declined?</label>
+                                                            <select class="form-control"
+                                                                name="health_declined{{i}}{{j}}"
+                                                                [(ngModel)]="disease.health_declined">
+                                                                <option value="">-Select-</option>
+                                                                <option value="Yes">Yes</option>
+                                                                <option value="No">No</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                </div> -->
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="button-area text-center pt-3 d-md-flex justify-content-between">
+                    <button type="button" class="btn btn-dark-blue" (click)="savenShare(savequotes,'medical')">Save &
+                        Share</button>
+                    <button type="button" (click)="goto('6')" class="btn btn-dark-blue">Next</button>
+                    <!-- <button type="button" *ngIf="previewFlag" (click)="goto('6')"
+                        class="btn btn-dark-blue">Update</button> -->
+                </div>
+            </div>
+            <!----PREVIEW---->
+            <div class="col-md-8 p-from-wrapper order-md-2 order-2" id="review" *ngIf="step6">
+                <div class="proposal-l-area   p-0 from-block ">
+                    <!----form start------>
+                    <div class="p-r-head second-head life-style">
+                        <h5 class="mt-3">PREVIEW </h5>
+                        <!-- <pre>
+                            {{carebody | json}}
+                        </pre> -->
+
+                        <!-- <hr>
+                        <pre>
+                            {{responsejson | json}}
+                        </pre>  -->
+
+                    </div>
+                    <!---head end-->
+                </div>
+                <h4 class="fi-head">Proposer Details</h4>
+                <div class="proposal-l-area  from-block proposal-final-st">
+                    <i class="fa fa-edit" (click)="back('1',true)"></i>
+                    <h6 *ngIf="proposal.middle_name">
+                        {{proposal.first_name + ' '+proposal.middle_name+' '+proposal.last_name}}</h6>
+                    <h6 *ngIf="!proposal.middle_name">{{proposal.first_name+' '+proposal.last_name}}</h6>
+                    <div class="l-details-info">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label>Date of birth</label>
+                                <span>{{proposal.dob.dd+'/'+proposal.dob.mm+'/'+proposal.dob.yy}}</span>
+                            </div>
+                            <div class="col-md-4">
+                                <label>Marital Status</label>
+                                <span>{{proposal.marital_status | titlecase}}</span>
+                            </div>
+                            <div class="col-md-4">
+                                <label>Gender</label>
+                                <span>{{proposal.gender | titlecase}}</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="l-details-info">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label>Email</label>
+                                <span>{{proposal.emailId}}</span>
+                            </div>
+                            <div class="col-md-4">
+                                <label>Mobile</label>
+                                <span>{{proposal.contactNumber}}</span>
+                            </div>
+                            <div class="col-md-4">
+                                <label>Annual Income</label>
+                                <span>{{proposal.annual_income}}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="l-details-info">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <label>Address</label>
+                                <span>{{proposal.address.house_no+', '+proposal.address.area}}</span>
+                            </div>
+                            <div class="col-md-4">
+                                <label>City</label>
+                                <span>{{proposal.address.city}}</span>
+                            </div>
+                            <div class="col-md-4">
+                                <label>State</label>
+                                <span>{{proposal.address.state}}</span>
+                            </div>
+                            <div class="col-md-4">
+                                <label>Pincode</label>
+                                <span>{{proposal.address.pincode}}</span>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <h4 class="fi-head">Insured members</h4>
+                <div class="proposal-l-area  from-block proposal-final-st"
+                    *ngFor="let im of proposal.insured_member;let i=index">
+                    <i class="fa fa-edit" (click)="back('2',true,i)"></i>
+                    <p>{{im.memberDef}}</p>
+                    <h6>{{im.first_name + ' '+ im.middle_name+' '+im.last_name}}</h6>
+                    <!-- inner area -->
+                    <!-----repeat div start-->
+                    <div class="l-details-info">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label>Date of birth</label>
+                                <span>{{im.date_of_birth.dd+'/'+im.date_of_birth.mm+'/'+im.date_of_birth.yy}}</span>
+                            </div>
+                            <div class="col-md-4">
+                                <label>Marital Status</label>
+                                <span>{{im.marital_status | titlecase }}</span>
+                            </div>
+                            <div class="col-md-4">
+                                <label>Gender</label>
+                                <span>{{im.gender | titlecase }}</span>
+                            </div>
+                        </div>
+                        <div class="row mt-2" *ngIf="company_special_id == '4'">
+                            <div class="col-md-4">
+                                <label>Email</label>
+                                <span>{{im.emailId}}</span>
+                            </div>
+                            <div class="col-md-4">
+                                <label>Mobile (+91)</label>
+                                <span>{{im.contactNumber}}</span>
+                            </div>
+                            <div class="col-md-4">
+                                <label>IDProof Type</label>
+                                <span>{{im.IDProofName | uppercase }}</span>
+                            </div>
+                            <div class="col-md-4">
+                                <label>IDProof Type No</label>
+                                <span>{{im.IDProofNumber }}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- repeat div end -->
+                    <!-----repeat div start-->
+                    <div class="l-details-info">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label>Height</label>
+                                <span>{{im.height.ft}}ft {{im.height.inch}} inch</span>
+                            </div>
+                            <div class="col-md-4">
+                                <label>Weight</label>
+                                <span>{{im.weight}} kg</span>
+                            </div>
+                            <div class="col-md-4" *ngIf="company_special_id != '1'">
+                                <label>Occupation</label>
+                                <span>{{(im.occupationName && im.occupationName.length >
+                                    0)?im.occupationName[0]['occupation_name']:''}}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- repeat div end -->
+                   
+                    <div *ngIf="company_special_id != '1'">
+                        <div class="l-details-info" *ngIf="im.lifestyle.length > 0">
+                            <div class="row">
+                                <div class="col-12">
+                                    <h4 class="fi-head">Lifestyle Details</h4>
+                                </div>
+                                <div class="col-md-12" *ngFor="let lifes of im.lifestyle;">
+                                    <div class="row">
+                                        <div class="col -md-4">
+                                            <h6>{{lifes.lifestyle_name}}</h6>
+                                        </div>
+                                        <div class="col -md-8">
+                                            <label *ngIf="lifes.checked">Consumes {{lifes.consumes+' '+lifes.interval}}
+                                                From
+                                                {{lifes.numberOfYears}} Yrs</label>
+                                            <label *ngIf="!lifes.checked">NO</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- repeat div end -->
+                    <!-- inner area end -->
+                </div>
+                <!-- Medical History -->
+                <h4 class="fi-head" *ngIf="countmedicalQus > 0">Medical Questionarries</h4>
+                <div class="proposal-l-area  from-block proposal-final-st" *ngIf="countmedicalQus > 0">
+                    <i class="fa fa-edit" (click)="back('4')"></i>
+                    <!-- <div class="l-details-info mb-1" *ngFor="let member of proposal.insured_member">
+                        <h6>{{member.first_name+' '+member.last_name}}</h6>
+                        <div *ngIf="member.has_ped">
+                            <div class="row" *ngFor="let medical of member.medical_history;">
+                                <div class="col-md-12" *ngIf="medical.formvisible">
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <label>Disease Name</label>
+                                            <span>{{medical.medical_history_name}}</span>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <label>Symptom Start Date</label>
+                                            <span>{{medical.symptom_start_date.mm+'/'+medical.symptom_start_date.yy}}</span>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <label>Ever health insurance declined</label>
+                                            <span>{{medical.health_declined}}</span>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <label>Current Status</label>
+                                            <span>{{medical.current_status}}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" *ngIf="!member.has_ped">
+                            <div class="col-md-8">Does this member has any pre-existing disease?</div>
+                            <div class="col-md-4"><b>No</b></div>
+                        </div>
+                    </div> -->
+
+                    <!-- <h4 class="fi-head">Medical Questionarries</h4> -->
+                    <div *ngIf="company_special_id == '2'">
+                        <div class="l-details-info mb-2" *ngFor="let mem of proposal.insured_member;let i=index">
+                            <h6>{{mem.first_name+' '+mem.last_name}}</h6>
+                            <div class="row mb-2" *ngFor="let qus of mem.medical_questions;let j=index">
+                                <div class="col-md-8" *ngIf="qus.question_code != 'isDiabetes'">{{j+1}}.
+                                    {{qus['question_title']}}</div>
+                                <div class="col-md-12" *ngIf="qus.question_code == 'isDiabetes'">{{j+1}}.
+                                    {{qus['question_title']}}</div>
+                                <div class="col-md-4" *ngIf="qus.question_code != 'isDiabetes'">
+                                    <b>{{(qus[qus['question_code']] == 'false' ||
+                                        qus[qus['question_code']] == '')?'None':((qus[qus['question_code']] ==
+                                        'true')?'Yes':qus[qus['question_code']])}}</b>
+                                </div>
+
+                                <div class="col-md-12" *ngIf="qus.question_code == 'isDiabetes'">
+                                    <div class="row mt-2">
+                                        <div class="col-md-4">No Of Years Suffering</div>
+                                        <div class="col-2">
+                                            <b>{{qus['diabetes']['diabetesMellitus']}} Yrs</b>
+                                        </div>
+                                        <div class="col-md-4">Blood Sugar</div>
+                                        <div class="col-2">
+                                            <b>{{qus['diabetes']['bloodSugar']}}</b>
+                                        </div>
+                                        <div class="col-md-4">Is Taking Insulin</div>
+                                        <div class="col-2">
+                                            <b>{{(qus['diabetes']['insulinProblem'] == 'true')?'Yes':'No'}}</b>
+                                        </div>
+                                        <div class="col-md-4">No Of Years Taking Insulin</div>
+                                        <div class="col-2">
+                                            <b>{{(qus['diabetes']['insulinFrom'] ==
+                                                '')?'0':qus['diabetes']['insulinFrom']}}
+                                                Yrs</b>
+                                        </div>
+                                        <div class="col-md-4">Serum Creatinine Level</div>
+                                        <div class="col-2">
+                                            <b>{{qus['diabetes']['serumCreatinine']}}</b>
+                                        </div>
+                                        <div class="col-md-4">HBA1C</div>
+                                        <div class="col-2">
+                                            <b>{{qus['diabetes']['HBA1C']}}</b>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div *ngIf="company_special_id == '1'">
+                        <div class="l-details-info mb-2" *ngFor="let mem of proposal.insured_member;let i=index">
+                            <h6>{{mem.first_name+' '+mem.last_name}}</h6>
+                            <div class="row mb-2" *ngFor="let qus of mem.medical_questions;let j=index">
+                                <div class="col-md-6">{{j+1}}. {{qus['question_desc']}} </div>
+                                <div class="col-md-2"><span *ngIf="qus.question_code != 'AddInfo'">{{qus['response'] ||
+                                        'NO'}}</span></div>
+                                <div class="col-md-4" *ngIf="qus.existing_since.mm != ''">
+                                    {{qus['existing_since']['mm']+'/'+qus['existing_since']['yy']}}</div>
+                                <div class="col-md-6" *ngIf="qus.additional_info != ''"><span style="font-size: large;">
+                                        Description:
+                                    </span></div>
+                                <div class="col-md-6">
+                                    {{qus.additional_info}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div *ngIf="company_special_id == '3'">
+                        <div class="l-details-info mb-2" *ngFor="let mem of proposal.insured_member;let i=index">
+                            <h6>{{mem.first_name+' '+mem.last_name}}</h6>
+                            <div class="row mb-2" *ngFor="let qus of mem.medical_questions;let j=index">
+                                <div class="col-md-6">{{j+1}}. {{qus['question_desc']}} </div>
+                                <div class="col-md-2">{{qus['response'] || 'NO'}}</div>
+                                <div class="col-md-4" *ngIf="qus.additional_info != ''">
+                                    {{qus['additional_info']}}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--NOMINEE Block-->
+
+                <h4 class="fi-head">Nominee Details</h4>
+                <div class="proposal-l-area  from-block proposal-final-st">
+                    <span><i class="fa fa-edit" (click)="back('3')"></i></span>
+                    <div class="l-details-info">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label>Name</label>
+                                <span>{{proposal.nominee.first_name+' '+proposal.nominee.last_name}}</span>
+                            </div>
+                            <div class="col-md-4">
+                                <label>Age</label>
+                                <span>{{proposal.nominee.age}} Yrs.</span>
+                            </div>
+                            <div class="col-md-4">
+                                <label>Relationship</label>
+                                <span>{{proposal.nominee.relation_value}}</span>
+                            </div>
+
+                        </div>
+                        <div class="row mt-2" *ngIf="company_special_id == '4'">
+                            <div class="col-md-6">
+                                <label>Address Line1</label>
+                                <span>{{proposal.nominee.addressline1}}</span>
+                            </div>
+                            <div class="col-md-6">
+                                <label>Address Line2</label>
+                                <span>{{proposal.nominee.addressline2}}</span>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="row mt-2">
+                                    <div class="col-md-4">
+                                        <label>State</label>
+                                        <span>{{proposal.nominee.stateName}}</span>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label>City</label>
+                                        <span>{{proposal.nominee.cityName}}</span>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label>Pincode</label>
+                                        <span>{{proposal.nominee.pincode}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row" *ngIf="appointee">
+                            <div class="col-md-12">
+                                <h4 class="fi-head">Appointee Details</h4>
+                            </div>
+                            <div class="col-md-6">
+                                <label>Appointee Name</label>
+                                <span>{{proposal.appointee.appointeeName}}</span>
+                            </div>
+                            <div class="col-md-6">
+                                <label>Appointee Age</label>
+                                <span>{{proposal.appointee.appointeeAge}} Yrs.</span>
+                            </div>
+                            <div class="col-md-6">
+                                <label>Appointee Relationship</label>
+                                <span>{{proposal.appointee.appointeeRelationship}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" (click)="declarationspopup($event,tnc)">
+                    <label class="form-check-label" style="margin-left: 15px;font-size: 12px;"><i>I hereby declare that
+                            all the information
+                            provided by me, including any medical declarations, are true and correct to the best of my
+                            knowledge.
+
+                            I accept all the <a href="javascript:" (click)="openTnc(tnc)">Terms and Conditions</a> & I
+                            understand that by making payment, I am also
+                            signing the proposal form.</i></label>
+                </div>
+                <div class="button-area text-center pt-3 d-md-flex justify-content-between">
+                    <button type="button" class="btn btn-dark-blue" (click)="savenShare(savequotes,'buylater')">Buy
+                        Later</button>
+                    <!-- <button type="button" (click)="proposalSubmit()" class="btn btn-dark-blue">Dev Submit</button> -->
+                    <button type="button" [disabled]="btndisabled" class="btn btn-dark-blue"
+                        (click)="requestOtp(false)">{{btnText}}</button>
+
+                </div>
+
+            </div>
+            <!----right side---->
+            <div class="col-md-4 order-md-2 order-1">
+                <div class="proposal-r-area">
+                    <div class="text-center p-r-head">
+                        <img [src]="plandetails.companylogo" alt="Image">
+                        <h5 class="mt-3">{{plandetails.plan_name}}</h5>
+                    </div>
+                    <div class="policy-detaild-des">
+                        <div class="border-field tUpper">
+                            Coverage:
+                            <span class="text-right">
+                                <strong>
+                                    <i class="fa fa-inr"></i>{{coverageDisplay}}
+                                </strong>
+                            </span>
+                        </div>
+                        <div class="border-field tUpper">
+                            Premium Term:
+                            <span class=" text-right ">
+                                <strong>{{plandetails.premium_term+' Year'}}</strong>
+                            </span>
+                        </div>
+                        <div class="border-field tUpper">
+                            Premium Amt.:
+                            <span class=" text-right ">
+                                <strong><i class="fa fa-inr"></i>{{plandetails.premium.premium_price}}</strong>
+                            </span>
+                        </div>
+                        <div class="border-field tUpper">
+                            GST ({{gst}}%):
+                            <span class=" text-right ">
+                                <strong><i class="fa fa-inr"></i>{{plandetails.premium.gst_amount}}</strong>
+                            </span>
+                        </div>
+                        <div class="border-field tUpper">
+                            Final Premium:
+                            <span class=" text-right ">
+                                <strong><i class="fa fa-inr"></i>{{finalPremiumDisplay}}</strong><br>
+                                <br>
+                            </span>
+                        </div>
+                        <!-- <div class="border-field tUpper no-border" *ngIf="plandetails.premium.premium_with_gst_2">
+                            Premium for 2 Years
+                            <span class=" text-right ">
+                                <strong>{{plandetails.premium.premium_with_gst_2 | currency:'INR'}}</strong>
+                            </span>
+                        </div>
+                        <div class="no-border  tUpper" *ngIf="plandetails.premium.premium_with_gst_3">
+                            Premium for 3 Years
+                            <span class=" text-right ">
+                                <strong> {{plandetails.premium.premium_with_gst_3 | currency:'INR'}}</strong>
+
+                            </span>
+                        </div> -->
+                        <!-- <div class="no-border tUpper mt-3">
+                            Includes 18.0% GST
+
+                        </div> -->
+                        <!-- <div class="no-border tUpper mt-3">
+                            You
+                            <span class=" text-right ">
+                                <i class="fa fa-inr" aria-hidden="true"></i> 36 Years
+
+                            </span>
+                        </div> -->
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<ng-template #tnc>
+    <div class="modal-header">
+        <h4 class="modal-title pull-left">Terms and Conditions</h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias vel cum illum sed? Necessitatibus deleniti saepe
+        reprehenderit inventore perferendis quam esse ipsum blanditiis tenetur quae, maiores vero sed incidunt accusamus
+        praesentium, dolorem corporis voluptates sapiente laborum placeat consequuntur perspiciatis. Est praesentium
+        rerum temporibus ratione laboriosam nulla quasi eaque? Labore, distinctio!
+    </div>
+</ng-template>
+
+<ng-template #savequotes>
+    <div class="modal-header">
+        <h4 class="modal-title pull-left">Confirm Your Email ID & Mobile No</h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef2.hide()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <div class="form-group">
+            <label for="email">Email ID</label>
+            <input type="email" class="form-control" id="email" name="emailId" placeholder="Enter email"
+                [(ngModel)]="savenshareObj.emailId">
+        </div>
+        <div class="form-group">
+            <label for="mobile">Mobile Number</label>
+            <input type="text" class="form-control" id="mobile" name="contactNumber" maxlength="10"
+                [(ngModel)]="savenshareObj.contactNumber">
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-primary" [disabled]="snsdisabled"
+            (click)="submitSavenShare()">{{snsBtn}}</button>
+    </div>
+</ng-template>
+
+<!-- OTP popup -->
+<ng-template #otppopup>
+    <div class="modal-header">
+        <h4 class="modal-title pull-left">Please Enter The OTP Sent To Your Mobile!</h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <div class="form-group">
+            <label for="mobile">Enter OTP</label>
+            <input type="text" class="form-control" id="mobile" name="otp" maxlength="6" [(ngModel)]="otp">
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-primary" (click)="validateOTP()">Submit</button>
+        <button type="button" class="btn btn-secondary" (click)="requestOtp(true)">Resend</button>
+    </div>
+</ng-template>
+
+
+<!-- ABHI PG Langing Page -->
+<form id="abhipgform" [action]="ABHI_PG_LANDING" method="POST">
+    <input type="hidden" name="Email" [(ngModel)]="abhi.Email">
+    <input type="hidden" name="PhoneNo" [(ngModel)]="abhi.PhoneNo">
+    <input type="hidden" name="SourceCode" [(ngModel)]="abhi.SourceCode">
+    <input type="hidden" name="OrderAmount" [(ngModel)]="abhi.OrderAmount">
+    <input type="hidden" name="Currency" [(ngModel)]="abhi.Currency">
+    <input type="hidden" name="secSignature" [(ngModel)]="abhi.secSignature">
+    <input type="hidden" name="ReturnURL" [(ngModel)]="abhi.ReturnURL">
+    <input type="hidden" name="QuoteId" [(ngModel)]="abhi.QuoteId">
+    <input type="hidden" name="SubCode" [(ngModel)]="abhi.SubCode">
+    <input type="hidden" name="GrossPremium" [(ngModel)]="abhi.GrossPremium">
+    <input type="hidden" name="FinalPremium" [(ngModel)]="abhi.FinalPremium">
+    <input type="hidden" name="SourceTxnId" [(ngModel)]="abhi.SourceTxnId">
+</form>
+
+<!-- CARE PG Langing Page -->
+<form id="carepgform" [action]="CARE_PG_LANGING" name='PAYMENTFORM' method="POST">
+    <input type="hidden" name="proposalNum" [(ngModel)]="carepg.proposalNum">
+    <input type="hidden" name="returnURL" [(ngModel)]="carepg.returnURL">
+</form>

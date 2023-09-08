@@ -1,0 +1,24 @@
+.jstartDt {
+    position: relative;
+}
+
+.jstartDt i{ 
+    position: absolute; 
+    right: 24px; 
+    top: 12px; 
+    color: gray;
+    cursor: pointer;
+} 
+.discount-text{
+    color:#3BB846;
+    margin-left: 6px;
+    font-size: 18px;
+}
+.planname-text {
+    font-size: 18px;
+    color: #0d4ba0;
+}
+.lmbutton .gndr {
+    border-radius: 0;
+}
+.md-checked [type="checkbox"] + label{padding-left:10px }

@@ -1,0 +1,209 @@
+<section class="motor-details-inner-wrapper ">
+    <!------banner-tab show-hide-area------>
+    <div class="banner-tab-area">
+        <div class="container">
+            <div class="health-insurance">
+                <div class="tab-head-text text-center">
+                    <h1>Existing offer on <span>Motor Insurance</span></h1>
+                    <p>From 10+ insurance companies</p>
+                </div>
+            </div>
+            <div class="productformbox">
+
+                <div class="row full-width">
+                    <!---left side start-->
+                    <div class="col-md-6 border-right pr-md-0">
+                        <div class="tab-left-area  ">
+                            <p class="right-nevigation">
+                                <span><i class="fa fa-home" aria-hidden="true"></i>
+                                    Home</span> >
+                                Motor Insurance
+                            </p>
+                            <div class="big-l-block blue-text text-uppercase mb-3">
+                                <h6>Instant - simple - smart</h6>
+                                <h2>Motor Insurance</h2>
+                            </div>
+                            <p class="l-sm-info">
+                                More than 50,000 satisfied customer<br>
+                                Best Rates Guaranteed<br>
+                                Dedicated Claims Desk
+                            </p>
+                            <div class="text-center">
+                                <img src="assets/images/motor-details/two-whiller-1.png">
+                            </div>
+                        </div>
+                    </div>
+                    <!---left end-->
+                    <!---right side start-->
+                    <div class="col-md-6">
+                        <div class="tab-right-area">
+                            <div class="mo-details-r-head text-center">
+                                <span>Motor Insurance</span>
+                            </div>
+                            <!------>
+                            <div class="tab-pane ">
+                                <div class="horizontal-item">
+                                    <div class="item-details">
+                                        <img style="width:80px" src="assets/images/download_9.png" alt="">
+                                      <div class="item-info">
+                                        <h3>ICICI Lombard</h3>
+                                        <p>Two wheeler insurance (Incl. Tax)</p>
+                                        <span class="item-price">1249</span>
+                                      </div>
+                                    </div>
+                                    <button (click)="buynow()" class="buy-button">Buy Now</button>
+                                  </div>
+
+                            </div>
+                            <!------>
+                        </div>
+                    </div>
+                    <!---right side end-->
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<ng-template #successmodal>
+    <div class="modal-header">
+      <h4 class="modal-title pull-left">Thanks for your interest</h4>
+      <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+       We just need few of your details to book your motor insurance
+       <div class="col-md-12">
+        <div class="tab-right-area">
+       <div class="tab-pane">
+        <form class="form-inline" (ngSubmit)="submit()" >
+            <!-- individual-step-one -->
+            <div class="">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label class="control-label col-sm-4" for="">Engine Number</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" id=""
+                                    placeholder="Enter Engine Number" name="motor_enhine_number"
+                                    [(ngModel)]="motor.motor_engine_number">
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label class="control-label col-sm-4" for="">Chasis Number</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" id=""
+                                    placeholder="Enter Chasis Number" name="motor_chasis_number"
+                                    [(ngModel)]="motor.motor_chasis_number">
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label class="control-label col-sm-4" for="">Owner Name</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" id=""
+                                    placeholder="Enter Owner Name" name="owner_name"
+                                    [(ngModel)]="motor.owner_Name">
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label class="control-label col-sm-4" for="">Ex-Showroom Price</label>
+                            <div class="col-sm-8">
+                                <input type="number" class="form-control" id=""
+                                    placeholder="Enter ExShowroom Price" name="ownerpirceexshowroom"
+                                    [(ngModel)]="motor.exshowroom">
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label class="control-label col-sm-3" for="">Owner Date of Birth</label>
+                            <div class="col-sm-9 jstartDt">
+                                <input type="text" class="form-control" id=""
+                                    placeholder="DD/MM/YYYY" name="Owner Date of Birth"
+                                    [(ngModel)]="motor.ownerdateofbirth"
+                                    [bsConfig]="{ dateInputFormat: 'DD/MM/YYYY' }" bsDatepicker
+                                    autocomplete="off" [isOpen]="isOpen">
+                                <i class="fa fa-calendar" (click)="isOpen = !isOpen"></i>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-6">
+
+                        <div class="form-group">
+                            <label class="control-label col-sm-4" for="">Nominee Name</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" id=""
+                                    placeholder="Enter Nominee Name" name="motor_nominee_name"
+                                    [(ngModel)]="motor.motor_nominee_name" >
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label class="control-label col-sm-3" for="">Nominee Date of Birth</label>
+                            <div class="col-sm-9 jstartDt">
+                                <input type="text" class="form-control" id=""
+                                    placeholder="DD/MM/YYYY" name="nominee Date of Birth"
+                                    [(ngModel)]="motor.dateofbirth"
+                                    [bsConfig]="{ dateInputFormat: 'DD/MM/YYYY' }" bsDatepicker
+                                    autocomplete="off" [isOpen]="isOpen">
+                                <i class="fa fa-calendar" (click)="isOpen = !isOpen"></i>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+                <p class="text-center d-block full-width m-0">
+                    <button type="submit" class="btn btn-default get-quotes-btn"
+                        [disabled]="getQuoteBtn">Submit</button>
+                </p>
+            </div>
+
+
+
+        </form>
+       </div>
+       </div>
+       </div>
+    </div>
+</ng-template>
+
+
+<ng-template #successmodal1>
+    <div class="modal-header">
+      <h4 class="modal-title pull-left">Success</h4>
+      <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+        Your Policy is Booked and we will share you the policy very soon on your email id.
+    </div>
+</ng-template>
+
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+<!----container area start--->

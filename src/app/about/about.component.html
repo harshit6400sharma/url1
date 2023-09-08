@@ -1,0 +1,243 @@
+<div>
+    <img src="assets/images/about-us/about-us-v3.jpg" width="100%" alt="">
+</div>
+<!---content area start------->
+<main class="about-c-wrapper">
+    <section class="conmon-gap about-banner-bottom py-5 text-justify">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-md-8">
+                    <p>In our 17 years of experience in the Insurance Industry there is one
+                        typical trait of the human mind that we have analysed. “I want to buy
+                        insurance” said no one ever, until and unless there are in a tragic crisis
+                        themselves.</p>
+                    <p>While an air of indifference towards insurance is not encouraged, neither
+                        is an impulsive insurance buying decision a wise move. For an economy like
+                        India, where Insurance Penetration is less than 4 percent, it is easier for
+                        fraud Insurance issuers to prevail, for whom your impulse might act out as a
+                        pro.</p>
+                    <p>Trinity Reinsurance Brokers Limited, a leading General & Life Insurance
+                        intermediary, licensed by the Insurance Regulatory and Development Authority
+                        of India (IRDAI), License No. IRDA/CB-358/06, has created a strong presence
+                        in the Corporate and Reinsurance business. Over the last 17 years the
+                        company has handled over 50,000 Corporate Insurance policies and has an
+                        experience of catering to more than 5 million lives under various Employee
+                        Benefit policies.</p>
+                    <p>In 2021, ThePolicyMall.com is yet another
+                        initiative by the organisation, with the idea of creating a one-stop
+                        destination for policy seekers.</p>
+
+                    <!-- <p class="mb-0">The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those
+                        interested. Sections</p> -->
+                </div>
+                <div class="col-md-4">
+                    <img src="assets/images/about-us/about-2.png" alt="">
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+
+    <section class="conmon-gap my-5 text-justify">
+        <div class="container">
+            <h2 class="common-heading text-center">Digital <span>Insurance Journey</span> </h2>
+
+
+            <div class="row">
+                <div class="col-md-4">
+                    <img src="assets/images/about-us/about-3.png" alt="">
+                </div>
+                <div class="col-md-8">
+                    <p>100 Plans are now just a click away from you</p>
+                    <p>Step 1: You plan to take a policy tailored based on your needs and you land on our website.</p>
+
+                    <p> Step 2: Over 100 Plans present to you the best policy for you from their product vault, at just
+                        a click. Compare products within one umbrella offered by all these insurers at a go, select the
+                        one that serves you best, for any queries and completion of the process, get in touch with our
+                        subject matter expert of Insurance trained unbiased TPM personnel.
+
+                    </p>
+                    <p>Learn from them how to login to your account with TPM credentials to view & manage
+                        all your registered policies at a place. Conclude with learning how our Claim Support department
+                        will be rolling your claim down through insurers while you are at the scene of crisis.</p>
+                    <p class="mb-0">
+                        Step 3: Congratulations! You, your family and your assets are now insured.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--awards start---->
+    <section class="conmon-gap my-5 text-justify awards-area">
+        <div class="container">
+            <h2 class="common-heading text-center">
+
+                <ul class="nav nav-tabs justify-content-center">
+                    <li><a data-toggle="tab" href="#directors" class="active"> Directors <span class="dot-text"> &nbsp;
+                                . </span></a>
+                    </li>
+                    <li><a data-toggle="tab" href="#leaders"> / The Leaders <span class="dot-text"> &nbsp;.
+                            </span></a></li>
+
+                    <!-- <li><a data-toggle="tab" href="#awards"> / Awards <span class="dot-text"> &nbsp; . </span></a></li> -->
+                </ul>
+            </h2>
+            <!----tab content start---->
+            <div class="tab-content">
+                <div id="leaders" class="tab-pane fade">
+                    <!--slider start--->
+                    <div class="owl-carousel owl-theme carousel-leaders">
+                        <div class="item" *ngFor="let lead of leaders">
+                            <div class="card">
+                                <div class="bd-placeholder-img">
+                                    <img [src]="lead.pic">
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">{{lead.name}} <br> <small
+                                            style="font-size: small;">{{lead.designation}}</small></h5>
+
+                                    <p class="card-text">
+                                        {{lead.intro}}
+                                    </p>
+                                    <button type="button" class="btn btn-read-more"
+                                        (click)="openModal(template,lead)">Read
+                                        More ></button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!--slider start--->
+                </div>
+                <div id="directors" class="tab-pane fade in active show">
+                    <div class="owl-carousel owl-theme carousel-directors">
+                        <div class="item" *ngFor="let lead of directors">
+                            <div class="card">
+                                <div class="bd-placeholder-img">
+                                    <img [src]="lead.pic">
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">{{lead.name}} <br> <small
+                                            style="font-size: small;">{{lead.designation}}</small></h5>
+                                    <p class="card-text">
+                                        {{lead.intro}}
+                                    </p>
+                                    <button type="button" class="btn btn-read-more"
+                                        (click)="openModal(template,lead)">Read
+                                        More ></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div id="awards" class="tab-pane fade">
+                    <div class="owl-carousel owl-theme carousel-awards">
+                        <div class="item">
+                            <div class="award-box">
+                                <img src="assets/images/about-us/award-1.png" alt="award">
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="award-box">
+                                <img src="assets/images/about-us/award-2.png" alt="award">
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="award-box">
+                                <img src="assets/images/about-us/award-3.png" alt="award">
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="award-box">
+                                <img src="assets/images/about-us/award-4.png" alt="award">
+                            </div>
+                        </div>
+
+                    </div>
+                </div> -->
+
+            </div>
+            <!----tab content end------>
+        </div>
+    </section>
+    <section class="conmon-gap my-2 py-2">
+        <h2 class="common-heading text-center">Finding the best plan <span>was never this easy</span></h2>
+    </section>
+    <!--awards end---->
+    <section class="conmon-gap mt-2 py-5 text-justify plan-area-wrapper">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="plan-box-wrapper st-box">
+                        <div class="box-top">
+                            <img src="assets/images/mission.png" style="height: 35%;" alt="Mission">Mission
+                        </div>
+                        <p>
+                            To create the most convincing shopping experience for even the most insurance-averse Indian.
+                        </p>
+                        <!-- <ul style="text-align: left;">
+                            <li>To help humanity beyond life-spans</li>
+                            <li>To accelerate the transition of India to an Insured India</li>
+                            <li>To create the most convincing shopping experience for even the most insurance-averse
+                                Indian
+                            </li>
+                            <li>Connecting the most genuine insurance products to the most genuine requirements</li>
+                        </ul> -->
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="plan-box-wrapper nd-box">
+                        <div class="box-top">
+                            <img src="assets/images/vision.png" style="height: 35%;" alt="Vision">
+                            Vision
+                        </div>
+                        <p>To help every Indian take the educated shift towards understanding that insurance is not a luxury.</p>
+                        <!-- <ul style="text-align: left;">
+                            <li>To create an online Insurance Universe that holds the Insured as its Sun/centrifugal
+                                force.</li>
+                            <li>To devise an insurance bubble to bear every compensable loss faced by every Indian who
+                                matters.</li>
+                            <li>To help every Indian take the educated shift towards understanding that Insurance is not
+                                a luxury.</li>
+                            <li>To redefine how India looks at Insurance.</li>
+                        </ul> -->
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="plan-box-wrapper rd-box">
+                        <div class="box-top"><img src="assets/images/goal.png" style="height: 35%;" alt="Goal">Goal
+                        </div>
+                        <p>
+                            To redefine how India looks at Insurance
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+    </section>
+
+    <!---testimonial section----->
+    <app-emp-speak></app-emp-speak>
+    <!---testimonial section----->
+
+</main>
+<!---content area end------->
+
+
+<ng-template #template>
+    <div class="modal-header">
+        <h4 class="modal-title pull-left">{{leader.name}} <br><small>{{leader.designation}}</small></h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        {{leader.desc}}
+    </div>
+</ng-template>
